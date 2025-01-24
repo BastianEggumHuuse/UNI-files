@@ -1,0 +1,72 @@
+        inp 
+        sta plu
+	start   sub vare_1
+        brz var1
+        lda plu
+        sub vare_2
+        brz var2
+        lda plu
+        sub vare_3
+        brz var3
+	var1    inp 
+        sta antall
+	multi1  lda Tpris
+        add pris_1
+        sta Tpris
+        lda antall
+        sub en 
+        sta antall
+        brz done
+        bra multi1
+	var2    inp 
+        sta antall
+	multi2  lda Tpris
+        add pris_2
+        sta Tpris
+        lda antall
+        sub en 
+        sta antall
+        brz done
+        bra multi2
+	var3    inp 
+        sta antall
+	multi3  lda Tpris
+        add pris_3
+        sta Tpris
+        lda antall
+        sub en 
+        sta antall
+        brz done
+        bra multi3
+	done    inp 
+        sta plu
+        brz finish
+        bra start
+	finish  lda Tpris
+        out 
+        lda N
+        otc 
+        lda I
+        otc
+        lda E
+        otc
+        lda L
+        otc
+        lda C
+        otc
+        hlt
+	plu     dat 0
+	en      dat 1
+	vare_1  dat 302
+	vare_2  dat 301
+	vare_3  dat 300
+	pris_1  dat 20
+	pris_2  dat 30
+	pris_3  dat 45
+	antall  dat 0
+	Tpris   dat 0
+	N       dat 78
+	I       dat 73
+	E       dat 69
+	L       dat 76
+	C       dat 67

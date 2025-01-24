@@ -1,0 +1,10 @@
+USB-C kabler; 50; 25
+Bluetooth hodetelefoner; 30; 150
+Oppvaskkoster; 100; 10
+Smartklokker; 20; 400
+Sportsflasker; 60; 40
+Datamus; 40; 60
+Skriveblokker; 80; 20
+Kaffeautomater; 10; 2000
+LED-pærer; 70; 15
+Powerbanks; 25; 100

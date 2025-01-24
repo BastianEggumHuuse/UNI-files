@@ -1,0 +1,11 @@
+b) Klassen Filmklubb kunne lest inn filen med filmer i konstruktøren, det vil si ved
+opprettelsen av et nytt Filmklubb-objekt. Ser du noen fordel ved å ikke lese inn filen
+med filmer i konstruktøren?
+
+- Kanksje lese inn filmer bare når det trengs. Det vil si kanskje man ikke trenger det med en gang i opprettelsen av filmklubb-objektet.
+
+
+c) Parameteren år til konstruktøren i klassen Film er en int (heltall). Hvilken annen type
+ville det vært naturlig å velge, og hvilken forskjell ville det gjort?
+
+- Streng da kunne man ha gitt dato. Man kan videre ikke regne på året. Da kan man ikke finne hvilken film kom først for eksempel.

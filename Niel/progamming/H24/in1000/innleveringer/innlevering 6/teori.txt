@@ -1,0 +1,10 @@
+1. Hva er innkapsling? Hvorfor er det nyttig?
+    - Det er når data blir brukt av metoder kapsles inn i samme klasse. Det beskytter dataene ved å gjøre dem private og gir kontrollert tilgang gjennom offentlige metoder.
+
+2. Hva er grensesnittet til en klasse? Hvordan skiller det seg fra implementasjonen av
+en klasse?
+    - Det er når en klasse tilbyr endring/hendelse for brukeren gjennom metoder.  -vet ikke 
+
+3. Hva er en instansmetode (ofte kalt bare metode)? Hvordan skiller metoder seg fra
+prosedyrene/funksjonene vi har jobbet med hittil?
+    - Instansmetoder bruker self for å referere til objektets tilstand. De skiller seg fra vanlige funksjoner ved at de er bundet til objekter og kan endre objektets tilstand.
