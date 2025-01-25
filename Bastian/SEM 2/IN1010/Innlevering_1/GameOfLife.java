@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 class GameOfLife
 {
@@ -7,12 +8,33 @@ class GameOfLife
     public static void main(String[] Args)
     {
 
-        Verden v = new Verden(8,12);
+        int Rader = 8;
+        int Kolonner = 12;
+        try 
+        {
+            if(Args.length > 1)
+            {
+                Rader = Integer.parseInt(Args[0]);
+                Kolonner = Integer.parseInt(Args[1]);
+            }
+        }
+        catch (NumberFormatException e)
+        {
+            // Vi gjør ingen ting her :)
+        }
 
-        while(v.GenNR < 3)
+        Verden v = new Verden(Rader,Kolonner);
+
+
+        Scanner s = new Scanner(System.in);
+        String Input = ""; 
+
+        while(Input == "")
         {
             v.Tegn();
             v.Oppdater();
+
+            Input = s.nextLine();
         }
 
         System.out.println("");
