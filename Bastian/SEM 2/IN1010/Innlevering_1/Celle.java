@@ -13,12 +13,12 @@ class Celle
         AntLevendeNaboer = 0;
     }
 
-    public void SetDod()
+    public void SettDod()
     {
         Levende = false;
     }
 
-    public void SetLevende()
+    public void SettLevende()
     {
         Levende = true;
     }
@@ -50,7 +50,7 @@ class Celle
 
         for(int i = 0; i < AntNaboer; i++)
         {
-            if (Naboer[i].ErLevende)
+            if (Naboer[i].ErLevende())
             {
                 AntLevendeNaboer ++;
             }
@@ -61,11 +61,11 @@ class Celle
     {
         if (AntLevendeNaboer == 3)
         {
-            SetLevende();
+            SettLevende();
         }
         else
         {
-            SetDod();
+            SettDod();
         }
     }
 }
