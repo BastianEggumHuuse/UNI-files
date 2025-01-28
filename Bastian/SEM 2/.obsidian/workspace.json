@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
+                "file": "STK-FYS1110/Uke 2 (Uke 5)/Forelesning 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Forelesning 21.01.2025"
+              "title": "Forelesning 3"
             }
           }
         ]
@@ -162,22 +162,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c02c0a8043107b7",
+  "active": "d0cd5c81079881b6",
   "lastOpenFiles": [
-    "Untitled.canvas",
-    "STK-FYS1110/STK-FYS1110 - Snarvei.lnk",
     "MAT1110/Innforing_MAT1110.pdf",
-    "MAT1110",
-    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md",
-    "IN1010/Uke 1 (uke 4)/TestClass.class",
-    "IN1010/Uke 1 (uke 4)/Forelesning_2.class",
-    "IN1010/Uke 1 (uke 4)/TestClass.java",
-    "IN1010/Uke 1 (uke 4)/Forelesning_2.java",
-    "STK-FYS1110/mathematical-statistics-with-applications-3rd-edition.pdf",
-    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
+    "STK-FYS1110/Uke 2 (Uke 5)/Forelesning 3.md",
+    "STK-FYS1110/Uke 2 (Uke 5)",
+    "STK-FYS1110/Untitled.md",
+    "IN1010/Uke 2 (uke 5)/Forelesning_3.class",
+    "IN1010/Uke 2 (uke 5)/Text.txt",
+    "IN1010/Uke 2 (uke 5)/Forelesning_3.java",
+    "IN1010/Uke 2 (uke 5)/Forelesning 3.java",
+    "IN1010/Uke 2 (uke 5)/Forelesning 3",
+    "IN1010/Uke 2 (uke 5)",
     "FYS1105/taylor-2005-classical-mechanics.pdf",
     "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
-    "EXPHIL03/Uke 1 (Uke 4)",
+    "IN1010/Innlevering_1/Verden.java",
+    "Untitled.canvas",
+    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md",
+    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
     "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 1 (legacy).md"
   ]
 }
