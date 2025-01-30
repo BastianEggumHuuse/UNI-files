@@ -11,10 +11,14 @@
             "id": "bc3db3aa85b5ae38",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian UiO/H25/IN1030/30.01 Forelesning.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "30.01 Forelesning"
             }
           }
         ]
@@ -159,8 +163,9 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "8ab20a57a37ea695",
+  "active": "bc3db3aa85b5ae38",
   "lastOpenFiles": [
+    "Obsidian UiO/H25/IN1030/30.01 Forelesning.md",
     "Obsidian UiO/H25/IN1150/første forelesning 20.01.25.md",
     "Obsidian UiO/H25/IN1150",
     "Obsidian UiO/H25/IN1030/Første forelesning.md",
