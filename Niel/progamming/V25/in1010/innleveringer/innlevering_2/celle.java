@@ -1,15 +1,15 @@
-class celle {
+class Celle {
 
     boolean levende;
-    celle[] naboer;
+    Celle[] naboer;
     int AntallNaboer;
     int antLevendeNaboer;
 
-    public celle(){
+    public Celle(){
         levende = false;
         AntallNaboer = 0;
         antLevendeNaboer = 0;
-        naboer = new celle[8];
+        naboer = new Celle[8];
     }
 
     public void settDod(){
@@ -36,7 +36,7 @@ class celle {
         }
     }
 
-    public void leggTilNabo(celle nabo) {
+    public void leggTilNabo(Celle nabo) {
         if (naboer.length < AntallNaboer){
             naboer[AntallNaboer] = nabo;
             AntallNaboer ++;
