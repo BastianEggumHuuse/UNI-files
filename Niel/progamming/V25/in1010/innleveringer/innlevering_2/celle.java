@@ -37,7 +37,7 @@ class Celle {
     }
 
     public void leggTilNabo(Celle nabo) {
-        if (naboer.length < AntallNaboer){
+        if (naboer.length > AntallNaboer){
             naboer[AntallNaboer] = nabo;
             AntallNaboer ++;
         } else {
