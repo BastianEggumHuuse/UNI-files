@@ -46,31 +46,31 @@ public class Rutenett {
             System.out.println();
         }
         
-        String radSeparator = "+";
-        for (int kx = 0; kx < antKolonner; kx++) {
-            radSeparator += "---+";
-        }
-        
-        
-        
         for (int rx = 0; rx < antRader; rx++) {
-            
-            System.out.println(radSeparator);
-            
-            System.out.print("|");
             for (int kx = 0; kx < antKolonner; kx++) {
                 Celle celle = rutene[rx][kx];
-                System.out.print(" " + celle.hentStatusTegn() + " |");
+                System.out.print(celle.hentStatusTegn());
             }
             System.out.println();
         }
         
-        System.out.println(radSeparator);
     }
 
 
     public void settNaboer(int rad, int kolonne){
         Celle celle = hentCelle(rad,kolonne);
+        
+        for (int i = rad-1; i <= rad+1; i++ ){
+            for (int j = kolonne-1; j <= kolonne+1; j++) {
+
+                Celle nabo = hentCelle(i,j);
+                if (nabo == null && nabo != celle){
+                    celle.leggTilNabo(nabo);
+                }
+                
+            }
+        }
+            
 
 
     }
