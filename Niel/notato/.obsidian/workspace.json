@@ -53,7 +53,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -178,6 +179,7 @@
   },
   "active": "5f37a4416eef8c68",
   "lastOpenFiles": [
+    "Attachments/images/Pasted image 20250202153032.png",
     "Obsidian UiO/V25/IN1030/innleveringer/oblig-1---samspill---in1030-v25.pdf",
     "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.md",
     "Obsidian UiO/V25/IN1030/Første forelesning.md",
