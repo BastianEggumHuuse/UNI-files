@@ -11,12 +11,14 @@
             "id": "d0cd5c81079881b6",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "MAT1110/Innforing_MAT1110.pdf"
+                "file": "EXPHIL03/Uke 3 (Uke 6)/Forelesning 7.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Innforing_MAT1110"
+              "icon": "lucide-file",
+              "title": "Forelesning 7"
             }
           },
           {
@@ -186,8 +188,10 @@
   },
   "active": "d0cd5c81079881b6",
   "lastOpenFiles": [
-    "FYS1105/taylor-2005-classical-mechanics.pdf",
     "MAT1110/Innforing_MAT1110.pdf",
+    "EXPHIL03/Uke 3 (Uke 6)/Forelesning 7.md",
+    "EXPHIL03/Uke 3 (Uke 6)",
+    "FYS1105/taylor-2005-classical-mechanics.pdf",
     "IN1010/Innlevering_1/GameOfLife.class",
     "IN1010/Innlevering_1/Celle.class",
     "IN1010/Innlevering_1/Rutenett.class",
@@ -195,8 +199,6 @@
     "IN1010/Badge_System/Damage_Amp.java",
     "IN1010/Badge_System/Test_Badge_2.txt",
     "IN1010/Badge_System/Test_Badge.txt",
-    "IN1010/Badge_System/Badge.class",
-    "IN1010/Badge_System/Badge_Main.class",
     "EXPHIL03/Uke 2 (Uke 5)/Forelesning 5.md",
     "STK-FYS1110/Uke 2 (Uke 5)/Forelesning 3.md",
     "STK-FYS1110/Untitled.md",
