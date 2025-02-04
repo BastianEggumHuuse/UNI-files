@@ -25,10 +25,22 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "MAT1110/Innforing_MAT1110.pdf"
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Innforing_MAT1110"
+              "title": "taylor-2005-classical-mechanics"
+            }
+          },
+          {
+            "id": "e76ba5e8d4fa7d52",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "taylor-2005-classical-mechanics"
             }
           }
         ]
@@ -174,7 +186,8 @@
   },
   "active": "d0cd5c81079881b6",
   "lastOpenFiles": [
-<<<<<<< Updated upstream
+    "FYS1105/taylor-2005-classical-mechanics.pdf",
+    "MAT1110/Innforing_MAT1110.pdf",
     "IN1010/Innlevering_1/GameOfLife.class",
     "IN1010/Innlevering_1/Celle.class",
     "IN1010/Innlevering_1/Rutenett.class",
@@ -184,8 +197,6 @@
     "IN1010/Badge_System/Test_Badge.txt",
     "IN1010/Badge_System/Badge.class",
     "IN1010/Badge_System/Badge_Main.class",
-    "IN1010/Badge_System/Badge_Main.java",
-    "IN1010/Badge_System/Badge.java",
     "EXPHIL03/Uke 2 (Uke 5)/Forelesning 5.md",
     "STK-FYS1110/Uke 2 (Uke 5)/Forelesning 3.md",
     "STK-FYS1110/Untitled.md",
@@ -193,23 +204,6 @@
     "Untitled.canvas",
     "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md",
     "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
-=======
-    "IN1010/Innlevering_1/Verden.java",
-    "IN1010/Innlevering_1/Rutenett.java",
-    "IN1010/Innlevering_1/GameOfLife.java",
-    "IN1010/Innlevering_1/Celle.java",
-    "IN1010/Innlevering_1",
-    "Untitled.canvas",
-    "STK-FYS1110/STK-FYS1110 - Snarvei.lnk",
-    "MAT1110/Innforing_MAT1110.pdf",
-    "MAT1110",
-    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md",
-    "IN1010/Uke 1 (uke 4)/TestClass.class",
-    "IN1010/Uke 1 (uke 4)/Forelesning_2.class",
-    "IN1010/Uke 1 (uke 4)/TestClass.java",
-    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
-    "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
->>>>>>> Stashed changes
     "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 1 (legacy).md"
   ]
 }

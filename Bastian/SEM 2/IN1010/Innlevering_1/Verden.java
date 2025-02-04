@@ -31,5 +31,7 @@ class Verden
         Nett.TellLevendePerCelle();
         Nett.OppdaterAlleCeller();
         GenNR ++;
+
+        return(null);
     }
 }
