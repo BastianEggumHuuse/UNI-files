@@ -106,14 +106,14 @@ public class TestCelle {
     public static void main (String[] arg) {
 	System.out.println("** Test Celle **");
 
-	// Kall paa de metodene du vil teste ved aa fjerne // under:
-	// testCelle();
-	// testSettDoedLevende();
-	// testErLevende();
-	// testHentStatusTegn();
-	// testLeggTilNabo();
-	// testTellLevendeNaboer();
-	// testOppdaterStatus();
+	//Kall paa de metodene du vil teste ved aa fjerne // under:
+	testCelle();
+	testSettDoedLevende();
+	testErLevende();
+	testHentStatusTegn();
+	testLeggTilNabo();
+	testTellLevendeNaboer();
+	testOppdaterStatus();
 	
 	System.out.println();
     }

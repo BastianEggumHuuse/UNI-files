@@ -30,7 +30,10 @@ public class Kategori {
 
         if (liste.length != 0) {  // kan gjøre : !liste.isEmpty()
             Random tilfeldig = new Random();
+            int index = tilfeldig.nextInt(liste.size());
+            return liste.get(index);
         }
+        return null;
 
     }
 

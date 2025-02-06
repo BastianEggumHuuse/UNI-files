@@ -1,28 +1,14 @@
 {
   "main": {
-    "id": "70bde8a28ce0cc90",
+    "id": "51408cfbdd4cc770",
     "type": "split",
     "children": [
       {
-        "id": "9b5a60206e144a0e",
+        "id": "a8ad7785d8f03535",
         "type": "tabs",
         "children": [
           {
-            "id": "bc3db3aa85b5ae38",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian UiO/H25/IN1150/Gruppe/Første gruppetime.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Første gruppetime"
-            }
-          },
-          {
-            "id": "8223b11f09cf4d55",
+            "id": "d447a1611d13f66c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -34,37 +20,22 @@
               "icon": "lucide-file",
               "title": "30.01 Forelesning"
             }
-          },
-          {
-            "id": "e908ee62bae9dd38",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian UiO/H25/IN1030/Første forelesning.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Første forelesning"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "98544a62dd357234",
+    "id": "842fe79bdcfdaa23",
     "type": "split",
     "children": [
       {
-        "id": "3ac37907e0035441",
+        "id": "5917ab2bba6e4b2d",
         "type": "tabs",
         "children": [
           {
-            "id": "8ab20a57a37ea695",
+            "id": "f76d47e6fd80ee89",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -77,12 +48,12 @@
             }
           },
           {
-            "id": "e14d4abed15ad4d6",
+            "id": "31ccc3c01b0d4e1c",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "kan sikkerhetsmål ivaretas",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +65,7 @@
             }
           },
           {
-            "id": "e9cde991ed149661",
+            "id": "94bd671ff819348d",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -107,23 +78,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "99b39a163de53250",
+    "id": "7a0df75977de4339",
     "type": "split",
     "children": [
       {
-        "id": "f3bfce7aa3c17edd",
+        "id": "7a0ba0b52813603e",
         "type": "tabs",
         "children": [
           {
-            "id": "d0362011f6c6e22b",
+            "id": "87469ad1f51652ef",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obsidian UiO/H24/IN1020/Gruppe_timer (2)/Untitled.md",
+                "file": "Obsidian UiO/H25/IN1030/30.01 Forelesning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,46 +104,51 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Untitled"
+              "title": "Backlinks for 30.01 Forelesning"
             }
           },
           {
-            "id": "c6b27722e4504161",
+            "id": "6c41d08920456ec2",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obsidian UiO/H24/IN1020/Gruppe_timer (2)/Untitled.md",
+                "file": "Obsidian UiO/H25/IN1030/30.01 Forelesning.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Untitled"
+              "title": "Outgoing links from 30.01 Forelesning"
             }
           },
           {
-            "id": "361ec6fb0437785f",
+            "id": "4f1d58b3d84e4507",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
             }
           },
           {
-            "id": "f1894bce0bed148e",
+            "id": "2d709880b2ad150a",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian UiO/H24/IN1020/Gruppe_timer (2)/Untitled.md"
+                "file": "Obsidian UiO/H25/IN1030/30.01 Forelesning.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "Outline of 30.01 Forelesning"
             }
           }
         ]
@@ -193,52 +169,8 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "e908ee62bae9dd38",
+  "active": "f76d47e6fd80ee89",
   "lastOpenFiles": [
-    "Obsidian UiO/H25/IN1150/Gruppe/Første gruppetime.md",
-    "Obsidian UiO/H25/IN1030/Første forelesning.md",
-    "Attachments/images/Pasted image 20250131132411.png",
-    "Attachments/images/image.png",
-    "Attachments/images/Pasted image 20250130153344.png",
-    "Attachments/images/Pasted image 20240909144611.png",
-    "Attachments/images/Pasted image 20250130114023.png",
-    "Attachments/images/Pasted image 20250130114036.png",
-    "Attachments/images/Pasted image 20250130114102.png",
-    "Obsidian UiO/H25/EXPHIL/24.01.25 nr.4 forelesning.md",
-    "Obsidian UiO/H25/EXPHIL/30.01.25 nr.5 forelesning.md",
-    "Obsidian UiO/H25/IN1150/første forelesning 20.01.25.md",
-    "Obsidian UiO/H25/IN1030/30.01 Forelesning.md",
-    "Obsidian UiO/H25/IN1010",
-    "Attachments/images/Pasted image 20250130113916.png",
-    "Attachments/images/Pasted image 20250130113403.png",
-    "Obsidian UiO/H25/IN1150",
-    "Obsidian UiO/H25/IN1030",
-    "Obsidian UiO/H25/EXPHIL/21.01.25 nr.3 forelesning.md",
-    "Obsidian UiO/H25/EXPHIL/16.01.25 nr.2 forelesning.md",
-    "Obsidian UiO/H25/EXPHIL/14.01.25 nr.1 forelesning.md",
-    "Obsidian UiO/H25/EXPHIL",
-    "Obsidian UiO/H25",
-    "Attachments/images/Pasted image 20250122181408.png",
-    "Obsidian UiO/H24/IN1020/Forelesninger/Forkurs.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/Untitled.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/14.01.25.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/Kryptografi 11.10.24.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/Datateknologi og sikkerhet.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/forelesning 18.09.24.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/forelesning 04.10.24.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/forelesning 16.10.10.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/forelesning 25.09.2024.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/Kretsene som driver koden.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/Koder møte kretser 25.10.24.md",
-    "Obsidian UiO/H24/IN1020/Forelesninger/forelesning 09.10.24.md",
-    "Obsidian UiO/H24/IN1050/Forelesninger/forelesning 22.10.24 - Tilnærming til evaluering.md",
-    "Obsidian UiO/H24/IN1050/Obligger/obligatorisk-oppgave 2.md",
-    "Obsidian UiO/H24/IN1020/eksamen tips.md",
-    "Obsidian UiO/H24/IN1050/Tekst guide like temaer.md",
-    "Obsidian UiO/H24/IN1050/lese eksamen",
-    "Obsidian UiO/H24/IN1050/Obligger/nielc_3.pdf",
-    "Obsidian UiO/H24/IN1050/Obligger/nielc_3.pdf.opdownload",
-    "Obsidian UiO/H24/IN1050/Forelesninger/Untitled",
-    "Obsidian UiO/H24/IN1020/Annet"
+    "Obsidian UiO/H25/IN1030/Første forelesning.md"
   ]
 }

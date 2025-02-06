@@ -10,9 +10,17 @@ public class Antrekk {
         anledninger.add(anledning);
 
         for (Plagg p : this.plagg) {
-
+            p.oppdaterAntallAntrekk(1);
         }
-
-
     }
+
+    public ArrayList<Plagg> hentPlaggene() {
+        return plagg;
+    }
+
+    public void leggTilAnledning(String anledning) {
+        anledninger.add(anledning);
+    }
+
+
 }
