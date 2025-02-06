@@ -1,4 +1,11 @@
-I teksten.. så skriver imanuel.. gir argument er er vilje er helt godt "quote start". Kant kommer fram til dette via moral loven. 
+I teksten "Grunnlegging av moralens metafysikk" skrevet av Immanuel Kant gir argument er "Det er umulig å tenke seg noe i verden, ja, til og med utenfor den, som uten innskrenkning kan anses for godt, annet enn en god vilje." Han utforsker hva som gjør en handling moralsk god. Argumentet til Kant er basert på tanken om at en god handling kan bare bli gjort bak en god vilje. 
+
+Kant definerer moralloven som et sett av ulike plikter vi mennesker er født med, hvor de er absolutte og er uten betingelser. Dette går under pliktetikk som er Kants etisk rammeverk. Der handlings moralske verdi oppstår gjennom å følge pliktene. En handling skal utføres fra hensikt ut i fra denne moralloven. Det har ikke noe å si hva resultatet av den handlingen er. Det eneste som betyr noe er bare om handlingen ble utført ut av pliktene til moralloven. 
+
+Mennesker har evnen til å gjøre både gode og onde handlinger, men det er viljen som avgjør om handlingene er gode. Enkelte egenskaper kan fremme denne gode viljen, men man kan ikke si at en egenskap er god i seg selv, fordi den kan brukes både til det gode og det onde. God vilje trenger ingen ting for å være god. Det resultatet du oppnår/ikke oppnår med din gode vilje, verken øker eller reduserer verdien av din gode vilje. Den gode viljen er i seg selv verdifull. Når Kant beskriver hva "god vilje", prøver han å si at det ikke er noe som tilfredsstiller oss / gir oss en god følelse. Det skal bli bestemt av den objektive moralloven, som blir avgjøres gjennom bruk av sunn fornuft. 
+
+Ifølge Kant som sagt er ikke fokuset på hva resultatene av handlingene du gjør er, men hva viljen bak det var. Fornuften er universell for alle vesener født med det. Det vil si at fornuften kan fortelle oss alle hva vi bør gjøre. Det skal ikke ha noe å si hvem du er eller hva du liker. Den skal være en moralsk grunnlag som er gyldige for alle vesener med fornuft. Der for skal vi alle kunne komme til prinsippet til moralens lover og plikter ved å tenke selv. 
+
 
 
 hoved del. definere moral loven. 
