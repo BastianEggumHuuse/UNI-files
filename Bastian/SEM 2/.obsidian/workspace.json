@@ -11,14 +11,36 @@
             "id": "d0cd5c81079881b6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
-                "mode": "source",
-                "source": false
+                "file": "MAT1110/Innforing_MAT1110.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Forelesning 21.01.2025"
+              "icon": "lucide-file-text",
+              "title": "Innforing_MAT1110"
+            }
+          },
+          {
+            "id": "1fd15abde2adfdbf",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "taylor-2005-classical-mechanics"
+            }
+          },
+          {
+            "id": "e76ba5e8d4fa7d52",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "taylor-2005-classical-mechanics"
             }
           }
         ]
@@ -162,22 +184,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c02c0a8043107b7",
+  "active": "d0cd5c81079881b6",
   "lastOpenFiles": [
-    "Untitled.canvas",
-    "STK-FYS1110/STK-FYS1110 - Snarvei.lnk",
-    "MAT1110/Innforing_MAT1110.pdf",
-    "MAT1110",
-    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md",
-    "IN1010/Uke 1 (uke 4)/TestClass.class",
-    "IN1010/Uke 1 (uke 4)/Forelesning_2.class",
-    "IN1010/Uke 1 (uke 4)/TestClass.java",
-    "IN1010/Uke 1 (uke 4)/Forelesning_2.java",
-    "STK-FYS1110/mathematical-statistics-with-applications-3rd-edition.pdf",
-    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
     "FYS1105/taylor-2005-classical-mechanics.pdf",
+    "MAT1110/Innforing_MAT1110.pdf",
+    "IN1010/Innlevering_1/GameOfLife.class",
+    "IN1010/Innlevering_1/Celle.class",
+    "IN1010/Innlevering_1/Rutenett.class",
+    "IN1010/Innlevering_1/Verden.class",
+    "IN1010/Badge_System/Damage_Amp.java",
+    "IN1010/Badge_System/Test_Badge_2.txt",
+    "IN1010/Badge_System/Test_Badge.txt",
+    "IN1010/Badge_System/Badge.class",
+    "IN1010/Badge_System/Badge_Main.class",
+    "EXPHIL03/Uke 2 (Uke 5)/Forelesning 5.md",
+    "STK-FYS1110/Uke 2 (Uke 5)/Forelesning 3.md",
+    "STK-FYS1110/Untitled.md",
     "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
-    "EXPHIL03/Uke 1 (Uke 4)",
+    "Untitled.canvas",
+    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md",
+    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
     "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 1 (legacy).md"
   ]
 }
