@@ -8,33 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bc3db3aa85b5ae38",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Obsidian UiO/V25/IN1030/innleveringer/oblig-1---samspill---in1030-v25.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "oblig-1---samspill---in1030-v25"
-            }
-          },
-          {
             "id": "5f37a4416eef8c68",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian UiO/V25/EXPHIL/innlevering.md",
+                "file": "Obsidian UiO/V25/IN1030/innleveringer/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "innlevering"
+              "title": "Untitled"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -179,21 +166,21 @@
   },
   "active": "5f37a4416eef8c68",
   "lastOpenFiles": [
+    "Obsidian UiO/V25/IN1030/06.02 Brukerundersøkelse.md",
+    "Obsidian UiO/V25/IN1030/30.01 Forelesning.md",
+    "Obsidian UiO/V25/IN1030/Første forelesning.md",
+    "Obsidian UiO/V25/IN1030/innleveringer/Untitled.md",
+    "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.pdf",
+    "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.md",
+    "Obsidian UiO/V25/EXPHIL/innlevering.md",
     "Obsidian UiO/V25/EXPHIL/~$el_Carlsen.docx",
     "Obsidian UiO/V25/EXPHIL/~WRL0001.tmp",
     "Obsidian UiO/V25/EXPHIL/~WRD0000.tmp",
     "Obsidian UiO/V25/EXPHIL/Niel_Carlsen.docx",
     "Obsidian UiO/V25/EXPHIL/21.01.25 nr.3 forelesning.md",
-    "Obsidian UiO/V25/IN1030/06.02 Brukerundersøkelse.md",
-    "Obsidian UiO/V25/EXPHIL/innlevering.md",
     "Obsidian UiO/V25/EXPHIL/24.01.25 nr.4 forelesning.md",
     "Obsidian UiO/V25/EXPHIL/30.01.25 nr.5 forelesning.md",
     "Obsidian UiO/V25/EXPHIL/14.01.25 nr.1 forelesning.md",
-    "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.md",
-    "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.pdf",
-    "Obsidian UiO/V25/IN1030/innleveringer/Untitled.md",
-    "Obsidian UiO/V25/IN1030/30.01 Forelesning.md",
-    "Obsidian UiO/V25/IN1030/Første forelesning.md",
     "Obsidian UiO/V25/IN1030/innleveringer/oblig-1---samspill---in1030-v25.pdf",
     "Attachments/images/Pasted image 20250202153032.png",
     "Obsidian UiO/V25/IN1030/innleveringer",
@@ -205,7 +192,6 @@
     "Obsidian UiO/V25/EXPHIL/16.01.25 nr.2 forelesning.md",
     "Obsidian UiO/V25/IN1150",
     "Obsidian UiO/V25/IN1030",
-    "Obsidian UiO/V25/EXPHIL",
     "Attachments/images/Pasted image 20250131132411.png",
     "Attachments/images/image.png",
     "Attachments/images/Pasted image 20250130153344.png",
