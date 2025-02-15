@@ -31,8 +31,8 @@ public class Rutenett {
     }
 
     public Celle hentCelle(int rad ,int kolonne){
-        if (antRader > rad && 0 < rad){
-            if (antKolonner > kolonne && 0 < kolonne){
+        if (antRader > rad && 0 <= rad){
+            if (antKolonner > kolonne && 0 <= kolonne){
                 return (rutene[rad][kolonne]);
             }
         }
@@ -64,19 +64,40 @@ public class Rutenett {
             for (int j = kolonne-1; j <= kolonne+1; j++) {
 
                 Celle nabo = hentCelle(i,j);
-                if (nabo == null && nabo != celle){
+                if (nabo != null && nabo != celle){
                     celle.leggTilNabo(nabo);
                 }
                 
             }
         }
-            
-
-
     }
 
+    public void kobleAlleCeller() {
+        
+        for (int r = 0; r < antRader; r++) {
+            for (int k = 0; k < antKolonner; k++) {
+                settNaboer(r,k);
+            }
+        }
+    }
+    
+    public int antallLevende() {
+        int teller = 0;
 
+        for (int r = 0; r < antRader; r++) {
+            for (int k = 0; k < antKolonner; k++) {
 
-
+                Celle celle = hentCelle(r,k);
+                if (celle.erLevende()) {
+                    teller += 1;
+                }
+            }
+        }
+        return teller;
+    }
 
 }
+
+
+
+
