@@ -1,8 +1,8 @@
 class Celle {
 
-    boolean levende; // Variabel til å lagre om cellen er levende.
-    Celle[] naboer; // Array for å lagre naboceller.
-    int AntallNaboer; // Variabel til å telle antall naboer.
+    boolean levende; // Variabel for om cellen er levende
+    Celle[] naboer; // Array for naboceller
+    int AntallNaboer; // Variabel til å telle antall naboer
     int antLevendeNaboer; // Variabel til å telle antall levende naboer.
 
     public Celle(){

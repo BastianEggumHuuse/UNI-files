@@ -1,8 +1,8 @@
 public class Rutenett {
 
-    int antRader; // Antall rader i rutenettet.
-    int antKolonner; // Antall kolonner i rutenettet.
-    Celle[][] rutene; // 2D-array som representerer cellene i rutenettet.
+    int antRader; // Antall rader
+    int antKolonner; // Antall kolonner
+    Celle[][] rutene; // array som representerer cellene i rutenettet.
 
     // Konstruktør som initialiserer rutenett med gitt antall rader og kolonner.
     public Rutenett(int Rader, int Kolonner){
@@ -52,7 +52,7 @@ public class Rutenett {
             }
             System.out.println();
         }
-        System.out.println("-------------");
+        
     }
 
     // Setter naboene til cellen på gitt rad og kolonne.

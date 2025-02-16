@@ -12,14 +12,16 @@ class Verden {
         rutenett.kobleAlleCeller(); // Knytter alle celler til sine naboer.
     }
 
-    // Tegner nåværende tilstand i verden med generasjonstall og antall levende celler.
+    // Tegner nåværende tilstand i verden med generasjonstall og antall levende celler. Legger til linjer bare fordi jeg syns det ser bedre ut. 
     public void tegn() {
         System.out.println("");
         System.out.println("-------------");
         System.out.println("Generasjon: " + genNr);
         rutenett.tegnRutenett(); // Tegner rutenettet.
         int antallLevende = rutenett.antallLevende(); // Teller antall levende celler.
-        System.out.println(antallLevende);
+        System.out.println("");
+        System.out.println("Antall levende: " + antallLevende);
+        System.out.println("-------------");
     }
 
     // Oppdaterer tilstanden i verden til neste generasjon.
