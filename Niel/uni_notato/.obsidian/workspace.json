@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8b89622d96d5b261",
+        "id": "20d0c8a5c1523d79",
         "type": "tabs",
         "children": [
           {
-            "id": "6c3383f9dbd7d415",
+            "id": "d37a19cb47cf525d",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -165,8 +165,10 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "6c3383f9dbd7d415",
+  "active": "d37a19cb47cf525d",
   "lastOpenFiles": [
+    "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.md",
+    "Obsidian UiO/V25/IN1030/06.02 Brukerundersøkelse.md",
     "Obsidian UiO/V25/IN1030/innleveringer/oblig 2.md"
   ]
 }

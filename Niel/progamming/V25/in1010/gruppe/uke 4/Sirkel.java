@@ -23,8 +23,9 @@ class Sirkel extends Figur {
         if (!(obj instanceof Sirkel)) {
             return false;
         }
+        // Spør basitan hvorfor Sirkel i mean (Klasse) obj peker?
         Sirkel annenSirkel = (Sirkel) obj;
-
+        //      type, 
         return (Double.compare(hentAreal(), annenSirkel.hentAreal()) == 0) && hentFarge().equals(annenSirkel.hentFarge());
     }
 }
