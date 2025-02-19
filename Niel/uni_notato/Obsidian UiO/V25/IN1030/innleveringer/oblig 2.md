@@ -33,13 +33,21 @@ B. Elektronisk behandling av personopplysninger blir regulert i Personopplysning
 
 C. Utform et samtykkeskjema tilpasset din undersøkelse som du legger ved besvarelsen din. Obs: inkluder samtykkeskjema uten navn/underskrift fra deltaker i PDF-filen du leverer. 
 
+-------------
+
+
 D. Gjennomfør en pilotundersøkelse av den planlagte datainnsamlingen. Rapporter kort om følgende: 
-- Hva erfarte du? 
-- Hvilke lærdommer tar du med deg til hovedundersøkelsen? 
-- Er det noe ved planen du ønsker å modifisere? I så fall hva? 
+Hva erfarte du? 
+- I pilotundersøkelsen av brukbarheten til Spotify erfarte jeg at brukerne ikke hadde problemer med å navigere og bruke plattformen. Deltageren brukte litt tid på å finne seg rundt i biblioteket men alt virket lett og enkelt å forstå.
+
+Hvilke lærdommer tar du med deg til hovedundersøkelsen? 
+- Til hovedundersøkelsen har jeg lært hvor viktig det er å lage klare og tydelige spørsmål slik at alle forstår hva de skal gjøre. De litt åpne spørsmålene, som å finne en tilfeldig spilleliste, virket kanskje ikke så naturlige. Derimot var de mer spesifikke oppgavene mye enklere å forholde seg til.
+
+Er det noe ved planen du ønsker å modifisere? I så fall hva? 
+- Jeg fant ut at noen av spørsmålene var litt dårlig formulerte. Jeg endret også noen av oppgavene, som de der man måtte sende noen en tilfeldig sang eller spilleliste. Nå er det greit å bare kopiere linken til sangen i stedet.
 
 E. Gjennomfør hovedundersøkelsen (observasjonen). Rapporter kort fra undersøkelsen, hvilke erfaringer og innsikter fikk du? Husk å legge ved et ikke identifiserbart bilde i PDF-filen du leverer, for å dokumentere gjennomførelsen.
-
+![[Pasted image 20250218210948.png|300]]
 
 #### Oppgave 2 - Analyse: Sekvens av handlinger 
 
