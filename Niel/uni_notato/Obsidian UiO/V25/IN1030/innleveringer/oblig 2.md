@@ -44,7 +44,7 @@ Hvilke lærdommer tar du med deg til hovedundersøkelsen?
 - Til hovedundersøkelsen har jeg lært hvor viktig det er å lage klare og tydelige spørsmål slik at alle forstår hva de skal gjøre. De litt åpne spørsmålene, som å finne en tilfeldig spilleliste, virket kanskje ikke så naturlige. Derimot var de mer spesifikke oppgavene mye enklere å forholde seg til.
 
 Er det noe ved planen du ønsker å modifisere? I så fall hva? 
-- Jeg fant ut at noen av spørsmålene var litt dårlig formulerte. Jeg endret også noen av oppgavene, som de der man måtte sende noen en tilfeldig sang eller spilleliste. Nå er det greit å bare kopiere linken til sangen i stedet.
+- Jeg fant ut at noen av spørsmålene var litt dårlig formulerte. Jeg endret også noen av oppgavene, som de der man måtte sende noen en tilfeldig sang eller spilleliste. Tenkte at det var greit å bare kopiere linken til sangen i stedet. Siden både deltageren og jeg ble usikker når jeg spurte dem til å sende en random sang eller album til hvem som helst.
 
 E. Gjennomfør hovedundersøkelsen (observasjonen). Rapporter kort fra undersøkelsen, hvilke erfaringer og innsikter fikk du? Husk å legge ved et ikke identifiserbart bilde i PDF-filen du leverer, for å dokumentere gjennomførelsen.
 ![[Pasted image 20250218210948.png|300]]
@@ -52,15 +52,45 @@ E. Gjennomfør hovedundersøkelsen (observasjonen). Rapporter kort fra undersøk
 #### Oppgave 2 - Analyse: Sekvens av handlinger 
 
 A. Les gjennom notatet «Sekvens av handlinger mellom menneske og maskin», og svar på følgende: 
-- Hva er formålet med tabellen? 
-- Hva skal føres inn i de ulike kolonnene? Bruk gjerne eksempler. 
+
+Hva er formålet med tabellen? 
+- Formålet med tabellen er til å analysere/kartlegge interaksjonen mellom menneske og maskin. Dette blir brukt for å forstå interaksjonen bedre og muligheten til å se etter forbedringer.
+Hva skal føres inn i de ulike kolonnene? Bruk gjerne eksempler. 
+- De er ulike kategorier for både Brukeren og Maskinen. De fire ulike kolonnene er :
+	- Handling som ikke er synlig for maskinen
+	- Handling synlig for maskin
+	- Effekt synlig for bruker
+	- Design rasjonale 
+Dette kan være når en person som kjøper en billett på en automat. Handlingen som ikke er synlig for maskinen er da: Personen vurderer hvilken billet de skal kjøpe. Under handling synlig for maskin er at personen trykker på skjermen for å velge en billett. Og for effekt synlig for bruker, så viser automaten "velg betalings metode". Under design rasjonale altså hva maskinen gjør uten å vise er å sjekke om brukeren har nok for å betale for billetten. 
 
 B. Velg én eller flere av oppgavene du ba deltakeren om å utføre i oppgave 1e, og fyll ut sekvenstabellen for å beskrive sekvensene du observerte mellom menneske og maskin. 
 
-C. Analyser tabellen du fylte ut i oppgave 2bl og var på følgende: 
-- Hvordan oppfatter du interaksjonen mellom bruker og system? 
-- På hvilke måter kan interaksjonen forbedres eller bli gjort annerledes?
+| Bruker                                   |                                     | Maskin                    |                                                   |
+| ---------------------------------------- | ----------------------------------- | ------------------------- | ------------------------------------------------- |
+| Handling som ikke er synlig for maskinen | Handling synlig for maskin          | Effekt synlig for bruker  | Design rasjonale                                  |
+|                                          | Åpner Spotify-appen                 |                           |                                                   |
+|                                          |                                     | Spotify-logoen vises      | Starter appen                                     |
+| Tenker på hvilken sang de skal søke på   |                                     | Spotify hoved meny vises  | Laster opp ulike albumer og hoved layouten        |
+|                                          | Skriver inn sangtittel i søkefeltet |                           | Bruker søkeordene til å matche sanger i databasen |
+| Tenker på å dele sang med en venn        |                                     | Søkeforslag vises         |                                                   |
+|                                          | Trykker på ønsket sang              |                           | henter sang fra databasen                         |
+|                                          |                                     | Sangen begynner å spille  | Spiller av lyd fra systemet                       |
+| Tenker på å dele sang med en venn        |                                     |                           |                                                   |
+|                                          | Klikker på "Del"-knappen            |                           |                                                   |
+|                                          |                                     | Delingsalternativer vises |                                                   |
+|                                          |                                     |                           | Genererer delingslenke                            |
 
+
+
+
+
+C. Analyser tabellen du fylte ut i oppgave 2bl og var på følgende: 
+
+Hvordan oppfatter du interaksjonen mellom bruker og system? 
+- Interaksjonen mellom bruker og system er preget av ulike sekvenser hvor brukeren gir input og mottar feedback. Systemet reagerer på bruker input ved å gi visuell og lyd basert tilbakemeldinger, samtidig som det utfører interne prosesser som brukeren ikke ser. Kategorien hvor man beskriver delen maskinen ikke ser påvirker også den helhetlige brukeropplevelsen.
+
+På hvilke måter kan interaksjonen forbedres eller bli gjort annerledes?
+- Interaksjonen kan forbedres ved å gi muligheten en mer avansert søkefunksjon som lar brukerne filtrere søkene etter årstall, sjangre og ulike tags. Spotify kan redusere ventetiden ved å optimalisere appen for raskere respons, slik at tiden det tar å laste innhold blir kortere.
 #### Oppgave 3 - Øvelse: Oppmerksomhet og distraksjon 
 
 Les notatet «Oppmerksomhet og distraksjon». I denne øvelsen er det du som er brukeren. Forsøk å ikke bruke sosiale medier/skru av nettet og telefonen en kveld (fra kl. 18:00-22:00). Etter du har gjennomført øvelsen, svar på følgende: 
