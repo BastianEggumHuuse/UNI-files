@@ -1,0 +1,8 @@
+# ignorér alle .class-filer
+*.class
+
+# ignorér Emacs sine backup-filer
+*~
+
+# ignorér hva enn nå dette er 
+*.DS_Store
