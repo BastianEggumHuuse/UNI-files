@@ -29,7 +29,7 @@ class GameOfLife
 
         // Danner et Verden-objekt.
         Verden v = new Verden(Rader,Kolonner);
-
+        
         // Scanner-objektet (Hentet fra java.util.Scanner) brukes for å håndtere bruker-input.
         Scanner s = new Scanner(System.in);
         String Input = ""; 
