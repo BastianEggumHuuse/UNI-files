@@ -1,0 +1,11 @@
+lilla
+rosa
+gul
+grønn
+blå
+rød
+oransje
+hvit
+brun
+svart
+grå

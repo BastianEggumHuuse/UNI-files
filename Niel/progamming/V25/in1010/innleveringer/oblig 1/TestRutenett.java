@@ -63,22 +63,22 @@ class TestRutenett {
 	System.out.println("testTegnRutenett(): Utskrift ferdig!");
 	System.out.println("  Naa kan du selv sjekke om den ser riktig ut.");
     }
-/*
+
     private static void testSettNaboer () {
 	Rutenett testRutenett = new Rutenett(3, 3);
 	testRutenett.fyllMedTilfeldigeCeller();
 
 	testRutenett.settNaboer(0,0);
 	sjekk("testSettNaboer(): et hjørne skal ha 3 naboer",
-	      testRutenett.hentCelle(0,0).antNaboer==3);
+	      testRutenett.hentCelle(0,0).AntallNaboer==3);
 	
 	testRutenett.settNaboer(1,1);
 	sjekk("testSettNaboer(): en indre celle skal ha 8 naboer",
-	      testRutenett.hentCelle(1,1).antNaboer==8);
+	      testRutenett.hentCelle(1,1).AntallNaboer==8);
 	
 	testRutenett.settNaboer(2,1);
 	sjekk("testSettNaboer(): en kantcelle skal ha 5 naboer",
-	      testRutenett.hentCelle(2,1).antNaboer==5);
+	      testRutenett.hentCelle(2,1).AntallNaboer==5);
     
 	System.out.println("testSettNaboer(): Alt riktig!");
     }
@@ -91,7 +91,7 @@ class TestRutenett {
 	int totaltAntallNaboer = 0;
 	for (int rx = 0;  rx < testRutenett.antRader;  ++rx) {
 	    for (int kx = 0;  kx < testRutenett.antKolonner;  ++kx) {
-		totaltAntallNaboer += testRutenett.hentCelle(rx,kx).antNaboer;
+		totaltAntallNaboer += testRutenett.hentCelle(rx,kx).AntallNaboer;
 	    }
 	}
 	sjekk("antall naboer i 2x2-rutenett skal være 12", totaltAntallNaboer==12);
@@ -103,7 +103,7 @@ class TestRutenett {
 	totaltAntallNaboer = 0;
 	for (int rx = 0;  rx < testRutenett.antRader;  ++rx) {
 	    for (int kx = 0;  kx < testRutenett.antKolonner;  ++kx) {
-		totaltAntallNaboer += testRutenett.hentCelle(rx,kx).antNaboer;
+		totaltAntallNaboer += testRutenett.hentCelle(rx,kx).AntallNaboer;
 	    }
 	}
 	sjekk("antall naboer i 3x3-rutenett skal være 40", totaltAntallNaboer==40);
@@ -130,7 +130,7 @@ class TestRutenett {
     
 	System.out.println("testAntallLevende(): Alt riktig!");
     }
-	*/
+	
     public static void main (String[] arg) {
 	System.out.println("** Test Rutenett **");
 
@@ -138,8 +138,8 @@ class TestRutenett {
 	testFyllMedTilfeldigeCeller();
 	testHentCelle();
 	testTegnRutenett();
-	// testSettNaboer();
-	// testKobleAlleCeller();
-	// testAntallLevende();
+	testSettNaboer();
+	testKobleAlleCeller();
+	testAntallLevende();
     }
 }
