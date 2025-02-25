@@ -11,6 +11,20 @@
             "id": "d0cd5c81079881b6",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "EXPHIL03/Uke 6 (Uke 9)/Forelesning 13.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Forelesning 13"
+            }
+          },
+          {
+            "id": "952261930ef56c40",
+            "type": "leaf",
+            "state": {
               "type": "pdf",
               "state": {
                 "file": "MAT1110/Innforing_MAT1110.pdf"
@@ -20,27 +34,15 @@
             }
           },
           {
-            "id": "1fd15abde2adfdbf",
+            "id": "2467ca2b6a0fbe41",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
+                "file": "MAT1110/Innforing_MAT1110.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "taylor-2005-classical-mechanics"
-            }
-          },
-          {
-            "id": "e76ba5e8d4fa7d52",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "taylor-2005-classical-mechanics"
+              "title": "Innforing_MAT1110"
             }
           }
         ]
@@ -62,7 +64,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -186,17 +189,21 @@
   },
   "active": "d0cd5c81079881b6",
   "lastOpenFiles": [
+    "EXPHIL03/Bastian_Eggum_Huuse_Oblig_1.pdf",
     "FYS1105/taylor-2005-classical-mechanics.pdf",
-    "MAT1110/Innforing_MAT1110.pdf",
-    "IN1010/Innlevering_1/GameOfLife.class",
-    "IN1010/Innlevering_1/Celle.class",
-    "IN1010/Innlevering_1/Rutenett.class",
-    "IN1010/Innlevering_1/Verden.class",
-    "IN1010/Badge_System/Damage_Amp.java",
-    "IN1010/Badge_System/Test_Badge_2.txt",
-    "IN1010/Badge_System/Test_Badge.txt",
-    "IN1010/Badge_System/Badge.class",
-    "IN1010/Badge_System/Badge_Main.class",
+    "EXPHIL03/Uke 6 (Uke 9)/Forelesning 13.md",
+    "EXPHIL03/Uke 6 (Uke 9)",
+    "EXPHIL03/Uke 3 (Uke 6)/Untitled.md",
+    "STK-FYS1110/Oblig_1/Oppgave_4_a.py",
+    "STK-FYS1110/Oblig_1/Oppgave_4_a",
+    "STK-FYS1110/Oblig_1/Oppgave_3_c.py",
+    "STK-FYS1110/Oblig_1/Oppgave_3_b copy.py",
+    "STK-FYS1110/Oblig_1/Oppgave_3_b.py",
+    "STK-FYS1110/Oblig_1/Oppgave_3_a copy.py",
+    "STK-FYS1110/Oblig_1/Oppgave_3_a.py",
+    "STK-FYS1110/Oblig_1/doedelighet copy.py",
+    "EXPHIL03/Uke 3 (Uke 6)/Seminar 2.md",
+    "EXPHIL03/Uke 3 (Uke 6)/Forelesning 7.md",
     "EXPHIL03/Uke 2 (Uke 5)/Forelesning 5.md",
     "STK-FYS1110/Uke 2 (Uke 5)/Forelesning 3.md",
     "STK-FYS1110/Untitled.md",
