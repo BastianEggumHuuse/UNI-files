@@ -109,9 +109,9 @@ class Rutenett
         // Henter Cellen-objektet vi skal sette naboer for
         Celle HovedCelle = HentCelle(Rad,Kol);
 
-        // igjen en dobbel for-løkke, her for å iterere gjennom alle 8 Cellene rundt HovedCellen.
+        
+        for(int i = Rad-1; i <= Rad + 1; i ++)// igjen en dobbel for-løkke, her for å iterere gjennom alle 8 Cellene rundt HovedCellen.
         // Vi itererer altså først over de tre cellene over hovedcellen, så de to på hver sin side, og så de tre under.
-        for(int i = Rad-1; i <= Rad + 1; i ++)
         {
             for(int j = Kol-1; j <= Kol + 1; j ++)
             {

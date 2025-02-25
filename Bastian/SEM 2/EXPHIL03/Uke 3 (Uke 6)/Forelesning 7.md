@@ -57,3 +57,19 @@ Sokrates finner frem en gutt som ikke kan noe geometri, og lærer han litt sånn
 Vi antar en firkant med Sidelengde $\alpha$ og flate $x$. Sokrates ber om sidelengden på firkanten med areal $2x$. Gutten svarer med å doble sidelengden, som er feil. Gutten gjør dette noen flere ganger, og blir overbevist om at han ikke kan svaret. Gutten kommer aldri til å finne svaret på spørsmålet ved sin fremgangsmåte, så Sokrates gjør litt andre ting, slik at gutten innser hvordan han kan finne det store arealet, og gutten skjønner det, selv om han ikke vet det fra før.
 
 Dette bryter paradokset. Gutten har fått en riktig oppfatning.
+
+### Trancendentale Argumenter
+
+- 1. x er nødvendig for y
+- 2. y
+- 3. altså y
+
+### Likhet
+
+Finnes ikke! Vi mener at to ting er like store, men de er jo egentlig ikke det! Vi har aldri observert to absolutt like ting, så hvordan kan vi vite hva som er likt hverandre?
+
+Her kommer Gjenerindringen tilbake, denne gangen i Platons Faidon. Objektenes likhet er en slags universell sannhet, som fører til at vi kan se det.
+
+Vi må altså allerede vite hva likhet er. Faidon my balls.
+
+Det er her Platons idé om formene kommer fra, og idé-verdenen (Det hadde du vg3!!!). Idéene kan kun erkjennes ved fornuften. De kan ikke observeres, men de kan tenkes fram til.
