@@ -1,45 +1,45 @@
 class Celle
 {
     // Definerer Variabler i toppen av klassen.
-    boolean Levende;
-    Celle[] Naboer;
-    int AntNaboer;
-    int AntLevendeNaboer;
+    boolean levende;
+    Celle[] naboer;
+    int antNaboer;
+    int antLevendeNaboer;
 
     // Konstruktør for klassen Celle, som kjøres når et nytt Celle-Objekt dannes.
     public Celle()
     {
-        Levende = false;
-        Naboer = new Celle[8];
-        AntNaboer = 0;
-        AntLevendeNaboer = 0;
+        levende = false;
+        naboer = new Celle[8];
+        antNaboer = 0;
+        antLevendeNaboer = 0;
     }
 
-    // Metoder som kontrollerer cellens "Levende"-verdi.
-    public void SettDod()
+    // Metoder som kontrollerer cellens "levende"-verdi.
+    public void settDod()
     {
-        Levende = false;
+        levende = false;
     }
 
-    public void SettLevende()
+    public void settLevende()
     {
-        Levende = true;
+        levende = true;
     }
 
     // Metode som brukes til å sjekke om en Celle er levende eller ikke.
-    public boolean ErLevende()
+    public boolean erLevende()
     {
-        return(Levende);
+        return(levende);
     }
 
     // Metode som returnerer riktig tegn for denne cellen.
     // Dette tegnet er '0' dersom cellen lever, og '.' dersom cellen er død.
-    public char HentStatusTegn()
+    public char hentStatusTegn()
     {
-        if (Levende)
+        if (levende)
         {   
             // I java brukes "" til å definere Strings, og '' til å definere Chars, altså enkeltkarakterer.
-            return('0');
+            return('O');
         }
         return('.');
     }
@@ -48,39 +48,46 @@ class Celle
     // Disse naboene brukes til å sjekke om cellen skal leve neste generasjon
     // Legg merke til at Cellen ikke vet noe om hvor den selv er, eller hvor naboene er.
     // Den har bare tilgang til Naboenes Celle-objekter.
-    public void LeggTilNabo(Celle NyNabo)
+    public void leggTilNabo(Celle NyNabo)
     {
         // Her forutsetter vi at vi ikke prøver å legge til mer enn 8 naboer 
-        Naboer[AntNaboer] = NyNabo;
-        AntNaboer ++;
+        naboer[antNaboer] = NyNabo;
+        antNaboer ++;
     }
 
     // Metode som teller antall levende naboer.
     // Det er denne metoden vi bruker til å finne ut om Cellen skal leve. 
-    public void TellLevendeNaboer()
+    public void tellLevendeNaboer()
     {
-        AntLevendeNaboer = 0;
+        antLevendeNaboer = 0;
 
-        for(int i = 0; i < AntNaboer; i++)
+        for(int i = 0; i < antNaboer; i++)
         {
-            // Her bruker vi metoden ErLevende, skrevet over, til å finne Levende-verdien til Nabocellen.
-            if (Naboer[i].ErLevende())
+            // Her bruker vi metoden ErLevende, skrevet over, til å finne levende-verdien til Nabocellen.
+            if (naboer[i].erLevende())
             {
-                AntLevendeNaboer ++;
+                antLevendeNaboer ++;
             }
         }
     }
 
     // Metode som oppdaterer Cellens status, basert på spillets regler.
-    public void OppdaterStatus()
+    public void oppdaterStatus()
     {
-        if (AntLevendeNaboer == 3)
+        if (levende)
         {
-            SettLevende();
+            if(antLevendeNaboer == 2 || antLevendeNaboer == 3)
+            {
+                return;
+            }
+            settDod();
         }
         else
         {
-            SettDod();
+            if (antLevendeNaboer == 3)
+            {
+                settLevende();
+            }
         }
     }
 }
