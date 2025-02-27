@@ -28,13 +28,13 @@ E_x = np.sum(x*px)
 # Finner forventet resterende alder ved gitt alder a
 A = [25,50,85]
 
-print(f"\nForventet levealder for menn ved fødsel er {E_x:.2f}\n")
+print(f"\nForventet levealder for menn ved foedsel er {E_x:.2f}\n")
 
 for a in A:
     x = alder[a:107]
     Fx = np.cumsum(px)
     E_x_a = np.sum((alder[a:107]-a)*px[a:107])/(1-Fx[a-1])
 
-    print(f"Forventet levealder for menn, gitt at man har levd {a} år, er {(E_x_a + a):.2f}")
+    print(f"Forventet levealder for menn, gitt at man har levd {a} aar, er {(E_x_a):.2f}")
 
 print()

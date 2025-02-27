@@ -36,24 +36,24 @@ E_y = np.sum(y*py)
 # Finner forventet resterende alder ved gitt alder a
 A = [25,50,85]
 
-print(f"\nForventet levealder for menn ved fødsel er {E_x:.2f}\n")
+print(f"\nForventet levealder for menn ved foedsel er {E_x:.2f}\n")
 
 for a in A:
     x = alder[a:107]
     Fx = np.cumsum(px)
     E_x_a = np.sum((alder[a:107]-a)*px[a:107])/(1-Fx[a-1])
 
-    print(f"Forventet levealder for menn, gitt at man har levd {a} år, er {(E_x_a + a):.2f}")
+    print(f"Forventet levealder for menn, gitt at man har levd {a} aar, er {(E_x_a):.2f}")
 
 print()
 
-print(f"\nForventet levealder for kvinner ved fødsel er {E_y:.2f}\n")
+print(f"\nForventet levealder for kvinner ved foedsel er {E_y:.2f}\n")
 
 for a in A:
     y = alder[a:107]
     Fy = np.cumsum(py)
     E_y_a = np.sum((alder[a:107]-a)*py[a:107])/(1-Fy[a-1])
 
-    print(f"Forventet levealder for kvinner, gitt at man har levd {a} år, er {(E_y_a + a):.2f}")
+    print(f"Forventet levealder for kvinner, gitt at man har levd {a} aar, er {(E_y_a):.2f}")
 
 print()
