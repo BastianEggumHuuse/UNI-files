@@ -62,4 +62,13 @@ class GameOfLife
         s.close();
     }
 
+    // @Override
+    // public double prisABetale()
+    // {
+
+    //     double pris = hentlegemiddel().hentpris() * rabatt;
+    //     return Math.round(pris);
+
+    // }
+
 }
