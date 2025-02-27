@@ -25,12 +25,14 @@
             "id": "3f70ea5e951b8cd1",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.7"
+                "file": "Obsidian UiO/V25/EXPHIL/Seminar/26.02 descartes meditasjon.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.7"
+              "icon": "lucide-file",
+              "title": "26.02 descartes meditasjon"
             }
           }
         ],
@@ -184,6 +186,7 @@
   },
   "active": "3f70ea5e951b8cd1",
   "lastOpenFiles": [
+    "Obsidian UiO/V25/EXPHIL/Seminar/26.02 descartes meditasjon.md",
     "Obsidian UiO/V25/EXPHIL/18.02.25 nr.7.md",
     "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.md",
     "Obsidian UiO/V25/IN1030/06.02 Brukerundersøkelse.md",
