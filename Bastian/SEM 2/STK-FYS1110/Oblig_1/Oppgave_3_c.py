@@ -56,16 +56,24 @@ edge = "black"
 color_k = "orange"
 color_m = "red"
 
-plt.title("Forventet gjenstående levealder for\n kvinner (oransje) og menn (rød)")
-plt.xlabel("Alder")
-plt.ylabel("Forventet gjenstående levealder")
-plt.bar(alder,plot_k,width,color=color_k,edgecolor=edge)
-plt.bar(alder,plot_m,width,color=color_m,edgecolor=edge)
-plt.show()
+fig = plt.figure()
+ax = fig.add_subplot(111)    # The big subplot
+ax1 = fig.add_subplot(211)
+ax2 = fig.add_subplot(212)
 
-plt.title("Forventet gjenstående levealder for\n kvinner (oransje) og menn (rød)")
-plt.xlabel("Alder")
-plt.ylabel("Forventet gjenstående levealder")
-plt.plot(alder,plot_k,color_k)
-plt.plot(alder,plot_m,color_m)
+ax.spines['top'].set_color('none')
+ax.spines['bottom'].set_color('none')
+ax.spines['left'].set_color('none')
+ax.spines['right'].set_color('none')
+ax.tick_params(labelcolor='w', top=False, bottom=False, left=False, right=False)
+
+ax.set_xlabel('Alder')
+ax.set_ylabel('Forventet Gjenstaaende Levealder')
+ax.set_title("Forventet Gjenstaaende levealder for\n Kvinner (oransje) og Menn (roed)")
+
+ax1.bar(alder,plot_k,width,color=color_k,edgecolor=edge)
+ax1.bar(alder,plot_m,width,color=color_m,edgecolor=edge)
+
+ax2.plot(alder,plot_k,color_k)
+ax2.plot(alder,plot_m,color_m)
 plt.show()
