@@ -11,14 +11,12 @@
             "id": "d0cd5c81079881b6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "EXPHIL03/Uke 6 (Uke 9)/Forelesning 13.md",
-                "mode": "source",
-                "source": false
+                "file": "STK-FYS1110/mathematical-statistics-with-applications-3rd-edition.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Forelesning 13"
+              "icon": "lucide-file-text",
+              "title": "mathematical-statistics-with-applications-3rd-edition"
             }
           },
           {
@@ -27,10 +25,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "MAT1110/Innforing_MAT1110.pdf"
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Innforing_MAT1110"
+              "title": "taylor-2005-classical-mechanics"
             }
           },
           {
@@ -189,19 +187,21 @@
   },
   "active": "d0cd5c81079881b6",
   "lastOpenFiles": [
-    "EXPHIL03/Bastian_Eggum_Huuse_Oblig_1.pdf",
-    "FYS1105/taylor-2005-classical-mechanics.pdf",
+    "IN1010/Innlevering_1/TestKlasser/TestVerden.java",
+    "IN1010/Innlevering_1/TestKlasser/TestRutenett.java",
+    "IN1010/Innlevering_1/TestKlasser/TestCelle.java",
+    "IN1010/Innlevering_1/TestKlasser",
+    "STK-FYS1110/Oblig_1/3_c_graph.png",
+    "STK-FYS1110/Oblig_1/3_c_bar.png",
+    "STK-FYS1110/Oblig_1/Oppgave_3_b_output.py",
+    "STK-FYS1110/Oblig_1/Oppgave_3_a_output copy.py",
+    "STK-FYS1110/Oblig_1/Oppgave_3_a_output.py",
+    "IN1010/Uke 6 (Uke 9)/Forelesning.java",
+    "IN1010/Uke 6 (Uke 9)",
+    "STK-FYS1110/Oblig_1/Test.py",
     "EXPHIL03/Uke 6 (Uke 9)/Forelesning 13.md",
-    "EXPHIL03/Uke 6 (Uke 9)",
+    "FYS1105/taylor-2005-classical-mechanics.pdf",
     "EXPHIL03/Uke 3 (Uke 6)/Untitled.md",
-    "STK-FYS1110/Oblig_1/Oppgave_4_a.py",
-    "STK-FYS1110/Oblig_1/Oppgave_4_a",
-    "STK-FYS1110/Oblig_1/Oppgave_3_c.py",
-    "STK-FYS1110/Oblig_1/Oppgave_3_b copy.py",
-    "STK-FYS1110/Oblig_1/Oppgave_3_b.py",
-    "STK-FYS1110/Oblig_1/Oppgave_3_a copy.py",
-    "STK-FYS1110/Oblig_1/Oppgave_3_a.py",
-    "STK-FYS1110/Oblig_1/doedelighet copy.py",
     "EXPHIL03/Uke 3 (Uke 6)/Seminar 2.md",
     "EXPHIL03/Uke 3 (Uke 6)/Forelesning 7.md",
     "EXPHIL03/Uke 2 (Uke 5)/Forelesning 5.md",
