@@ -22,7 +22,7 @@ class Forelesning_1
         System.out.println(b.GetAmount());
         // will still print out 50!!
 
-        SUB s = new SUB();
+        SUB s = new SUB(1,"s");
         s.Printer(2.0);
     }
 }
