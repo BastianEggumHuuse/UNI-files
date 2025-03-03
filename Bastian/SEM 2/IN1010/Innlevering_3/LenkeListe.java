@@ -20,10 +20,13 @@ abstract class LenkeListe <E> implements Liste<E>
         }
     }
 
-    private Node<E> firstElement
+    private Node<E> firstElement;
 
     void AddElement(E newElement,x newIndex)
     {
-
+        if(firstElement == null)
+        {
+            firstElement = new Node<E>(newElement,null,null);
+        }
     }
 }

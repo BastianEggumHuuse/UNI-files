@@ -43,7 +43,8 @@
               "title": "Innforing_MAT1110"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -185,20 +186,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c02c0a8043107b7",
+  "active": "952261930ef56c40",
   "lastOpenFiles": [
-    "Code For Drinks/Oppgave_E.py",
-    "Code For Drinks/Oppgave_D.py",
-    "Code For Drinks/Oppgave_B.py",
-    "Code For Drinks/Oppgave_1.py",
-    "Code For Drinks",
-    "STK-FYS1110/STK_FYS1110_Oblig_1.pdf",
-    "STK-FYS1110/Oblig_1/Oppgave_4_g_output.py",
-    "STK-FYS1110/Oblig_1/Oppgave_4_d.py",
-    "STK-FYS1110/Oblig_1/Oppgave_4_a_output.py",
+    "STK-FYS1110/mathematical-statistics-with-applications-3rd-edition.pdf",
+    "IN1010/Uke 7 (Uke 10)",
+    "STK-FYS1110/Oblig_1/STK_FYS1110_Oblig_1_Bastiaeh.pdf",
+    "IN1010/Uke 6 (Uke 9)/Test.java",
+    "IN1010/Innlevering_3/Liste.java",
+    "IN1010/Innlevering_3/LenkeListe.java",
+    "IN1010/Innlevering_3",
+    "HON1000/Oblig_1/Water_Consumption.csv",
+    "HON1000/Oblig_1/Vannforbruk_plot_1.png",
+    "HON1000/Oblig_1/Strømforbruk.png",
+    "HON1000/Oblig_1/Plotting.py",
+    "HON1000/Oblig_1/Kjøling_Infographic.png",
+    "HON1000/Oblig_1",
+    "HON1000",
     "STK-FYS1110/Oblig_1/4_d_graph.png",
-    "IN1010/Innlevering_1/TestKlasser/TestVerden.java",
-    "IN1010/Innlevering_1/TestKlasser/TestRutenett.java",
     "STK-FYS1110/Oblig_1/3_c_graph.png",
     "STK-FYS1110/Oblig_1/3_c_bar.png",
     "EXPHIL03/Uke 6 (Uke 9)/Forelesning 13.md",
