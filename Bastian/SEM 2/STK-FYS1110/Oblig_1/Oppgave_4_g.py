@@ -9,5 +9,5 @@ Q = [5,10,20]
 
 print(f"\nVi har N = {N}, og n = {n}\n")
 for q in Q:
-        print(f"Naar q = {q:2}, har vi at P(X = 1|C) = {p(N,n,q):.6f}")
+        print(f"Naar q = {q:2}, har vi at P(C| X = 1) = {p(N,n,q):.6f}")
 print()
