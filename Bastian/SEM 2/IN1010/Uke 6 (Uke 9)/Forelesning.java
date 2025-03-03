@@ -1,4 +1,6 @@
-class Forelesning
+import java.util.*;
+
+class Forelesning{
 
     public static void main(String[] Args)
     {
@@ -65,10 +67,5 @@ class Forelesning
         ArrayList er en ikke fast Array, altså du kan endre lengden osv.
 
         */
-
-    interface Strengliste 
-    {
-        public int antall()
     }
-
-    }
+}
