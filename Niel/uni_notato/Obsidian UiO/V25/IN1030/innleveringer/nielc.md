@@ -48,6 +48,9 @@ Er det noe ved planen du ønsker å modifisere? I så fall hva?
 - Jeg fant ut at noen av spørsmålene var litt dårlig formulerte. Jeg endret også noen av oppgavene, som de der man måtte sende noen en tilfeldig sang eller spilleliste. Tenkte at det var greit å bare kopiere linken til sangen i stedet. Siden både deltageren og jeg ble usikker når jeg spurte dem til å sende en random sang eller album til hvem som helst.
 
 E. Gjennomfør hovedundersøkelsen (observasjonen). Rapporter kort fra undersøkelsen, hvilke erfaringer og innsikter fikk du? Husk å legge ved et ikke identifiserbart bilde i PDF-filen du leverer, for å dokumentere gjennomførelsen.
+
+Under pilotundersøkelsen oppdaget jeg at brukeren håndterte alle oppgavene på Spotify uten problemer. Brukte litt tid på å finne funksjonen for å laste ned en spilleliste. Dette kan bety at noen funksjoner er mer intuitivt enn andre. Deltakeren var en bekjent så kjente at det påvirket atferden på deltageren og observasjonen av meg. Jeg var mer bevisst på formuleringen / type spørsmål jeg ga under hovedundersøkelsen.
+
 ![[Pasted image 20250218210948.png|300]]
 
 #### Oppgave 2 - Analyse: Sekvens av handlinger 
@@ -109,6 +112,14 @@ Skriv minst tre ulike poenger/refleksjoner over hva du erfarte.
 Bruk erfaringene du gjorde deg her, samt erfaringer du har fra tidligere, til å kommentere og problematisere din forståelse av vår tids “tilgjengelighetskultur”.
 
 - Opplevelsen med å slå av nettet viste hvor mye jeg er konstant knyttet til digital tilkobling. Selv om det handler om å enten å være oppdatert med varsler eller i kontakt med venner via sosiale medier. I dagens moderne tid utgjør tilgjengelighetskulturen en kontinuerlig strøm av forstyrrelser, som svekker vår evne til å opprettholde konsentrasjon over lengre perioder. Vi stiller mange spørsmål om hvordan vi kan strukturere hverdagen vår for å forbedre evnen til å fokusere uten konstante avbrytelser. Jeg innså hvor lett det er å utvikle en vane med å sjekke varsler fra ulike sosiale medier. Under eksperimentet la jeg merke til at dagen min føltes betydelig kjedeligere uten musikk, som jeg vanligvis hører på.
+
+
+#### Oppgave 4 - Spørsmål til pensum 
+
+A. Les notatet: Målinger, nøyaktighet og representasjoner som ligger i pensum, og skriv to spørsmål til denne. Det kan være noe du lurer på, er usikker på, eller gjerne ønsker å vite mer om.
+
+1. Hvordan kan vi balansere mellom objektive målinger og subjektive vurderinger i beslutningsprosesser?
+2. Hvordan skiller vi mellom nyttige målinger og de som fører til unødvendig kontroll og overvåkning?
 
 B. Les artikkelen: How Can I Help You? A chatbot’s answers to citizens’ information needs som du finner ved å gå inn i Leganto. Velg ut en setning eller to fra denne artikkelen som du synes er spennende, skriv en egen setning, og lag en referanse til artikkelen. For eksempel slik: 
 
