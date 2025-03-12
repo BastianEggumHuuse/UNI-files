@@ -11,24 +11,28 @@
             "id": "d0cd5c81079881b6",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "STK-FYS1110/mathematical-statistics-with-applications-3rd-edition.pdf"
+                "file": "HON1000/12.02.2025.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "mathematical-statistics-with-applications-3rd-edition"
+              "icon": "lucide-file",
+              "title": "12.02.2025"
             }
           },
           {
             "id": "952261930ef56c40",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
+                "file": "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "taylor-2005-classical-mechanics"
+              "icon": "lucide-file",
+              "title": "Forelesning 2 (21.01.2025)"
             }
           },
           {
@@ -43,8 +47,7 @@
               "title": "Innforing_MAT1110"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -186,22 +189,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "952261930ef56c40",
+  "active": "d0cd5c81079881b6",
   "lastOpenFiles": [
+    "FYS1105/taylor-2005-classical-mechanics.pdf",
+    "HON1000/12.02.2025.md",
+    "FYS1105/Midtveisprosjekt/Oppgave_3.py",
+    "FYS1105/Midtveisprosjekt/Oppgave_2.py",
+    "FYS1105/Midtveisprosjekt",
     "STK-FYS1110/mathematical-statistics-with-applications-3rd-edition.pdf",
-    "IN1010/Uke 7 (Uke 10)",
-    "STK-FYS1110/Oblig_1/STK_FYS1110_Oblig_1_Bastiaeh.pdf",
-    "IN1010/Uke 6 (Uke 9)/Test.java",
-    "IN1010/Innlevering_3/Liste.java",
-    "IN1010/Innlevering_3/LenkeListe.java",
-    "IN1010/Innlevering_3",
-    "HON1000/Oblig_1/Water_Consumption.csv",
+    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
+    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 1 (legacy).md",
+    "IN1010/Uke 7 (Uke 10)/NumBox.class",
+    "IN1010/Uke 7 (Uke 10)/MultiBox.class",
+    "IN1010/Uke 7 (Uke 10)/Box.class",
+    "IN1010/Uke 7 (Uke 10)/Forelesning.class",
+    "IN1010/Uke 7 (Uke 10)/Forelesning.java",
     "HON1000/Oblig_1/Vannforbruk_plot_1.png",
     "HON1000/Oblig_1/Strømforbruk.png",
-    "HON1000/Oblig_1/Plotting.py",
     "HON1000/Oblig_1/Kjøling_Infographic.png",
-    "HON1000/Oblig_1",
-    "HON1000",
     "STK-FYS1110/Oblig_1/4_d_graph.png",
     "STK-FYS1110/Oblig_1/3_c_graph.png",
     "STK-FYS1110/Oblig_1/3_c_bar.png",
@@ -214,8 +219,6 @@
     "STK-FYS1110/Untitled.md",
     "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
     "Untitled.canvas",
-    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md",
-    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
-    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 1 (legacy).md"
+    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md"
   ]
 }
