@@ -1,16 +1,19 @@
-
-public class Stabel<E> extends LenkeListe
+class Stabel<E> extends Lenkeliste<E>
 {
-
-    // Dette funker ikke ????
-    // Skal sjekke en gang :)
+    Stabel()
+    {
+        super();
+    }
 
     @Override
     public void leggTil(E x)
     {
-        Node temp = firstElement;
-        firstElement = new Node(x,temp,null);
+        // Inserting a node between the last and second to last node.
+        Node newNode = new Node(x,head,head.next);
+        head.next.prev = newNode; 
+        head.next = newNode;
 
-        elementCount += 1;
+        count += 1;
     }
+
 }

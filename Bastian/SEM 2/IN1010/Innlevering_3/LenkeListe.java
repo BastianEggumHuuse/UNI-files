@@ -1,96 +1,96 @@
-
-abstract class LenkeListe <E> implements Liste<E> 
+abstract class Lenkeliste <E> implements Liste<E>
 {
+
     protected class Node
     {
         protected E element;
-        protected Node prevElement;
-        protected Node nextElement;
+        protected Node prev;
+        protected Node next;
 
-        public Node(E newElement,Node pElement, Node nElement)
+        Node(E newElement, Node p, Node n)
         {
             element = newElement;
-            prevElement = pElement;
-            nextElement = nElement;
-        }
-
-        public E getElement()
-        {
-            return(element);
+            prev = p;
+            next = n;
         }
     }
 
-    protected Node firstElement;
-    protected int elementCount = 0;
+    protected Node head;
+    protected Node tail;
+    protected int count = 0;
+
+    Lenkeliste()
+    {
+        head = new Node(null,null,null);
+        tail = new Node(null,head,null);
+        head.next = tail;
+    }
 
     @Override
     public int størrelse()
     {
-        return(elementCount);
+        return count;
     }
 
     @Override
-    public void leggTil (E x)
+    public void leggTil(E x)
     {
+        // Inserting a node between the last and second to last node.
+        Node newNode = new Node(x,tail.prev,tail);
+        tail.prev.next = newNode; 
+        tail.prev = newNode;
 
-        if (firstElement == null)
-        {
-            firstElement = new Node(x,null,null);
-        }
-        else
-        {
-            Node iterator = firstElement;
-
-            while (iterator.nextElement != null)
-            {
-                iterator = iterator.nextElement;
-            }
-
-            iterator.nextElement = new Node(x,iterator,null);
-        }
-
-        elementCount += 1;
+        count += 1;
     }
-    
 
     @Override
     public E hent()
     {
-        return(firstElement.getElement());
+        if (head.next == tail)
+        {
+            // Listen er tom:
+            throw new UgyldigListeindeks(0);
+        }
+        
+        return head.next.element;
     }
 
-    @Override
+     @Override
     public E fjern()
     {
-        E temp = firstElement.getElement();
+        
+        if (head.next == tail)
+        {
+            // Listen er tom:
+            throw new UgyldigListeindeks(0);
+        }
 
-        firstElement = firstElement.nextElement;
-        elementCount -= 1;
+        E elem = head.next.element;
+        head.next.next.prev = head;
+        head.next = head.next.next;
 
-        return(temp);
+        count -= 1;
+        return elem;
     }
 
-    @Override
     public String toString()
     {
         String s = "";
 
-        if (firstElement == null)
+        if(count == 0)
         {
-            s = "Listen er tom";
-        }
-        else
-        {
-            Node iterator = firstElement;
-            while (iterator != null)
-            {
-                s += (iterator.getElement() + " ");
-                iterator = iterator.nextElement;
-            }
-
-
+            s = "Ingen elementer i listen!!";
+            return s;
         }
 
-        return(s);
+        Node iter = head.next;
+        while(iter.next != tail)
+        {
+            s += iter.element;
+            iter = iter.next;
+        }
+
+        return s;
     }
+
 }
