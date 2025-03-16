@@ -13,12 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
+                "file": "HON1000/12.02.2025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Forelesning 21.01.2025"
+              "title": "12.02.2025"
+            }
+          },
+          {
+            "id": "952261930ef56c40",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Forelesning 2 (21.01.2025)"
+            }
+          },
+          {
+            "id": "2467ca2b6a0fbe41",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "MAT1110/Innforing_MAT1110.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Innforing_MAT1110"
             }
           }
         ]
@@ -40,7 +66,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -162,22 +189,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c02c0a8043107b7",
+  "active": "d0cd5c81079881b6",
   "lastOpenFiles": [
-    "Untitled.canvas",
-    "STK-FYS1110/STK-FYS1110 - Snarvei.lnk",
-    "MAT1110/Innforing_MAT1110.pdf",
-    "MAT1110",
-    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md",
-    "IN1010/Uke 1 (uke 4)/TestClass.class",
-    "IN1010/Uke 1 (uke 4)/Forelesning_2.class",
-    "IN1010/Uke 1 (uke 4)/TestClass.java",
-    "IN1010/Uke 1 (uke 4)/Forelesning_2.java",
+    "FYS1105/taylor-2005-classical-mechanics.pdf",
+    "HON1000/12.02.2025.md",
+    "FYS1105/Midtveisprosjekt/Oppgave_3.py",
+    "FYS1105/Midtveisprosjekt/Oppgave_2.py",
+    "FYS1105/Midtveisprosjekt",
     "STK-FYS1110/mathematical-statistics-with-applications-3rd-edition.pdf",
     "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
-    "FYS1105/taylor-2005-classical-mechanics.pdf",
+    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 1 (legacy).md",
+    "IN1010/Uke 7 (Uke 10)/NumBox.class",
+    "IN1010/Uke 7 (Uke 10)/MultiBox.class",
+    "IN1010/Uke 7 (Uke 10)/Box.class",
+    "IN1010/Uke 7 (Uke 10)/Forelesning.class",
+    "IN1010/Uke 7 (Uke 10)/Forelesning.java",
+    "HON1000/Oblig_1/Vannforbruk_plot_1.png",
+    "HON1000/Oblig_1/Strømforbruk.png",
+    "HON1000/Oblig_1/Kjøling_Infographic.png",
+    "STK-FYS1110/Oblig_1/4_d_graph.png",
+    "STK-FYS1110/Oblig_1/3_c_graph.png",
+    "STK-FYS1110/Oblig_1/3_c_bar.png",
+    "EXPHIL03/Uke 6 (Uke 9)/Forelesning 13.md",
+    "EXPHIL03/Uke 3 (Uke 6)/Untitled.md",
+    "EXPHIL03/Uke 3 (Uke 6)/Seminar 2.md",
+    "EXPHIL03/Uke 3 (Uke 6)/Forelesning 7.md",
+    "EXPHIL03/Uke 2 (Uke 5)/Forelesning 5.md",
+    "STK-FYS1110/Uke 2 (Uke 5)/Forelesning 3.md",
+    "STK-FYS1110/Untitled.md",
     "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
-    "EXPHIL03/Uke 1 (Uke 4)",
-    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 1 (legacy).md"
+    "Untitled.canvas",
+    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md"
   ]
 }
