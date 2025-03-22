@@ -7,8 +7,8 @@ Colors = ["firebrick","mediumspringgreen","royalblue"]
 plt.axhline(1,linestyle="dashed",color = "black")
 
 plt.bar(X,Y,edgecolor = "black",color = Colors)
-plt.title("Vannforbruk for forskjellige typer strømproduksjon\n i bcm (Billion Cubic Meters) i 2021")
+plt.title("Vannforbruk for forskjellige typer stromproduksjon\n i bcm (Billion Cubic Meters) i 2021")
 plt.ylabel("Vann [bcm]")
-plt.xlabel("Strømproduksjonstype")
+plt.xlabel("Stromproduksjonstype")
 
 plt.show();
