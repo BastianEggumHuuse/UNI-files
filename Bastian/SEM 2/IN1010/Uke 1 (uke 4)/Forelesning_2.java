@@ -24,11 +24,11 @@ class Forelesning_2
         ListOfBools2[5] = true;
 
         // I Java kan du lage matrise-style arrays!!!
-        int[][] matrix = new int[5][10] // 5 x 10 matrise
+        int[][] matrix = new int[5][10]; // 5 x 10 matrise
 
         //pring
-        TestClass NewTest = new TestClass(15);
-        NewTest.Print();
+        //TestClass NewTest = new TestClass(15);
+        //NewTest.Print();
 
         System.out.println("pring");
 

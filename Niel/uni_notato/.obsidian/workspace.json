@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "bed09bc1ce3f2327",
+        "id": "689175b530e82c8b",
         "type": "tabs",
         "children": [
           {
-            "id": "078c9b41931c9489",
+            "id": "98db9ad06224ef32",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian UiO/V25/IN1030/20.mars etter midveis..md",
+                "file": "Obsidian UiO/V25/Untitled/konte.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "20.mars etter midveis."
+              "title": "konte"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "aktør",
+                "query": "kan sikkerhetsmål ivaretas",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -164,19 +164,19 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "078c9b41931c9489",
+  "active": "98db9ad06224ef32",
   "lastOpenFiles": [
-    "Obsidian UiO/V25/IN1030/20.mars etter midveis..md",
-    "Obsidian UiO/H24/IN1050/lese eksamen/tilleggs artikler oppsummering.md",
-    "Obsidian UiO/V25/IN1030/innleveringer/oblig3.md",
-    "Obsidian UiO/H24/IN1050/Forelesninger/forelesning 09.09.24.md",
-    "Obsidian UiO/H24/IN1050/Forelesninger/1. forelesning.md",
-    "Obsidian UiO/V25/EXPHIL/innleveringer/innlevering.md",
-    "Obsidian UiO/V25/EXPHIL/innleveringer/oblig 2.md",
+    "Obsidian UiO/V25/Untitled/practice midveis brotherman.md",
+    "Obsidian UiO/V25/Untitled/konte.md",
+    "Obsidian UiO/V25/Untitled",
     "Obsidian UiO/V25/EXPHIL/innleveringer/mal.md",
+    "Untitled.md",
+    "Obsidian UiO/V25/EXPHIL/innleveringer/oblig 2.md",
+    "Obsidian UiO/V25/EXPHIL/innleveringer/innlevering.md",
     "Obsidian UiO/V25/EXPHIL/innleveringer",
     "Obsidian UiO/V25/EXPHIL/30.01.25 nr.5 forelesning.md",
     "Obsidian UiO/V25/EXPHIL/14.01.25 nr.1 forelesning.md",
+    "Obsidian UiO/V25/IN1030/innleveringer/oblig3.md",
     "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.md",
     "Obsidian UiO/V25/IN1030/innleveringer/nielc.md",
     "Obsidian UiO/V25/EXPHIL/Seminar/26.02 descartes meditasjon.md",
@@ -195,7 +195,6 @@
     "Obsidian UiO/V25/EXPHIL/Niel_Carlsen.docx",
     "Obsidian UiO/V25/EXPHIL/21.01.25 nr.3 forelesning.md",
     "Obsidian UiO/V25/EXPHIL/24.01.25 nr.4 forelesning.md",
-    "Obsidian UiO/V25/IN1030/innleveringer/oblig-1---samspill---in1030-v25.pdf",
     "Attachments/images/Pasted image 20250202153032.png",
     "randint.md",
     "Obsidian UiO/H25/IN1150/Gruppe/Første gruppetime.md",
@@ -211,6 +210,7 @@
     "Attachments/images/Pasted image 20250130114102.png",
     "Obsidian UiO/H25/EXPHIL/24.01.25 nr.4 forelesning.md",
     "Obsidian UiO/H25/EXPHIL/30.01.25 nr.5 forelesning.md",
+    "Obsidian UiO/H25/IN1150/første forelesning 20.01.25.md",
     "Attachments/images/Pasted image 20250130113916.png"
   ]
 }
