@@ -81,5 +81,25 @@ public class Bok implements Comparable<Bok> { // comparable er et grensesnitt
             return kapittel;
         }
 
+
+        for (int i = 1; i < kapittelNummer - 1; i++) {
+            ståsted = ståsted.hentNeste();
+        }
+
+        kapittel = ståsted.hentNeste();
+        ståsted.settNeste(kapittel.hentNeste());
+
+        if (ståsted.hentNeste() == null ) {
+            siste = ståsted;
+        }
+        antallKapitler--;
+
+        if (antallKapitler == 1){
+            første = ståsted;
+        }
+
+        return kapittel;
+
+        
     }
 }
