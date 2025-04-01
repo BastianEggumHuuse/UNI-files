@@ -19,6 +19,8 @@ class Subsekvensregister
         //Er litt usikker på hva det er vi skal med denne metoden?
         //Sto bare "fjerner vilkårlig frekvenstabell" i oppgaven.
         Frekvenstabell r = register.remove(register.size()-1);
+        //System.out.println(r);
+        //System.out.println("--");
 
         return(r);
     }
@@ -42,21 +44,22 @@ class Subsekvensregister
             System.exit(1);
         }
 
-        String totalString = "";
+        String currentString = null;
+        char[] chars = null;
         while (fil.hasNextLine()) 
         {
-            totalString += fil.nextLine();
+            currentString = fil.nextLine();
+            chars = currentString.toCharArray();
+
+            for(int i = 0; i < chars.length - 2; i += 1)
+            {   
+                // From util
+                char[] currentChars = Arrays.copyOfRange(chars, i, i + SUBSEKVENSLENGDE);
+                String currentSubSequence = new String(currentChars);
+                f.put(currentSubSequence,1); // put() overskriver duplikater, slik at vi bare får unike subsekvenser. 
+            }
         }
         fil.close();
-
-        char[] chars = totalString.toCharArray();
-        for(int i = 0; i < chars.length - 2; i += 1)
-        {
-            // From util
-            char[] currentChars = Arrays.copyOfRange(chars, i, i + SUBSEKVENSLENGDE);
-            String currentSubSequence = new String(currentChars);
-            f.put(currentSubSequence,1); // put() overskriver duplikater, slik at vi bare får unike subsekvenser. 
-        }
         
         return(f);
     }

@@ -26,6 +26,8 @@ class Frekvenstabell extends TreeMap<String, Integer>
     {
         Frekvenstabell flettet = new Frekvenstabell();
         
+        //System.out.println(f1);
+
         Set<String> keys1 = f1.keySet();
         Set<String> keys2 = f2.keySet();
 

@@ -1,25 +1,55 @@
+import java.io.File;
+import java.util.*;
+
 class test
 {
     public static void main(String[] args)
     {
-        Frekvenstabell f1 = new Frekvenstabell();
-        Frekvenstabell f2 = new Frekvenstabell();
 
-        f1.put("en",1);
-        f1.put("to",2);
-        f1.put("tre",3);
+        String name = "smittet";
 
-        f2.put("one",1);
-        f2.put("to",2);
-        f2.put("en",1);
+        String filNavn = name + ".txt";
+        String filNavn2 = "Data/" + name;
 
-        Frekvenstabell f3 = Frekvenstabell.flett(f1,f2);
+        Scanner scanner = null;
+        try 
+        {
+            scanner = new Scanner(new File(filNavn));
+        } catch (Exception e) {
+            System.out.println("Kunne ikke lese fil.");
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
 
-        //System.out.println(f3);
-        //f3.skrivTilFil("TestFil");
+        Scanner scanner2 = null;
+        try 
+        {
+            scanner2 = new Scanner(new File(filNavn2));
+        } catch (Exception e) {
+            System.out.println("Kunne ikke lese fil.");
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
 
-        //Frekvenstabell f4 = Subsekvensregister.les("TestData/fil1.csv");
-        //Frekvenstabell f5 = Subsekvensregister.les("TestData/fil2.csv");
-        //System.out.println(Frekvenstabell.flett(f4,f5));
+        int Errors = 0;
+
+        while(scanner.hasNextLine())
+        {
+            String s1 = scanner.nextLine();
+            String s2 = scanner2.nextLine();
+
+            if(s1.equals(s2) == false)
+            {
+                System.out.println("ERROR!!!" + s1 + "is not equal to" + s2 + "!!!");
+                Errors += 1;
+            }
+
+            if(Errors >= 10)
+            {
+                break;
+            }
+        }
+
+        System.out.println("Completed test with " + Errors + " errors.");
     }
 }
