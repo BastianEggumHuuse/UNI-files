@@ -1,20 +1,22 @@
 {
   "main": {
-    "id": "88cc06bab75202ea",
+    "id": "0a2a30e6d772ceb5",
     "type": "split",
     "children": [
       {
-        "id": "527ec8e62c77479e",
+        "id": "27c48edbbe59e965",
         "type": "tabs",
         "children": [
           {
-            "id": "d5cbba5bd58d26d9",
+            "id": "b4629ad50639df04",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "pdf",
+              "state": {
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "taylor-2005-classical-mechanics"
             }
           }
         ]
@@ -23,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "665a1dfaa9215517",
+    "id": "98afa560c1fa37f4",
     "type": "split",
     "children": [
       {
-        "id": "f01a9a13300b135d",
+        "id": "2dde35e93ba4e3d7",
         "type": "tabs",
         "children": [
           {
-            "id": "6c02c0a8043107b7",
+            "id": "1a57e4cdf45521c1",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +46,7 @@
             }
           },
           {
-            "id": "3be4a7df40c50ce7",
+            "id": "08b981948f732634",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +63,7 @@
             }
           },
           {
-            "id": "cce214bfa3ac8ac6",
+            "id": "a105590e2bced77a",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,20 +79,20 @@
     "width": 300
   },
   "right": {
-    "id": "17c9a699044a8ef8",
+    "id": "3b0ca77951b23909",
     "type": "split",
     "children": [
       {
-        "id": "c945eca49ec44645",
+        "id": "352377a93362206e",
         "type": "tabs",
         "children": [
           {
-            "id": "430bcbf3482a6b67",
+            "id": "090c52b10dadfb86",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,46 +102,51 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Forelesning 21.01.2025"
+              "title": "Backlinks for taylor-2005-classical-mechanics"
             }
           },
           {
-            "id": "6c24db1a355a0467",
+            "id": "690bde0ba1596762",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Forelesning 21.01.2025"
+              "title": "Outgoing links from taylor-2005-classical-mechanics"
             }
           },
           {
-            "id": "e5b83bb20a93b4e2",
+            "id": "5ea4e6d72574f94e",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
             }
           },
           {
-            "id": "c3f5a43edfdc2af2",
+            "id": "13af3fdf035405d6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md"
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Forelesning 21.01.2025"
+              "title": "Outline of taylor-2005-classical-mechanics"
             }
           }
         ]
@@ -152,47 +159,13 @@
   "left-ribbon": {
     "hiddenItems": {
       "switcher:Open quick switcher": false,
-      "canvas:Create new canvas": false,
       "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false
     }
   },
-  "active": "d5cbba5bd58d26d9",
-  "lastOpenFiles": [
-    "FYS1105/Midtveisprosjekt/los.py",
-    "HON1000/12.02.2025 (Aksel Braanen Sterri).md",
-    "FYS1105/Midtveisprosjekt/movie.mp4",
-    "IN1010/Uke 9 (Uke 12)/Forelesning.java",
-    "IN1010/Uke 9 (Uke 12)",
-    "IN1010/Innlevering_3/TestKlasser/TestIndeksertListe.java",
-    "IN1010/Innlevering_3/TestKlasser/TestStabel.java",
-    "IN1010/Innlevering_3/TestKlasser/TestKø.java",
-    "IN1010/Innlevering_3/TestKlasser/TestPrioritetskø.java",
-    "IN1010/Innlevering_3/TestKlasser/MainTest.java",
-    "IN1010/Innlevering_3/TestKlasser",
-    "IN1010/Innlevering_3/Bilder/KlasseHirearkiTegning.png",
-    "IN1010/Innlevering_3/Bilder/KlasseHierarkiTegning.pdn",
-    "IN1010/Innlevering_3/Bilder/KlasseHierarkiTegning.png",
-    "IN1010/Innlevering_3/Bilder/Datastrukturtegning.png",
-    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 2 (21.01.2025).md",
-    "HON1000/Oblig_1/Strømforbruk.png",
-    "STK-FYS1110/Uke 1 (Uke 4)/Forelesning 1 (legacy).md",
-    "HON1000/Oblig_1/Vannforbruk_plot_1.png",
-    "HON1000/Oblig_1/Kjøling_Infographic.png",
-    "STK-FYS1110/Oblig_1/4_d_graph.png",
-    "STK-FYS1110/Oblig_1/3_c_graph.png",
-    "STK-FYS1110/Oblig_1/3_c_bar.png",
-    "EXPHIL03/Uke 6 (Uke 9)/Forelesning 13.md",
-    "EXPHIL03/Uke 3 (Uke 6)/Untitled.md",
-    "EXPHIL03/Uke 3 (Uke 6)/Seminar 2.md",
-    "EXPHIL03/Uke 3 (Uke 6)/Forelesning 7.md",
-    "EXPHIL03/Uke 2 (Uke 5)/Forelesning 5.md",
-    "STK-FYS1110/Uke 2 (Uke 5)/Forelesning 3.md",
-    "STK-FYS1110/Untitled.md",
-    "EXPHIL03/Uke 1 (Uke 4)/Forelesning 21.01.2025.md",
-    "Untitled.canvas",
-    "EXPHIL03/Uke 1 (Uke 4)/Seminar 22.01.2025.md"
-  ]
+  "active": "b4629ad50639df04",
+  "lastOpenFiles": []
 }
