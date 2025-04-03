@@ -10,6 +10,7 @@ class Monitor
     private final ReentrantLock lock = new ReentrantLock();
     private Condition ikkeTom = lock.newCondition();
 
+    // Variabler vi bruker for å bryte ut av flette-sekvensen
     private int threadCount = 0;
     private int waitCounter = 0;
     private String filNavn = "fil.txt";
@@ -28,8 +29,8 @@ class Monitor
         lock.lock();
         try
         {
-            sRegister.settInn(f);
-            ikkeTom.signalAll();
+            sRegister.settInn(f); // Legger inn ny Frekvenstabell
+            ikkeTom.signalAll();  // Sier ifra til alle ventende traader om at listen ikke er tom
         }
         finally
         {
@@ -37,7 +38,6 @@ class Monitor
         }
     }
 
-    // Kom tilbake til denne!!!
     public Frekvenstabell taUt()
     {
         return(sRegister.taUt());  
@@ -61,31 +61,33 @@ class Monitor
             // Venter på at det ligger 2 elementer i listen
             while (antall() <= 1)
             {
+                // For å bryte ut av flette-sekvensen, sjekker vi om alle traadene venter på at registeret skal fylles.
+                // Vi vet at alle venter dersom waitCounter == threadCount
                 waitCounter += 1;
-
                 if(waitCounter == threadCount)
                 {
+                    // når vi vet at alle traadene venter, ber vi alle om å gå videre, slik at de går ut av sekvensen og termineres.
                     ikkeTom.signalAll();
 
-                    // Den siste traaden skriver ut den siste tabellen.
+                    // Den siste traaden skriver ut den siste tabellen. (Vi er kun i denne if-setningen dersom vi er på den siste traaden)
                     Frekvenstabell siste = taUt();
                     siste.skrivTilFil(filNavn);
 
+                    // Returnerer null for å signalisere at vi skal bryte ut av sekvensen.
                     return(null);
                 }
 
+                // Dersom det ikke er to ledige frekvenstabeller i subsekvensregisteret, legger traaden seg og venter.
                 ikkeTom.await();
 
+                // Alle traader som skal bryte ut av sekvensen vil gå inn her.
                 if(waitCounter == threadCount)
                 {
-                    System.out.println("Yahoo");
                     return(null);
                 }
 
                 waitCounter -= 1;
             }
-
-            System.out.println("GETTING FS!!!!");
 
             f[0] = taUt();
             f[1] = taUt();
@@ -98,7 +100,7 @@ class Monitor
         {
             lock.unlock();
         }
-        
+
         return(f);
     }
 }

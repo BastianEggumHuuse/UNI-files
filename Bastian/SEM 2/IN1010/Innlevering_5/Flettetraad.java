@@ -12,29 +12,19 @@ class Flettetraad implements Runnable
     {
         while(true)
         {
+            // Tar ut to frekvenstabeller
             Frekvenstabell[] f = monitor.taUtTo();
 
+            // Dersom f er null, skal vi bryte ut av flettingen
             if(f == null)
             {
                 break;
             }
 
-            // if(f[0] != null)
-            // {
-            //     System.out.println("f1 -------------");
-            //     System.out.println(f[0]);
-            //     System.out.println("f2 -------------");
-            //     System.out.println(f[1]);
-            //     System.out.println("end-------------");
-            // }
-            // else
-            // {
-            //     System.out.println("Null Issue???");
-            // }
-
-
+            // Fletter sammen tabellene
             Frekvenstabell flettet = Frekvenstabell.flett(f[0],f[1]);
 
+            // Setter inn i monitor
             monitor.settInn(flettet);
         }
     }

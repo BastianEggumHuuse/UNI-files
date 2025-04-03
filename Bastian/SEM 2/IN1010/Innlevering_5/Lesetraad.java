@@ -16,15 +16,11 @@ class Lesetraad implements Runnable
     @Override
     public void run()
     {
+        // Bruker les()-metoden
         Frekvenstabell f = Subsekvensregister.les(filNavn);
 
-        /*
-        System.out.println("--------------");
-        System.out.println(f);
-        System.out.println("--------------");
-        */
-
+        //Legger inn i monitor
         monitor.settInn(f);
-        leseSignal.countDown();
+        leseSignal.countDown(); //Teller ned slik at vi til slutt starter flettingen
     }
 }
