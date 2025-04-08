@@ -4,6 +4,8 @@ import java.io.File;
 class Subsekvensregister {
     private static final int Subsekenslengde = 3;
     private ArrayList<Frekvenstabell> register = new ArrayList<Frekvenstabell>();
+
+    
     public void settInn(Frekvenstabell f) {
         register.add(f);
     }
