@@ -2,15 +2,15 @@ import java.util.concurrent.locks.*;
 import java.util.*;
 
 public class Monitor {
-    int teller = 0;
-    Subsekvensregister register; 
-    String filename;
+
+    Subsekvensregister register;
+    String fil; 
     Lock lås;
     Condition tilfelle;
 
-    public Monitor (String FileName){
-        filename = FileName;
-        register = new Subsekvensregister();
+    public Monitor (Subsekvensregister ny_register, String ny_fil){
+        register = ny_register;
+        fil = ny_fil;
         lås = new ReentrantLock(true);
         tilfelle = lås.newCondition();
     }
@@ -30,47 +30,22 @@ public class Monitor {
 
     public Frekvenstabell taUt(){
 
-        return register.taUt();
-
-        }
-
-
-    public Frekvenstabell[] taUtTo(){
-        
-
         lås.lock();
-        Frekvenstabell[] liste = new Frekvenstabell[2];
         try {
-
-            while (antall() <= 1) {
-                teller += 1;
-                if (teller == 8) {
-                    tilfelle.signalAll();
-
-                    Frekvenstabell t = taUt();
-                    t.skrivTilFil(filename);
-
-                    return new Frekvenstabell[2];
+            if (register.taUt() == null) {
+                try {
+                    tilfelle.await();
+                } catch (InterruptedException e) {
+                    System.out.println("hei");
                 }
-                tilfelle.await();
-                if (teller == 8) {
-                return  new Frekvenstabell[2];
-                }
-                teller -= 1;
             }
-            liste[0] = taUt();
-            liste[1] = taUt();
-        } catch(Exception e) {
-            System.out.println("Feil skjedde med å ta ut to frekvenstabeller.");
-        } finally{
-            lås.unlock();
-            return liste;
+            
+            return register.taUt();
         }
-
-
+        finally {
+            lås.unlock();
+        }
     }
-
-
 
     public int antall() {
 
@@ -86,9 +61,6 @@ public class Monitor {
     public static Frekvenstabell les(String filnavn) {
         return Subsekvensregister.les(filnavn);
     }
-
-
-
 
 
 
