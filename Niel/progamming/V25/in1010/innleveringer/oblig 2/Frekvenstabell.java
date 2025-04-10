@@ -32,11 +32,7 @@
             } else {
                 flettet.put(s,f2.get(s));
             }
-            
-            
         }
-
-
         return flettet;
     }
 

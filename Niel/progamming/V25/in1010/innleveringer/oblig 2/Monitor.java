@@ -2,15 +2,15 @@ import java.util.concurrent.locks.*;
 import java.util.*;
 
 public class Monitor {
-
-    Subsekvensregister register;
-    String fil; 
+    int teller = 0;
+    Subsekvensregister register; 
+    String filename;
     Lock lås;
     Condition tilfelle;
 
-    public Monitor (Subsekvensregister ny_register, String ny_fil){
-        register = ny_register;
-        fil = ny_fil;
+    public Monitor (String FileName){
+        filename = FileName;
+        register = new Subsekvensregister();
         lås = new ReentrantLock(true);
         tilfelle = lås.newCondition();
     }
@@ -30,22 +30,47 @@ public class Monitor {
 
     public Frekvenstabell taUt(){
 
+        return register.taUt();
+
+        }
+
+
+    public Frekvenstabell[] taUtTo(){
+        
+
         lås.lock();
+        Frekvenstabell[] liste = new Frekvenstabell[2];
         try {
-            if (register.taUt() == null) {
-                try {
-                    tilfelle.await();
-                } catch (InterruptedException e) {
-                    System.out.println("hei");
+
+            while (antall() <= 1) {
+                teller += 1;
+                if (teller == 8) {
+                    tilfelle.signalAll();
+
+                    Frekvenstabell t = taUt();
+                    t.skrivTilFil(filename);
+
+                    return new Frekvenstabell[2];
                 }
+                tilfelle.await();
+                if (teller == 8) {
+                return  new Frekvenstabell[2];
+                }
+                teller -= 1;
             }
-            
-            return register.taUt();
-        }
-        finally {
+            liste[0] = taUt();
+            liste[1] = taUt();
+        } catch(Exception e) {
+            System.out.println("Feil skjedde med å ta ut to frekvenstabeller.");
+        } finally{
             lås.unlock();
+            return liste;
         }
+
+
     }
+
+
 
     public int antall() {
 
@@ -61,6 +86,9 @@ public class Monitor {
     public static Frekvenstabell les(String filnavn) {
         return Subsekvensregister.les(filnavn);
     }
+
+
+
 
 
 

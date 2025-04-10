@@ -37,8 +37,8 @@ class Subsekvensregister {
 
 
         while (fil.hasNextLine()) {
-            String skibidi = fil.nextLine();
-            char[] tegn = skibidi.toCharArray();
+            String linje = fil.nextLine();
+            char[] tegn = linje.toCharArray();
 
             for (int i = 0; i < tegn.length-2; i++) {
 
