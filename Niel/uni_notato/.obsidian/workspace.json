@@ -1,54 +1,41 @@
 {
   "main": {
-    "id": "b3da9f988d5c9777",
+    "id": "70bde8a28ce0cc90",
     "type": "split",
     "children": [
       {
-        "id": "20d0c8a5c1523d79",
+        "id": "689175b530e82c8b",
         "type": "tabs",
         "children": [
           {
-            "id": "d37a19cb47cf525d",
+            "id": "98db9ad06224ef32",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian UiO/V25/EXPHIL/18.02.25 nr.7.md",
+                "file": "Obsidian UiO/V25/EXPHIL/Seminar/26.03.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "18.02.25 nr.7"
-            }
-          },
-          {
-            "id": "3f70ea5e951b8cd1",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.7"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.7"
+              "title": "26.03"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "394f97b83d3dfc6d",
+    "id": "98544a62dd357234",
     "type": "split",
     "children": [
       {
-        "id": "5b759558f3865385",
+        "id": "3ac37907e0035441",
         "type": "tabs",
         "children": [
           {
-            "id": "1158e466b9331695",
+            "id": "8ab20a57a37ea695",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -61,12 +48,12 @@
             }
           },
           {
-            "id": "92a6cc31e2279b93",
+            "id": "e14d4abed15ad4d6",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "kan sikkerhetsmål ivaretas",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +65,7 @@
             }
           },
           {
-            "id": "61a3c59f94456fb0",
+            "id": "e9cde991ed149661",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -91,23 +78,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
-    "id": "1f24a69b91b82389",
+    "id": "99b39a163de53250",
     "type": "split",
     "children": [
       {
-        "id": "18116eeff963dc6f",
+        "id": "f3bfce7aa3c17edd",
         "type": "tabs",
         "children": [
           {
-            "id": "2cd38ae48c6fe63f",
+            "id": "d0362011f6c6e22b",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obsidian UiO/V25/IN1030/innleveringer/oblig 2.md",
+                "file": "Obsidian UiO/H24/IN1020/Gruppe_timer (2)/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,51 +104,46 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for oblig 2"
+              "title": "Backlinks for Untitled"
             }
           },
           {
-            "id": "4a1be17d60114bfd",
+            "id": "c6b27722e4504161",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obsidian UiO/V25/IN1030/innleveringer/oblig 2.md",
+                "file": "Obsidian UiO/H24/IN1020/Gruppe_timer (2)/Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from oblig 2"
+              "title": "Outgoing links from Untitled"
             }
           },
           {
-            "id": "9cba52e3a5554c46",
+            "id": "361ec6fb0437785f",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
+                "useHierarchy": true
               },
               "icon": "lucide-tags",
               "title": "Tags"
             }
           },
           {
-            "id": "37b4b939b151f85b",
+            "id": "f1894bce0bed148e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian UiO/V25/IN1030/innleveringer/oblig 2.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "file": "Obsidian UiO/H24/IN1020/Gruppe_timer (2)/Untitled.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of oblig 2"
+              "title": "Outline of Untitled"
             }
           }
         ]
@@ -182,11 +164,53 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "3f70ea5e951b8cd1",
+  "active": "98db9ad06224ef32",
   "lastOpenFiles": [
-    "Obsidian UiO/V25/EXPHIL/18.02.25 nr.7.md",
+    "Obsidian UiO/V25/EXPHIL/Seminar/26.02 descartes meditasjon.md",
+    "Obsidian UiO/V25/EXPHIL/Seminar/26.03.md",
+    "Obsidian UiO/V25/EXPHIL/ultiririsime.md",
+    "Obsidian UiO/V25/Untitled/konte.md",
+    "Obsidian UiO/V25/Untitled/practice midveis brotherman.md",
+    "Obsidian UiO/V25/Untitled",
+    "Obsidian UiO/V25/EXPHIL/innleveringer/mal.md",
+    "Untitled.md",
+    "Obsidian UiO/V25/EXPHIL/innleveringer/oblig 2.md",
+    "Obsidian UiO/V25/EXPHIL/innleveringer/innlevering.md",
+    "Obsidian UiO/V25/EXPHIL/innleveringer",
+    "Obsidian UiO/V25/EXPHIL/30.01.25 nr.5 forelesning.md",
+    "Obsidian UiO/V25/EXPHIL/14.01.25 nr.1 forelesning.md",
+    "Obsidian UiO/V25/IN1030/innleveringer/oblig3.md",
     "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.md",
+    "Obsidian UiO/V25/IN1030/innleveringer/nielc.md",
+    "Obsidian UiO/V25/EXPHIL/18.02.25 nr.7.md",
+    "Attachments/images/samtykke for observatorisk studie av Spotify.pdf",
+    "Attachments/images/~$mtykke for observatorisk studie av Spotify.doc",
+    "Attachments/images/samtykke for observatorisk studie av Spotify.doc",
+    "Attachments/images/Pasted image 20250218210948.png",
     "Obsidian UiO/V25/IN1030/06.02 Brukerundersøkelse.md",
-    "Obsidian UiO/V25/IN1030/innleveringer/oblig 2.md"
+    "Obsidian UiO/V25/IN1030/30.01 Forelesning.md",
+    "Obsidian UiO/V25/IN1030/Første forelesning.md",
+    "Obsidian UiO/V25/IN1030/innleveringer/nielc.pdf.pdf",
+    "Obsidian UiO/V25/EXPHIL/~$el_Carlsen.docx",
+    "Obsidian UiO/V25/EXPHIL/~WRL0001.tmp",
+    "Obsidian UiO/V25/EXPHIL/~WRD0000.tmp",
+    "Obsidian UiO/V25/EXPHIL/Niel_Carlsen.docx",
+    "Obsidian UiO/V25/EXPHIL/21.01.25 nr.3 forelesning.md",
+    "Obsidian UiO/V25/EXPHIL/24.01.25 nr.4 forelesning.md",
+    "Attachments/images/Pasted image 20250202153032.png",
+    "randint.md",
+    "Obsidian UiO/H25/IN1150/Gruppe/Første gruppetime.md",
+    "Obsidian UiO/V25/IN1150/Gruppe/Første gruppetime.md",
+    "Obsidian UiO/V25/IN1150/første forelesning 20.01.25.md",
+    "Obsidian UiO/V25/EXPHIL/16.01.25 nr.2 forelesning.md",
+    "Attachments/images/Pasted image 20250131132411.png",
+    "Attachments/images/image.png",
+    "Attachments/images/Pasted image 20250130153344.png",
+    "Attachments/images/Pasted image 20240909144611.png",
+    "Attachments/images/Pasted image 20250130114023.png",
+    "Attachments/images/Pasted image 20250130114036.png",
+    "Attachments/images/Pasted image 20250130114102.png",
+    "Obsidian UiO/H25/EXPHIL/24.01.25 nr.4 forelesning.md",
+    "Attachments/images/Pasted image 20250130113916.png"
   ]
 }
