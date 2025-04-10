@@ -1,36 +1,36 @@
-class TestCelle {
-    private static void sjekk (String hva, boolean test) {
+public class TestCelle {
+    public static void sjekk (String hva, boolean test) {
 	if (! test) {
 	    System.out.println("Sjekken '" + hva + "' feilet!");
 	    System.exit(1);
 	}
     }
     
-    private static void testCelle () {
+    public static void testCelle () {
 	Celle celle = new Celle();
-	sjekk("celle er død", ! celle.levende);
+	sjekk("celle er doed", ! celle.levende);
 	sjekk("celle.antLevendeNaboer == 0", celle.antLevendeNaboer==0);
 	System.out.println("Konstruktør: Alt riktig!");
     }
 
-    private static void testSettDødLevende () {
+    public static void testSettDoedLevende () {
 	Celle celle = new Celle();
 	celle.settLevende();
 	sjekk("celle er levende", celle.levende);
-	celle.settDød();
-	sjekk("celle er død", ! celle.levende);
-	System.out.println("settDød() og settLevende(): Alt riktig!");
+	celle.settDod();
+	sjekk("celle er doed", ! celle.levende);
+	System.out.println("settDoed() og settLevende(): Alt riktig!");
     }
     
-    private static void testErLevende () {
+    public static void testErLevende () {
 	Celle celle = new Celle();
-	sjekk("celle er død", ! celle.erLevende());
+	sjekk("celle er doed", ! celle.erLevende());
 	celle.settLevende();
 	sjekk("celle er levende", celle.erLevende());
 	System.out.println("erLevende(): Alt riktig!");
     }
     
-    private static void testHentStatusTegn () {
+    public static void testHentStatusTegn () {
 	Celle celle = new Celle();
 	sjekk("celle.hentStatusTegn()=='.'", celle.hentStatusTegn()=='.');
 	celle.settLevende();
@@ -38,15 +38,15 @@ class TestCelle {
 	System.out.println("hentStatusTegn(): Alt riktig!");
     }
     
-    private static void testLeggTilNabo () {
+    public static void testLeggTilNabo () {
 	Celle celle = new Celle();
 	Celle nabo1 = new Celle() ;
 	celle.leggTilNabo(nabo1);
-	sjekk("celle.antNaboer==1", celle.antNaboer==1);
+	sjekk("celle.antNaboer==1", celle.AntallNaboer==1);
 	System.out.println("leggTilNabo(): Alt riktig!");
     }
 
-    private static void testTellLevendeNaboer () {
+    public static void testTellLevendeNaboer () {
 	Celle celle = new Celle();
 	Celle nabo1 = new Celle();
 	Celle nabo2 = new Celle();
@@ -69,10 +69,10 @@ class TestCelle {
 	System.out.println("tellLevendeNaboer(): Alt riktig!");
     }
     
-    private static void testOppdaterStatus () {
+    public static void testOppdaterStatus () {
 	Celle celle = new Celle();
 	celle.oppdaterStatus();
-	sjekk("celle er død (siden <2 levende naboer)", ! celle.erLevende());
+	sjekk("celle er doed (siden <2 levende naboer)", ! celle.erLevende());
 
 	Celle nabo1 = new Celle();
 	nabo1.settLevende();
@@ -83,7 +83,7 @@ class TestCelle {
 	celle.leggTilNabo(nabo2);
 	celle.tellLevendeNaboer();
 	celle.oppdaterStatus();
-	sjekk("celle forblir død (siden 2 levende naboer)", ! celle.erLevende());
+	sjekk("celle forblir doed (siden 2 levende naboer)", ! celle.erLevende());
 
 	Celle nabo3 = new Celle();
 	nabo3.settLevende();
@@ -106,9 +106,9 @@ class TestCelle {
     public static void main (String[] arg) {
 	System.out.println("** Test Celle **");
 
-	// Kall paa de metodene du vil teste ved aa fjerne // under:
+	//Kall paa de metodene du vil teste ved aa fjerne // under:
 	testCelle();
-	testSettDødLevende();
+	testSettDoedLevende();
 	testErLevende();
 	testHentStatusTegn();
 	testLeggTilNabo();
