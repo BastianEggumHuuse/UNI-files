@@ -30,7 +30,7 @@ class Subsekvensregister
 
     // Metode som leser fra fil
     public static Frekvenstabell les(String filnavn)
-    {
+     {
         Frekvenstabell f = new Frekvenstabell();
 
         Scanner fil = null;
@@ -57,7 +57,7 @@ class Subsekvensregister
                 char[] currentChars = Arrays.copyOfRange(chars, i, i + SUBSEKVENSLENGDE);
                 String currentSubSequence = new String(currentChars); // Gjør char-ene tilbake til en liste.
                 f.put(currentSubSequence,1); // put() overskriver duplikater, slik at vi bare får unike subsekvenser. 
-            }
+            } 
         }
         fil.close();
         

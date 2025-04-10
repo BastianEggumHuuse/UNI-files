@@ -23,7 +23,7 @@ class Frekvenstabell extends TreeMap<String, Integer>
 
         // Returner denne strengen
         return(outLine);
-    }
+    } 
 
     // Metode som fletter sammen to frekvenstabeller
     public static Frekvenstabell flett(Frekvenstabell f1, Frekvenstabell f2) 
