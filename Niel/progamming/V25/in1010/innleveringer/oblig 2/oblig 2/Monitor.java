@@ -7,14 +7,14 @@ public class Monitor {
     String filename;
     Lock lås;
     Condition tilfelle;
-
+    // Konstruktør - initialiserer monitor med filnavn
     public Monitor (String FileName){
         filename = FileName;
         register = new Subsekvensregister();
         lås = new ReentrantLock(true);
         tilfelle = lås.newCondition();
     }
-
+    // Setter inn frekvenstabell i register (sikker trådtilgang)
     public void settInn(Frekvenstabell f) {
 
         lås.lock();
@@ -28,16 +28,14 @@ public class Monitor {
         
     }
 
+    // Henter ut en frekvenstabell
     public Frekvenstabell taUt(){
-
         return register.taUt();
-
         }
 
-
+// Henter ut to frekvenstabeller
     public Frekvenstabell[] taUtTo(){
         
-
         lås.lock();
         Frekvenstabell[] liste = new Frekvenstabell[2];
         try {
@@ -71,9 +69,8 @@ public class Monitor {
     }
 
 
-
+    // Returnerer antall frekvenstabeller i register
     public int antall() {
-
         lås.lock();
         try {
             return register.antall();
@@ -82,7 +79,8 @@ public class Monitor {
             lås.unlock();
         }
     }
-
+    
+    // Statisk metode for å lese frekvenstabell fra fil
     public static Frekvenstabell les(String filnavn) {
         return Subsekvensregister.les(filnavn);
     }
