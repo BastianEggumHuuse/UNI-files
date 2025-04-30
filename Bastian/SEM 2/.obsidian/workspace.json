@@ -23,14 +23,12 @@
             "id": "67270fc18f9ddd44",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "HON1000/09.04.2025 (Cecilie Hellestveit).md",
-                "mode": "source",
-                "source": false
+                "file": "FYS1105/taylor-2005-classical-mechanics.pdf"
               },
-              "icon": "lucide-file",
-              "title": "09.04.2025 (Cecilie Hellestveit)"
+              "icon": "lucide-file-text",
+              "title": "taylor-2005-classical-mechanics"
             }
           }
         ],
@@ -183,16 +181,17 @@
   },
   "active": "67270fc18f9ddd44",
   "lastOpenFiles": [
+    "IN1010/Uke 14 (Uke 17)/ObjectGUI$1ExitListener.class",
+    "IN1010/Uke 14 (Uke 17)/ObjectGUI.class",
+    "IN1010/Uke 14 (Uke 17)/ObjectGUI.java",
+    "IN1010/Uke 14 (Uke 17)/GUI.class",
+    "IN1010/Uke 14 (Uke 17)/GUI.java",
+    "IN1010/Uke 14 (Uke 17)",
+    "IN1010/Uke 14",
     "HON1000/09.04.2025 (Cecilie Hellestveit).md",
     "FYS1105/taylor-2005-classical-mechanics.pdf",
     "MAT1110/Innforing_MAT1110.pdf",
     "STK-FYS1110/mathematical-statistics-with-applications-3rd-edition.pdf",
-    "IN1010/Innlevering_5/smittet.txt",
-    "IN1010/Innlevering_5/ikke_smittet.txt",
-    "IN1010/Innlevering_5/TestData/smittet",
-    "IN1010/Innlevering_5/TestData/metadata.csv",
-    "IN1010/Innlevering_5/TestData/ikke_smittet",
-    "IN1010/Innlevering_5/TestData/fil3.csv",
-    "IN1010/Innlevering_5/TestData/fil2.csv"
+    "IN1010/Innlevering_5/smittet.txt"
   ]
 }
