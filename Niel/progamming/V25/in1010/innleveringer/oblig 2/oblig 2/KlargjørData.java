@@ -11,12 +11,14 @@ class KlargjørData {
     // Hovedmetode for dataklargjøring
     public static void main(String args[]) {
 
-        String mappe = "Data/";
-        String filnavn = mappe + args[0];
+        String filnavn = args[0];
+        File file = new File(filnavn);
+        String mappe = file.getParent() + "/";
+        
 
     // Oppretter monitorer for smittede og ikke-smittede
-        monitor1 = new Monitor("smittet");
-        monitor2 = new Monitor("ikke_smittet");
+        monitor1 = new Monitor("smittet", ANTALL_TRÅDER);
+        monitor2 = new Monitor("ikke_smittet", ANTALL_TRÅDER);
 
     // Leser metadatafil
         Scanner fil = null;
