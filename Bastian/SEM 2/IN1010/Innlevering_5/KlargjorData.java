@@ -10,6 +10,7 @@ class KlargjorData
 
     public static void main(String[] args)
     {
+        
         String filNavn = args[0];
         File fil = new File(filNavn);
         String mappe = fil.getParent() + "/";
