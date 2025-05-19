@@ -8,16 +8,20 @@ class KlargjørData {
     public static Monitor monitor2;
     public static final int ANTALL_TRÅDER = 8;
 
+    // Hovedmetode for dataklargjøring
     public static void main(String args[]) {
 
-        String mappe = "Data/";
-        String filnavn = mappe + args[0];
+        String filnavn = args[0];
+        File file = new File(filnavn);
+        String mappe = file.getParent() + "/";
+        
 
-        monitor1 = new Monitor("smittet");
-        monitor2 = new Monitor("ikke_smittet");
+    // Oppretter monitorer for smittede og ikke-smittede
+        monitor1 = new Monitor("smittet", ANTALL_TRÅDER);
+        monitor2 = new Monitor("ikke_smittet", ANTALL_TRÅDER);
 
+    // Leser metadatafil
         Scanner fil = null;
-
         try {
             fil = new Scanner(new File(filnavn));
         } catch (Exception e) {
@@ -26,7 +30,7 @@ class KlargjørData {
             System.exit(1);
         }
 
-        // Finner ut hvor mange lesetraader vi trenger
+        // Teller antall linjer/filer å behandle
         int antallLestraader = 0;
         while(fil.hasNextLine())
         {
@@ -35,6 +39,7 @@ class KlargjørData {
         }
 
         fil = null;
+        // Gjenoppretter filscanner
         try {
             fil = new Scanner(new File(filnavn));
         } catch (Exception e) {
@@ -42,6 +47,7 @@ class KlargjørData {
             System.exit(1);
         }
 
+        // Oppretter lesetråder for hver fil
         CountDownLatch leseSignal = new CountDownLatch(antallLestraader);
 
         while (fil.hasNextLine()) {
@@ -63,7 +69,7 @@ class KlargjørData {
         }
         fil.close();
 
-        // Venter...
+        // Venter på at alle lesetråder skal fullføre
         try
         {
             leseSignal.await();
@@ -73,7 +79,8 @@ class KlargjørData {
         {
             System.out.println(e.getMessage());
         }
-
+        
+        // Starter flettetråder
         for(int i = 0; i < ANTALL_TRÅDER; i += 1)
         {
             Runnable f1 = new Flettetråd(monitor1);
