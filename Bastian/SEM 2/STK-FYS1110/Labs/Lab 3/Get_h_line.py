@@ -2,6 +2,8 @@ import numpy as np
 from scipy.stats import norm
 import matplotlib.pyplot as plt
 
+# Maaler diverse stats for prosjektil-Lab
+
 g = 9.81
 theta = np.pi/6
 h_0 = 0.214

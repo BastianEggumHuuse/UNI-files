@@ -1,0 +1,40 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import math as mt
+
+I_b = 16.31
+
+# Collecting data from file
+data = {}
+logData = {}
+with open("TrueIntensity.txt") as file:
+    for l in file:
+        points = l.split(",")
+        data[float(points[1])] = float(points[0]) - I_b
+        logData[float(points[1])] = mt.log(float(points[0]) - I_b)
+
+plt.title("log-transformert Straaling mot blytykkelse")
+plt.ylabel("ln(Straaling)")
+plt.xlabel("Blytykkelse [cm]")
+
+#plt.plot(data.keys(),data.values(),"o")
+#plt.plot(logData.keys(),logData.values(),"o",color = "green")
+#plt.show()
+
+# Regresjon
+X=np.array(logData.keys())
+I=np.array(logData.values())
+
+# beta1_hat=np.sum((I-np.mean(I))*(X-np.mean(X)))/np.sum((X-np.mean(X))**2)
+# beta0_hat=np.mean(I)-beta1_hat*np.mean(X)
+# print('betahat =%f %f' % (beta0_hat, beta1_hat))
+
+import statsmodels.api as sm
+X_int = sm.add_constant(X)
+mod_ols = sm.OLS(I,X_int)
+mod_fit = mod_ols.fit()
+
+I_hat=mod_fit.get_prediction(X_int)
+
+plt.plot(X_int, mod_fit.fittedvalues, color='red', label='Fitted Line')
+plt.show()

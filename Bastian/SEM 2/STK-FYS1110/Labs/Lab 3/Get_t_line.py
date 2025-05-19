@@ -1,4 +1,6 @@
 
+# Finner snittet av tidsmaalingene for radioaktivitet lab
+
 T = [
     14.05,
      14.28,
