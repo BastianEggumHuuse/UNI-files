@@ -13,6 +13,8 @@ data = []
 filename = "Heights.txt"
 # Data is in cm!!!
 with open(filename) as file:
+    file.readline()
+
     for l in file:
         data.append(float(l.replace(",",""))/100 - h_0)
 

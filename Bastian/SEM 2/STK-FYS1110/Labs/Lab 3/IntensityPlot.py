@@ -38,6 +38,7 @@ import statsmodels.api as sm
 X_int = sm.add_constant(X)
 mod_ols = sm.OLS(I,X_int)
 mod_fit = mod_ols.fit()
+print(mod_fit.summary())
 
 plt.plot(X,I,"o",color="green")
 #plt.plot(X, mod_fit.fittedvalues, color='red', label='Fitted Line')
