@@ -2,14 +2,14 @@ import java.util.*;
 import java.io.File;
 
 class Subsekvensregister {
-    private static final int Subsekenslengde = 3;
+    private static final int Subsekenslengde = 3; // Fast lengde på subsekvenser
     private ArrayList<Frekvenstabell> register = new ArrayList<Frekvenstabell>();
 
-    
+    // Legger til en frekvenstabell i registeret
     public void settInn(Frekvenstabell f) {
         register.add(f);
     }
-
+    // Henter og fjerner siste frekvenstabell
     public Frekvenstabell taUt() {
 
         //Jeg antar at det finnes ett eller flere elementer i listen.
@@ -18,11 +18,11 @@ class Subsekvensregister {
 
         return(r);
     }
-
+    // Returnerer antall frekvenstabeller i registeret
     public int antall() {
         return register.size();
     }
-
+    // Leser fil og lager frekvenstabell av subsekvenser
     public static Frekvenstabell les(String filnavn) {
 
         Frekvenstabell f = new Frekvenstabell();
@@ -35,6 +35,7 @@ class Subsekvensregister {
             System.exit(1);
         }
 
+        // Leser alle 3-tegns subsekvenser
 
         while (fil.hasNextLine()) {
             String linje = fil.nextLine();
@@ -48,8 +49,9 @@ class Subsekvensregister {
                 c1[2] = tegn[i+2];
 
                 String nyStreng = new String(c1);
-
-                f.put(nyStreng,1);
+                
+                // Legger til eller oppdaterer teller
+                f.put(nyStreng,1); 
             }
         }
 

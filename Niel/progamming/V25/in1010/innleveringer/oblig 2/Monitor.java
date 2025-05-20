@@ -32,7 +32,7 @@ public class Monitor {
 
         lås.lock();
         try {
-            if (register.taUt() == null) {
+            if (register.antall() == 0) {
                 try {
                     tilfelle.await();
                 } catch (InterruptedException e) {
@@ -45,6 +45,28 @@ public class Monitor {
         finally {
             lås.unlock();
         }
+    }
+
+    public Frekvenstabell[] taUtto(){
+
+        lås.lock();
+        Frekvenstabell [] NyttListe = {register.taUt(), register.taUt()};
+
+        try {
+            if (register.antall() < 2 ) {
+                try {
+                    tilfelle.await();
+                } catch (InterruptedException e) {
+                    System.out.println("hei");
+                }
+            }
+            return NyttListe;
+        }
+        finally {
+            lås.unlock();
+        }
+    }
+
     }
 
     public int antall() {

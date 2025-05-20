@@ -67,3 +67,8 @@ while LinReg(x_approx) >Target:
     x_approx += d_x
 
 print(f"Blytykkelse slik at 99% absorberes: {x_approx}")
+
+#   Beta_0_Hat = 7.075217
+#   Beta_1_Hat = -1.247014
+#   90% = 5.10700
+#   99% = 5.61700
