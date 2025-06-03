@@ -16,7 +16,7 @@ abstract class Bil {
     Bil forrige = null;
 
 
-     Bil (String bilnummer, int pris) {
+    Bil (String bilnummer, int pris) {
         this.bilnummer = bilnummer;
         this.pris = pris;
     }
@@ -26,6 +26,18 @@ abstract class Bil {
         String info = "Bilnummer: "+ bilnummer+" Pris: "+ pris;
         return info;
     }
+
+    Bil finnBilR(Dialog dialog, boolean kunElektrisk) {
+        if (! kunElektrisk && dialog.svarJaEllerNei("Liker du "+ this +"?")) {
+            return this;
+        }
+        if (neste != null) {
+            return neste.finnBilR(Dialog dialog, boolean kunElektrisk);
+        }
+        return null;       
+
+    }
+
 }
 
  class Personbiler extends Bil{
@@ -109,7 +121,7 @@ abstract class Bil {
         System.out.println(spørsmål + " ");
         Scanner bruker = new Scanner(System.in);
         String svar = bruker.nextLine();
-        
+
         bruker.close();
         if (svar == "j") {
             return true;
@@ -120,6 +132,68 @@ abstract class Bil {
     }
 }
 
+class GUIDialog implements Dialog {
+    JFrame vindu = null;
+    JPanel panel;
+    JLabel tekstefelt;
+    JButton jaKnapp;
+    JButton neiKnapp;
+
+    Thread hovedtråd = Thread.currentThread();
+    boolean svaret = true;
+
+    @Override
+    boolean svarJaEllerNei (String spørsmål) {
+        if (vindu == null) {
+            try {
+                UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+            } catch (Exeption e) {
+                System.exit(1);
+            }
+            
+            vindu = new Jframe("Ja eller Nei");
+            vindu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            panel = newJPanel();
+            vindu.add(panel);
+
+            tekstfelt = new JLabel(spørsmål);
+            panel.add(tekstfelt);
+
+            class SvarJaNei implements ActionListener {
+                boolean svar;
+
+                SvarJaNei (boolean jn) {
+                    svar = jn;
+                }
+
+                @Override
+                public void actionPerformed (ActionEvent e) {
+                    svaret = svar;
+                    hovedtråd.interrupt();
+                }
+            }
+
+            jaKnapp = new JButton("Ja");
+            jaKnapp.addActionListener(new SvarJaNei(true));
+            panel.add(jaKnapp);
+
+            neiKnapp = new JButton("Nei");
+            neiKnapp.addActionListener(new SvarJaNei(false));
+            panel.add(neiKnapp);
+            vindu.pack();
+            vindu.setVisible(true);
+        } else {
+            tekstfelt.setText(spørsmål);
+        }
+
+        try {
+            Thread.sleep(1000000);
+        } catch (InterruptedExeception e) {}
+
+        return svaret;
+    }
+}
 
 
  class Bilkollektiv {
@@ -194,31 +268,42 @@ abstract class Bil {
 
     Bil velgBil(Dialog d) {
 
+        Boolean brukerSvar = d.svarJaEllerNei("Er du bare interessert i elbil?");
 
+        Bil b = start;
+        while (b != null) {
+            if (b.erElbil() || brukerSvar == false) {
+                if (d.svarJaEllerNei("Liker du: " + b + "?")) {
+                    taUtBil(b);
+                    return b;
+                }
+            }
+        b = b.neste;
+        }
 
-
+        return null;
     }
         
 
+    Bil velgBilR(Dialog d) {
+
+        Boolean brukerSvar = d.svarJaEllerNei("Er du bare interessert i elbil?");
+
+        Bil b = start.finnBilR(Dialog dialog, boolean kunElektrisk);
+
+        if (b != null) {
+            taUt(b);
+            }
+
+        return b;
+        }
+
 }
 }
 
 
 
 
-
-
-
-
-/*
- class GUIDialog implements Dialog {
-
-    @Override
-     boolean svarJaEllerNei (String spørsmål) {
-        return
-    }
-}
-*/
 
 
 
