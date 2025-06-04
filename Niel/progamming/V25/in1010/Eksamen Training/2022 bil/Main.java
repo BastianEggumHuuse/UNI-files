@@ -123,7 +123,7 @@ abstract class Bil {
         String svar = bruker.nextLine();
 
         bruker.close();
-        if (svar == "j") {
+        if (svar.equals("j")) {
             return true;
         } else {
             return false;
