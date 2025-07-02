@@ -136,7 +136,7 @@ Den samlede tabellen med alle mål tatt av GM-telleren:
 \captionof{table}{Antall blyplater, Totale blytykkelser, usikkerhet i disse blytykkelsene, antall målinger fra GM-telleren, og standardavvikene for disse målene.} \label{bigtable}
 \end{center}
 
-standardavvikene her er funnet fra formel \ref{u_b}, og usikkerhetene er funnet fra skyvelærens skalausikkerhet $u_{skala} = 0.05$ mm, skyvelærens avlesningsusikkerhet $u_{avles} = 0.05$ mm, og formel \ref{au2}.
+Standardavvikene her er funnet fra formel \ref{u_b}, og usikkerhetene er funnet fra skyvelærens skalausikkerhet $u_{skala} = 0.05$ mm, skyvelærens avlesningsusikkerhet $u_{avles} = 0.05$ mm, og formel \ref{au2}.
 
 Relative Usikkerheter for Blytykkelse og Antall målinger:
 
@@ -179,11 +179,11 @@ Vi tilpasset en lineær regresjonsmodell til dette plottet:
 \includegraphics[scale=0.7]{Figurer/LogStraaling_Regresjon.png}
 \end{center}
 
-Denne regresjonsmodellen ga oss et uttrykk for  $\ln{I}$, og usikkerhetene i $\beta_0$ og $\beta_1$. Sammen med formelog $u_{\n{I}}$:
+Denne regresjonsmodellen ga oss et uttrykk for  $\ln{I}$, og usikkerhetene i $\beta_1$og $\beta_0$. Sammen med formelog $u_{\ln{I}}$:
 
 \begin{align*}
     (\ln{(I)})(x) &= -1.247014\cdot x + 7.075217\\
-    u_{\n{I}} &= \sqrt{(x\cdot 0.082)^2 + 0.153^2}
+    u_{\ln{I}} &= \sqrt{(x\cdot 0.082)^2 + 0.153^2}
 \end{align*}
 
 Programmet ga oss også et estimat for blytykkelsen nødvendig for at 90\% og 99\% av strålingen skal absorberes:
@@ -201,18 +201,12 @@ Programmet ga oss også et estimat for blytykkelsen nødvendig for at 90\% og 99
 \captionof{table}{Nødvendig blytykkelse (i cm) for å absorbere 90\% og 99\% av strålingen.}
 \end{center}
 
-[Usikkerhet for dette!!!]
-
 \subsection{Diskusjon}
 
 Selv om det ikke ble spesifisert i oppgaven, valgte vi å ta flere mål av tiden GM-telleren brukte på å samle 1000 tellinger, og når vi da bruker snitt-tiden, får vi et noe mer nøyaktig mål (ideelt sett skulle vi hatt flere målinger av t).\medskip
 
-Målene våre for blyplatenes tykkelser er ganske nøyaktige, grunnet skyvælærens lave usikkerheter. Når vi ser på en sammenheng som dette, der både tykkelsene og tellingene er usikre, kan vi se i tabell \ref{bigtable} at dersom vi bruker tellingenes standardavvik som usikkerheter, at disse er mye større enn usikkerhetene for for tykkelsen i platene. Samtidig øker usikkerheten i tykkelsene med antall plater, mens usikkerheten i tellingene minker, så om den totale blytykkelsen blir stor, kan dette forholdet endres.\medskip
-
-[Noe om relativ usikkerhet???]\medskip
+Målene våre for blyplatenes tykkelser er ganske nøyaktige, grunnet skyvælærens lave usikkerheter. Når vi ser på en sammenheng som dette, der både tykkelsene og tellingene er usikre, kan vi se i tabellen for relative usikkerheter at usikkerhetene i tellingene er 2 størrelsesordener større enn usikkerhetene i blytykkelsen, og dermed vil telle mye mer. \medskip
 
 I det første plottet, der stråling plottes direkte mot blytykkelse, ser vi punkter som danner en kurve som blir mindre bratt når blytykkelsen øker. Dette samsvarer med formel \ref{stbt}, hvor vi kan se at I er omvendt proporsjonal med $e^x$, som danner en graf som ser slik ut.
 
 I det andre plottet, der $\ln{I}$ plottes mot blytykkelsen, får vi punkter som danner en rett linje. Dette samsvarer igjen med formel \ref{stbt}, der vi kan se at $\ln{I}$ er lineær med x. Sammen med utrykket vi fikk fra regresjonen, kan vi også da finne at $\mu_\gamma$ er stigningen i dette utrykket, 1.247014. Samtidig er ikke denne modellen helt perfekt. Det lineære utrykket gir oss at $\ln{I_0} = 7.075217$, som gir oss $I_0 = e^{7.075217} = 1096.6$, som ikke er helt nøyaktig. Dette kunne bli løst med flere blyplater, som kunne gitt oss en bedre modell. Vi kunne også fått en bedre modell ved å måle tellinger for flere kombinasjoner av platene, i stedet for å kun måle i rekkefølge.\medskip
-
-[Noe om å lære å bruke GM-teller??]
