@@ -14,3 +14,35 @@ Day;Month;Year;Time;Stress;Happiness;Comment (Not mandatory)
 08;07;2025;M;1;3
 08;07;2025;N;1;3
 09;07;2025;M;1;2
+09;07;2025;N;2;2;Kristiansand dag 1. En dag er du her alene!
+10;07;2025;M;1;4
+10;07;2025;N;3;0;Kristiansand dag 2. Så Sabeltann!! Mange følelser fra dette.
+11;07;2025;M;X;X;Glemte å notere..
+11;07;2025;N;2;1;Avskjedsfest ILT
+12;07;2025;M;1;4;Drar til Sverige!!!
+12;07;2025;N;1;0;Var ekstremt varmt idag D:
+13;07;2025;M;1;1
+13;07;2025;N;1;2;Varmen tar knekken på meg owa
+14;07;2025;M;1;4
+14;07;2025;N;1;2
+15;07;2025;M;1;3
+15;07;2025;N;X;X;Glemte å notere..
+16;07;2025;M;1;0;Gjorde ferdig deltarune chapter 4 i går kveld. Føler meg veldig tom rn
+16;07;2025;N;1;-1;deltarune chapter 4 gjør ting med meg aaaa
+17;07;2025;M;1;2
+17;07;2025;N;X;X;Glemte å notere..
+18;07;2025;M;1;3
+18;07;2025;N;1;2
+19;07;2025;M;1;2
+19;07;2025;N;1;1
+20;07;2025;M;X;X;Glemte å notere..
+20;07;2025;N;1;1
+21;07;2025;M;1;2
+21;07;2025;N;1;-1;Ødela kanskje whiteboard
+22;07;2025;M;1;2;Mamma fikset :D
+22;07;2025;N;X;X;Glemte å notere..
+23;07;2025;M;1;4
+23;07;2025;N;X;X;Glemte å notere..
+24;07;2025;M;1;2;Kokte på eget rom i natt.
+24;07;2025;N;1;2;Kjøpte AC i dag :D er kalt på rommet mitt nå
+25;07;2025;M;1;4;Drar til høgis :D
