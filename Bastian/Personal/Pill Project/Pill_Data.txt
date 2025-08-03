@@ -46,3 +46,22 @@ Day;Month;Year;Time;Stress;Happiness;Comment (Not mandatory)
 24;07;2025;M;1;2;Kokte på eget rom i natt.
 24;07;2025;N;1;2;Kjøpte AC i dag :D er kalt på rommet mitt nå
 25;07;2025;M;1;4;Drar til høgis :D
+25;07;2025;N;1;0;Litt dooming rn
+26;07;2025;M;1;5;Topptur!!!
+26;07;2025;M;1;2
+27;07;2025;M;X;X;Glemte å notere...
+27;07;2025;N;2;2
+28;07;2025;M;2;4;På tide å locke in
+28;07;2025;N;2;2;Fikk det ikke helt til...
+29;07;2025;M;1;4
+29;07;2025;N;1;5;Sjukt effektiv i dag!!!!
+30;07;2025;M;1;4;Locker inn for nes :D
+30;07;2025;N;1;2
+31;07;2025;M;1;3;Drar til Nes med Tryhard Taskforce!!
+31;07;2025;N;1;2;Nes med gjengen! Mye dype samtaler.
+01;08;2025;M;1;4;Blir gøy idag :D
+01;08;2025;N;1;0;Føler meg dårlig om CERN søknad...
+02;08;2025;M;1;3;Tur til Brummundal idag!!
+02;08;2025;N;1;3;Poker!!
+03;08;2025;M;X;X;Glemte å notere...
+03;08;2025;N;
