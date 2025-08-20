@@ -1,0 +1,100 @@
+Day;Month;Year;Time;Stress;Happiness;Comment (Not mandatory)
+02;07;2025;M;3;4;Første dag!!! Det er en onsdag.
+02;07;2025;N;3;3
+03;07;2025;M;2;4
+03;07;2025;N;2;2
+04;07;2025;M;2;3
+04;07;2025;N;2;3
+05;07;2025;M;1;4;4H er i Japan!! Gøy å få bilder :D
+05;07;2025;N;1;1;Kødda til deltarune chapter 3 egg....
+06;07;2025;M;X;X;Glemte å notere..
+06;07;2025;N;1;7;Gjorde ferdig deltarune chapter 3 holy shit
+07;07;2025;M;X;X;Glemte å notere..
+07;07;2025;N;1;4
+08;07;2025;M;1;3
+08;07;2025;N;1;3
+09;07;2025;M;1;2
+09;07;2025;N;2;2;Kristiansand dag 1. En dag er du her alene!
+10;07;2025;M;1;4
+10;07;2025;N;3;0;Kristiansand dag 2. Så Sabeltann!! Mange følelser fra dette.
+11;07;2025;M;X;X;Glemte å notere..
+11;07;2025;N;2;1;Avskjedsfest ILT
+12;07;2025;M;1;4;Drar til Sverige!!!
+12;07;2025;N;1;0;Var ekstremt varmt idag D:
+13;07;2025;M;1;1
+13;07;2025;N;1;2;Varmen tar knekken på meg owa
+14;07;2025;M;1;4
+14;07;2025;N;1;2
+15;07;2025;M;1;3
+15;07;2025;N;X;X;Glemte å notere..
+16;07;2025;M;1;0;Gjorde ferdig deltarune chapter 4 i går kveld. Føler meg veldig tom rn
+16;07;2025;N;1;-1;deltarune chapter 4 gjør ting med meg aaaa
+17;07;2025;M;1;2
+17;07;2025;N;X;X;Glemte å notere..
+18;07;2025;M;1;3
+18;07;2025;N;1;2
+19;07;2025;M;1;2
+19;07;2025;N;1;1
+20;07;2025;M;X;X;Glemte å notere..
+20;07;2025;N;1;1
+21;07;2025;M;1;2
+21;07;2025;N;1;-1;Ødela kanskje whiteboard
+22;07;2025;M;1;2;Mamma fikset :D
+22;07;2025;N;X;X;Glemte å notere..
+23;07;2025;M;1;4
+23;07;2025;N;X;X;Glemte å notere..
+24;07;2025;M;1;2;Kokte på eget rom i natt.
+24;07;2025;N;1;2;Kjøpte AC i dag :D er kalt på rommet mitt nå
+25;07;2025;M;1;4;Drar til høgis :D
+25;07;2025;N;1;0;Litt dooming rn
+26;07;2025;M;1;5;Topptur!!!
+26;07;2025;M;1;2
+27;07;2025;M;X;X;Glemte å notere...
+27;07;2025;N;2;2
+28;07;2025;M;2;4;På tide å locke in
+28;07;2025;N;2;2;Fikk det ikke helt til...
+29;07;2025;M;1;4
+29;07;2025;N;1;5;Sjukt effektiv i dag!!!!
+30;07;2025;M;1;4;Locker inn for nes :D
+30;07;2025;N;1;2
+31;07;2025;M;1;3;Drar til Nes med Tryhard Taskforce!!
+31;07;2025;N;1;2;Nes med gjengen! Mye dype samtaler.
+01;08;2025;M;1;4;Blir gøy idag :D
+01;08;2025;N;1;0;Føler meg dårlig om CERN søknad...
+02;08;2025;M;1;3;Tur til Brummundal idag!!
+02;08;2025;N;1;3;Poker!!
+03;08;2025;M;X;X;Glemte å notere...
+03;08;2025;N;1;2
+04;08;2025;M;1;3;NM i AI idag :D
+04;08;2025;N;1;1;I aint posting that shit i got my ass kicked.
+05;08;2025;M;X;X;Glemte å notere...
+05;08;2025;N;1;1;Fortsatt vanskelig med AI men jeg prøver mitt beste!!!!!
+06;08;2025;M;1;2;AI dag 3...
+06;08;2025;N;1;1;vanskelig..... Men budsjett!!!
+07;08;2025;M;1;4;Fadder-opplæring idag!!
+07;08;2025;N;1;3;AI gikk faktisk litt bra :D
+08;08;2025;M;1;3
+08;08;2025;N;2;3
+09;08;2025;M;2;3
+09;08;2025;N;1;3
+10;08;2025;M;1;4;Siste dag i ferien
+10;08;2025;N;1;4;Siste natt i ferien
+11;08;2025;M;X;X;Glemte å notere...
+11;08;2025;N;1;5;Silent disco gikk crazy!!!!
+12;08;2025;M;1;5;Fadderuke dag 2 :D
+12;08;2025;N;1;4;Jobbet en vakt på Escape!!
+13;08;2025;M;1;5;Fadderuke dag 3
+13;08;2025;N;1;4;Jobbet to vakt på Escape!!
+14;08;2025;M;1;5;Fadderuke dag 4
+14;08;2025;N;X;X;Glemte å notere...
+15;08;2025;M;X;X;Glemte å notere...
+15;08;2025;N;1;3
+16;08;2025;M;1;3
+16;08;2025;N;1;3
+17;08;2025;M;X;X;Glemte å notere...
+17;08;2025;N;1;5;Høst-semesteret starter imorgen!!
+18;08;2025;M;1;4
+18;08;2025;N;3;-1;Feber.... ao
+19;08;2025;M;X;X;Glemte å notere...
+19;08;2025;N;2;3;Lærer git sånn for real
+20;08;2025;M;2;3
