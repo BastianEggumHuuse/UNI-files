@@ -1,0 +1,17 @@
+We writing the intro with this one :D
+
+Intro:
+
+Problemstilling
+
+Vi ønsker å skyte opp en rakett for å utforske solsystemet vårt (og ta igjen de tullingene i den intergalaktiske federasjonen). 
+Vi støter på et lite problem, i at drivstoffet vi skal bruke er dyrt (og vi har lite penger). For å løse dette, vil vi først simulere oppskytningen, 
+slik at vi finner en tilnærming til hvor mye drivstoff vi trenger. Når vi først har funnet ut av dette, 
+vil vi så kjøre enda en test, under litt mer realistiske tilstander, for å sjekke at alt går greit :)
+
+For å gjennomføre denne simulasjonen vil vi trenge flere viktige konsepter fra statistikk, termodynamikk, og mekanikk.
+
+
+
+motivasjon
+
