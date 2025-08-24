@@ -54,8 +54,8 @@ class FuelChamber:
                     # In the flowchart, velocities and positions were generated in different loops, but its more efficient to put them both in the same loop :)
                     self.Velocities[n] = np.array([self.MaxwellBoltzmann(),self.MaxwellBoltzmann(),self.MaxwellBoltzmann()])
                     
-                    n += 1
-                    if(n == self.NumParticles):
+                    n += 1 # We keep track of how many particles we have generated, so we can break out of the loop when finished
+                    if(n == self.NumParticles): # Because of the syntax we see in the lines below, we only need to break out of this loop
                         break
 
                 else: # This is an incredibly strange way of breaking nested loops that i found on stackoverflow
