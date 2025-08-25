@@ -1,6 +1,7 @@
 import numpy as np
 import time
 import random
+import ast2000tools.constants as const
 
 def GetArrays(Size = 10):
     # Array of ten objects
@@ -107,5 +108,19 @@ z_indexes = np.where(abs(arr[:,2]) < 1.5)
 
 all_indexes = np.intersect1d(np.intersect1d(x_indexes,y_indexes),z_indexes)
 
-print(arr)
-print(all_indexes)
+Temp = 3*10**3
+ParticleMass = const.m_H2
+sigma = ((Temp*const.k_B)/ParticleMass)**(1/2)
+MaxwellBoltzmann = lambda : np.random.normal(loc = 0, scale = sigma) 
+
+arr = np.array([(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0)])
+indices = [2,4,7]
+
+replacement = np.random.normal(loc = 0, scale = sigma,size = (len(indices),3))
+arr[indices] = replacement 
+
+Array = np.array([1,2,-2,41,-23])
+Array_2 = abs(Array)
+
+print(Array)
+print(Array_2)

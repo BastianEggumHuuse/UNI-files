@@ -31,6 +31,10 @@ class FuelChamber:
         self.Positions = np.zeros((self.NumParticles,3))
         self.Velocities = np.zeros((self.NumParticles,3))
 
+        # There isn't any better place to put this so it goes here.
+        # The coordinate system inside the chamber goes from -self.Length/2 to self.Length/2.
+        # This means that the origin is in the center of the box, which is nice
+
         self.SetPositionsAndVelocities()
 
     def SetPositionsAndVelocities(self):
@@ -61,7 +65,7 @@ class FuelChamber:
                 else: # This is an incredibly strange way of breaking nested loops that i found on stackoverflow
                     continue
                 break # Breaking out of the second loop
-            else: # It seems that python reads the for-loop as an if statement? The else only kicks in if the loop is broken, not if it just ends. Pretty cool :)
+            else: # It seems that python reads the for-loop as an if statement? The else only kicks in if the loop ends on it's own, not if it's broken. Pretty cool :)
                 continue
             break # Breaking out of the first loop
 
@@ -75,7 +79,7 @@ class FuelChamber:
 
         # Checking the collision of the entire array at once:
 
-        CheckArray = abs(self.Positions.copy()) # Creating a purely positive clone of the positional array
+        CheckArray = abs(self.Positions) # Creating a purely positive clone of the positional array
 
         # Here we use some cool numpy tech! We go through all the elements in the array, and then through all three dimentions.
         # Then, all elements that are outside the chamber (has a position with a value higher than the chambers length halved), are set to -1
@@ -110,4 +114,4 @@ if __name__ == "__main__":
 
     MeanE = TotalE/N
     print(f"Mean derived from simulation {MeanE:.5e}")
-    print(f"Mean derived analyticialy {(3/2)*const.k_B*TestChamber.Temp:.5e}")
+    print(f"Mean derived analyticialy    {(3/2)*const.k_B*TestChamber.Temp:.5e}")
