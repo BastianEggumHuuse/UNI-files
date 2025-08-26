@@ -4,16 +4,18 @@
 import  numpy        as     np
 import  scipy.stats  as     st
 import  math         as     mt
+import  matplotlib.pyplot as plt
+import matplotlib.animation as animation
 # AST imports
 import ast2000tools.constants as const
 
 class FuelChamber:
 
-    def __init__(self,Length,Temp,NumParticles):
+    def __init__(self,Length,Temp,NumParticles,dt = 10**(-12)):
 
         # Time parameters
         self.t     = 0
-        self.dt    = 10**(-12)
+        self.dt    = dt
         self.t_max = 10**(-9)
 
         # Chamber Parameters
@@ -21,6 +23,10 @@ class FuelChamber:
         self.Temp         = Temp
         self.NumParticles = NumParticles
         self.ParticleMass = const.m_H2
+
+        # Pressure, which we track for stats
+        self.TotalPressure = 0
+        self.counter = 0
 
         # Maxwell-boltzmann deviation, used for generating the particle velocities later
         self.sigma = ((self.Temp*const.k_B)/self.ParticleMass)**(1/2)
@@ -69,11 +75,22 @@ class FuelChamber:
                 continue
             break # Breaking out of the first loop
 
-    def EulerStep(self,dt):
+        self.FirstPositions = self.Positions.copy()
+
+    def EulerStep(self):
         
         # We integrate to the next timestep using the Euler method
         # Numpy lets us do this with the entire array at once!!
-        self.Positions += (self.Velocities * dt)
+        self.Positions += (self.Velocities * self.dt)
+
+    def CalculatePressure(self):
+
+        Indexes = np.where(self.Positions[:,0] > self.Length/2)
+        Velocities = self.Velocities[:,0][Indexes]
+        Forces = (Velocities * self.ParticleMass * 2) / (self.dt)
+        self.TotalPressure += sum(Forces) / ((self.Length)**2)
+        if(len(Forces) > 0):
+            self.counter += 1
 
     def CollisionStep(self):
 
@@ -94,7 +111,8 @@ class FuelChamber:
 
         while self.t < self.t_max:
 
-            self.EulerStep(self.dt)
+            self.EulerStep()
+            self.CalculatePressure()
             self.CollisionStep()
 
             self.t += self.dt
@@ -102,16 +120,58 @@ class FuelChamber:
 # Runtime code
 if __name__ == "__main__":
     
-    N = 10*5
+    N = 10**5
 
     TestChamber = FuelChamber(Length = 10**(-6),Temp = 3*10**3, NumParticles = N)
     TestChamber.TimeLoop()
 
+    # Calculating Velocity
+    TotalV = 0
+    for v in TestChamber.Velocities:
+        V = (v[0]**2 + v[1]**2 + v[2]**2)**(1/2) # Getting the magnitude of the velocity
+        TotalV += V
+    MeanV = TotalV / N
+    AnalyticalV = 4*((const.k_B*TestChamber.Temp)/(2 * const.pi * TestChamber.ParticleMass))**(1/2)
+
+    # Calculating Pressure
+    TotalP = TestChamber.TotalPressure
+    MeanP  = (TotalP / TestChamber.counter) * (TestChamber.Length**3)
+    AnalyticalP = N * const.k_B * TestChamber.Temp
+
+
+    # Calculating Energy
     TotalE = 0
     for v in TestChamber.Velocities:
         V = (v[0]**2 + v[1]**2 + v[2]**2)**(1/2) # Getting the magnitude of the velocity
         TotalE += (1/2)*TestChamber.ParticleMass*V**2
+    MeanE = TotalE / N
+    AnalyticalE = (3/2)*const.k_B*TestChamber.Temp
 
-    MeanE = TotalE/N
-    print(f"Mean derived from simulation {MeanE:.5e}")
-    print(f"Mean derived analyticialy    {(3/2)*const.k_B*TestChamber.Temp:.5e}")
+    #4sqrt(kT/(2 pi m))
+
+
+    # First looking at Velocity
+    print(f"Mean velocity derived from simulation          :{MeanV:.5e}")
+    print(f"Mean velocity derived analyticaly              :{AnalyticalV:.5e}")
+    print(f"Ratio between simulated and analytical answers :{MeanV/AnalyticalV}\n")
+
+    # Second looking at Pressure
+    print(f"Mean pressure calculated from simulation       :{MeanP:.5e}")
+    print(f"Mean pressure calculated analyticaly           :{AnalyticalP:.5e}")
+    print(f"Ratio between simulated and analytical answers :{MeanP/AnalyticalP}\n")
+
+    # Third looking at Energy
+    print(f"Mean energy calculated from simulation         :{MeanE:.5e}")
+    print(f"Mean energy calculated analyticaly             :{AnalyticalE:.5e}")
+    print(f"Ratio between simulated and analytical answers :{MeanE/AnalyticalE}\n")
+
+    # Plotting some stuff
+
+    NumPoints = 500
+    TotalPoints = len(TestChamber.FirstPositions)
+    Points = TestChamber.FirstPositions[0:TotalPoints-1:int(TotalPoints/NumPoints)]
+
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+    ax.scatter(Points[:,0],Points[:,1],Points[:,2])
+
+    plt.show()

@@ -120,7 +120,3 @@ replacement = np.random.normal(loc = 0, scale = sigma,size = (len(indices),3))
 arr[indices] = replacement 
 
 Array = np.array([1,2,-2,41,-23])
-Array_2 = abs(Array)
-
-print(Array)
-print(Array_2)

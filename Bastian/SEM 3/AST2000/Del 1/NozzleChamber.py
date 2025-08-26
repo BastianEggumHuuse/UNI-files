@@ -10,11 +10,13 @@ import ast2000tools.constants as const
 from FuelChamber import FuelChamber
 
 class NozzleChamber(FuelChamber):
-    def __init__(self,Length,Temp,NumParticles, length_nozzle): #Nozzle is square with sides equal to length
-        super.__init__(self,Length,Temp,NumParticles)  #Using Class from fuelChamber
+    def __init__(self,Length,Temp,NumParticles,dt, length_nozzle): #Nozzle is square with sides equal to length
+        super().__init__(Length,Temp,NumParticles,dt)  #Using Class from fuelChamber
+        
         self.length_nozzle = length_nozzle 
+        self.Force = []
     
-    def Nozzle(self): #Finding particles that leave the nozzle
+    def NozzleStep(self): #Finding particles that leave the nozzle
         
         Nozzle_length = self.length_nozzle/2 
         
@@ -36,7 +38,43 @@ class NozzleChamber(FuelChamber):
         self.Velocities[all_indexes] = np.random.normal(loc = 0, scale = self.sigma,size = (len(all_indexes),3)) 
         self.Positions[all_indexes] = (0,0, self.Length/2 *0.95)
 
-        return(Leaving_part_vel) 
+        Force,LeavingParticles = self.Momentum_leave(Leaving_part_vel)
+        return (Force,LeavingParticles)
+         
+    def Momentum_leave(self, Velocities):
+        Momentum_z = abs(Velocities[:,2] * self.ParticleMass)
+
+        if len(Momentum_z) > 0 :
+            Force = sum(Momentum_z)/self.dt
+            return (Force,len(Momentum_z))
+        
+        return 0,0
+
+    def TimeStep(self):
+        self.EulerStep()
+        Force,LeavingParticles = self.NozzleStep()
+        self.CollisionStep()
+
+        return (Force,LeavingParticles)
+
+    def TimeLoop(self):
+
+        while self.t < self.t_max:
+
+            self.EulerStep()
+            self.NozzleStep()
+            self.CollisionStep()
+
+            self.t += self.dt
+
+if __name__ == "__main__":
+    N = 10**5
+    Nozzle = NozzleChamber(Length = 10**(-6),Temp = 3*10**3, NumParticles = N, length_nozzle = 10**(-6)*0.25)
+    Nozzle.TimeLoop()
+    print(Nozzle.Force)
+
+
+
 
         
 
