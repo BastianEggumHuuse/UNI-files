@@ -28,6 +28,11 @@ class FuelChamber:
         self.TotalPressure = 0
         self.counter = 0
 
+        # Points, to animate
+        self.SelectPositions = np.zeros((1000,500,3))
+        self.NumPoints = 500
+        self.i = 0
+
         # Maxwell-boltzmann deviation, used for generating the particle velocities later
         self.sigma = ((self.Temp*const.k_B)/self.ParticleMass)**(1/2)
         # Method for generating a random velocity, according to the 
@@ -111,6 +116,9 @@ class FuelChamber:
 
         while self.t < self.t_max:
 
+            self.SelectPositions[self.i] = self.Positions[0:self.NumParticles-1:int(self.NumParticles/self.NumPoints)]
+            self.i += 1
+
             self.EulerStep()
             self.CalculatePressure()
             self.CollisionStep()
@@ -135,7 +143,7 @@ if __name__ == "__main__":
 
     # Calculating Pressure
     TotalP = TestChamber.TotalPressure
-    MeanP  = (TotalP / TestChamber.counter) * (TestChamber.Length**3)
+    P  = (TotalP / TestChamber.counter) * (TestChamber.Length**3)
     AnalyticalP = N * const.k_B * TestChamber.Temp
 
 
@@ -156,9 +164,9 @@ if __name__ == "__main__":
     print(f"Ratio between simulated and analytical answers :{MeanV/AnalyticalV}\n")
 
     # Second looking at Pressure
-    print(f"Mean pressure calculated from simulation       :{MeanP:.5e}")
-    print(f"Mean pressure calculated analyticaly           :{AnalyticalP:.5e}")
-    print(f"Ratio between simulated and analytical answers :{MeanP/AnalyticalP}\n")
+    print(f"Pressure calculated from simulation            :{P:.5e}")
+    print(f"Pressure calculated analyticaly                :{AnalyticalP:.5e}")
+    print(f"Ratio between simulated and analytical answers :{P/AnalyticalP}\n")
 
     # Third looking at Energy
     print(f"Mean energy calculated from simulation         :{MeanE:.5e}")
@@ -167,11 +175,14 @@ if __name__ == "__main__":
 
     # Plotting some stuff
 
-    NumPoints = 500
-    TotalPoints = len(TestChamber.FirstPositions)
-    Points = TestChamber.FirstPositions[0:TotalPoints-1:int(TotalPoints/NumPoints)]
-
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
-    ax.scatter(Points[:,0],Points[:,1],Points[:,2])
+    line = ax.plot(TestChamber.SelectPositions[0][:,0],TestChamber.SelectPositions[0][:,1],TestChamber.SelectPositions[0][:,2],".")[0]
+
+    def animate(i):
+        line.set_data_3d(TestChamber.SelectPositions[i][:,0],TestChamber.SelectPositions[i][:,1],TestChamber.SelectPositions[i][:,2])
+
+    ani = animation.FuncAnimation(
+        fig, animate, 300, interval=100)
+
 
     plt.show()

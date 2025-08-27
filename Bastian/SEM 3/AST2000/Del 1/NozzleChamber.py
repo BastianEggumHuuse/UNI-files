@@ -10,8 +10,8 @@ import ast2000tools.constants as const
 from FuelChamber import FuelChamber
 
 class NozzleChamber(FuelChamber):
-    def __init__(self,Length,Temp,NumParticles,dt, length_nozzle): #Nozzle is square with sides equal to length
-        super().__init__(Length,Temp,NumParticles,dt)  #Using Class from fuelChamber
+    def __init__(self,Length,Temp,NumParticles, length_nozzle): #Nozzle is square with sides equal to length
+        super().__init__(Length,Temp,NumParticles,10**(-12))  #Using Class from fuelChamber
         
         self.length_nozzle = length_nozzle 
         self.Force = []
@@ -34,28 +34,21 @@ class NozzleChamber(FuelChamber):
         all_indexes = np.intersect1d(np.intersect1d(x_indexes,y_indexes),z_indexes) #finds the common indexes
         Leaving_part_vel = self.Velocities[all_indexes] #saves their velocities for later use
 
-        #Make new particles thaat enter from the topp of the gass tank
+        #Make new particles thaat enter from the top of the gas tank
         self.Velocities[all_indexes] = np.random.normal(loc = 0, scale = self.sigma,size = (len(all_indexes),3)) 
         self.Positions[all_indexes] = (0,0, self.Length/2 *0.95)
 
-        Force,LeavingParticles = self.Momentum_leave(Leaving_part_vel)
-        return (Force,LeavingParticles)
-         
-    def Momentum_leave(self, Velocities):
-        Momentum_z = abs(Velocities[:,2] * self.ParticleMass)
-
-        if len(Momentum_z) > 0 :
-            Force = sum(Momentum_z)/self.dt
-            return (Force,len(Momentum_z))
-        
-        return 0,0
+        # Calculating and returning leaving momentum (Derived from velocity in negative z direction) and n leaving particles
+        Momentum = sum(abs(Leaving_part_vel[:,2] * self.ParticleMass))
+        LeavingParticles = len(Leaving_part_vel[:,2])
+        return (Momentum,LeavingParticles)
 
     def TimeStep(self):
         self.EulerStep()
-        Force,LeavingParticles = self.NozzleStep()
+        Momentum,LeavingParticles = self.NozzleStep()
         self.CollisionStep()
 
-        return (Force,LeavingParticles)
+        return (Momentum,LeavingParticles)
 
     def TimeLoop(self):
 
