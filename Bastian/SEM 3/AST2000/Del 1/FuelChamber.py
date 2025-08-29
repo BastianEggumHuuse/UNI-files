@@ -90,27 +90,22 @@ class FuelChamber:
 
     def CalculatePressure(self):
 
-        Indexes = np.where(self.Positions[:,0] > self.Length/2)
-        Velocities = self.Velocities[:,0][Indexes]
-        Forces = (Velocities * self.ParticleMass * 2) / (self.dt)
-        self.TotalPressure += sum(Forces) / ((self.Length)**2)
+        # This method calculates pressure along one wall, which we use to check if our simulation is sound.
+        Indexes = np.where(self.Positions[:,0] > self.Length/2) # Finding all indexes where particles are colliding with the wall
+        Velocities = self.Velocities[:,0][Indexes] # Finding related velocities
+        Forces = (Velocities * self.ParticleMass * 2) / (self.dt) # Finding the forces these particles apply 
+        self.TotalPressure += sum(Forces) / ((self.Length)**2) # Summing them together
+        
+
         if(len(Forces) > 0):
             self.counter += 1
 
     def CollisionStep(self):
 
-        # Checking the collision of the entire array at once:
-
-        CheckArray = abs(self.Positions) # Creating a purely positive clone of the positional array
-
-        # Here we use some cool numpy tech! We go through all the elements in the array, and then through all three dimentions.
-        # Then, all elements that are outside the chamber (has a position with a value higher than the chambers length halved), are set to -1
-        CheckArray[CheckArray > self.Length/2] = -1 
-        CheckArray[CheckArray != -1] = 1 # All other elements are set to 1
-
-        # We then multiply the velocity array with the checkarray, which now has 1 in most places, but -1 in all positions where the particles are inside the walls
-        # This means that the velocities at those positions are reversed, which is what we want to do.
-        self.Velocities = self.Velocities * CheckArray
+        # Finding all indexes where the particles are outside of the box
+        Indexes = np.where(abs(self.Positions) > self.Length/2)
+        # Reversing all velocities where this is the case :)
+        self.Velocities[Indexes] *= -1
 
     def TimeLoop(self):
 
@@ -134,11 +129,8 @@ if __name__ == "__main__":
     TestChamber.TimeLoop()
 
     # Calculating Velocity
-    TotalV = 0
-    for v in TestChamber.Velocities:
-        V = (v[0]**2 + v[1]**2 + v[2]**2)**(1/2) # Getting the magnitude of the velocity
-        TotalV += V
-    MeanV = TotalV / N
+    V = TestChamber.Velocities
+    MeanV = sum((V[:,0]**2 + V[:,1]**2 + V[:,2]**2)**(1/2)) / N
     AnalyticalV = 4*((const.k_B*TestChamber.Temp)/(2 * const.pi * TestChamber.ParticleMass))**(1/2)
 
     # Calculating Pressure
@@ -146,17 +138,9 @@ if __name__ == "__main__":
     P  = (TotalP / TestChamber.counter) * (TestChamber.Length**3)
     AnalyticalP = N * const.k_B * TestChamber.Temp
 
-
     # Calculating Energy
-    TotalE = 0
-    for v in TestChamber.Velocities:
-        V = (v[0]**2 + v[1]**2 + v[2]**2)**(1/2) # Getting the magnitude of the velocity
-        TotalE += (1/2)*TestChamber.ParticleMass*V**2
-    MeanE = TotalE / N
+    MeanE =  ((1/2)*TestChamber.ParticleMass*(sum(V[:,0]**2 + V[:,1]**2 + V[:,2]**2)))/N
     AnalyticalE = (3/2)*const.k_B*TestChamber.Temp
-
-    #4sqrt(kT/(2 pi m))
-
 
     # First looking at Velocity
     print(f"Mean velocity derived from simulation          :{MeanV:.5e}")

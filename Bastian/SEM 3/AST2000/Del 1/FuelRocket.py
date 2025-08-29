@@ -82,7 +82,7 @@ class FuelRocket:
         self.counter += 1
         self.t += self.dt
 
-        if self.counter % 10000000000 == 0:
+        if self.counter % 1000 == 0:
             print(f"Current Velocity : {self.Velocity:.3f}, Current Fuel Mass : {self.FuelMass:.3f},Current time in seconds : {self.t:.1f}, Current time in minutes : {self.t/60:.1f}")
 
     def TimeLoop(self):
