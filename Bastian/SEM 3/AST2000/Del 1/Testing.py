@@ -64,7 +64,7 @@ def SlicingMethod():
 
 def SlicingThreeDim():
 
-    Size = 10**5
+    Size = 5
     rng = np.random.default_rng()
     arr = rng.uniform(-2,2,(Size,3)) #(values between -2 and 2, in three dimentions
     arr_velocity = np.ones((Size,3)) * 5
@@ -72,16 +72,14 @@ def SlicingThreeDim():
     # The limit we search for
     limit = 1.0 # Values outside of 1 or -1 are false.
 
-    Copy = abs(arr.copy())
-    Copy[Copy > limit] = -1
-    Copy[Copy != -1] = 1
+    Copy = abs(arr)
+    Indexes = np.where(Copy > limit)
 
-    for i in range(len(Copy)):
-        if Copy[i] > limit:
-            Copy[i] = -1
+    print(arr_velocity)
+    arr_velocity[Indexes] *= -1
 
-
-    arr_velocity = arr_velocity * Copy
+    print(arr)
+    print(arr_velocity)
 
 
 
@@ -113,14 +111,4 @@ ParticleMass = const.m_H2
 sigma = ((Temp*const.k_B)/ParticleMass)**(1/2)
 MaxwellBoltzmann = lambda : np.random.normal(loc = 0, scale = sigma) 
 
-arr = np.array([(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0)])
-indices = [2,4,7]
-
-replacement = np.random.normal(loc = 0, scale = sigma,size = (len(indices),3))
-arr[indices] = replacement 
-
-Array = np.array([1,2,-2,41,-23])
-Array_2 = abs(Array)
-
-print(Array)
-print(Array_2)
+SlicingThreeDim()

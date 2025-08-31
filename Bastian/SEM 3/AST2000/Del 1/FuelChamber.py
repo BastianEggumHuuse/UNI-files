@@ -4,16 +4,18 @@
 import  numpy        as     np
 import  scipy.stats  as     st
 import  math         as     mt
+import  matplotlib.pyplot as plt
+import matplotlib.animation as animation
 # AST imports
 import ast2000tools.constants as const
 
 class FuelChamber:
 
-    def __init__(self,Length,Temp,NumParticles):
+    def __init__(self,Length,Temp,NumParticles,dt = 10**(-12)):
 
         # Time parameters
         self.t     = 0
-        self.dt    = 10**(-12)
+        self.dt    = dt
         self.t_max = 10**(-9)
 
         # Chamber Parameters
@@ -21,6 +23,15 @@ class FuelChamber:
         self.Temp         = Temp
         self.NumParticles = NumParticles
         self.ParticleMass = const.m_H2
+
+        # Pressure, which we track for stats
+        self.TotalPressure = 0
+        self.counter = 0
+
+        # Points, to animate
+        self.SelectPositions = np.zeros((1000,500,3))
+        self.NumPoints = 500
+        self.i = 0
 
         # Maxwell-boltzmann deviation, used for generating the particle velocities later
         self.sigma = ((self.Temp*const.k_B)/self.ParticleMass)**(1/2)
@@ -69,32 +80,42 @@ class FuelChamber:
                 continue
             break # Breaking out of the first loop
 
-    def EulerStep(self,dt):
+        self.FirstPositions = self.Positions.copy()
+
+    def EulerStep(self):
         
         # We integrate to the next timestep using the Euler method
         # Numpy lets us do this with the entire array at once!!
-        self.Positions += (self.Velocities * dt)
+        self.Positions += (self.Velocities * self.dt)
+
+    def CalculatePressure(self):
+
+        # This method calculates pressure along one wall, which we use to check if our simulation is sound.
+        Indexes = np.where(self.Positions[:,0] > self.Length/2) # Finding all indexes where particles are colliding with the wall
+        Velocities = self.Velocities[:,0][Indexes] # Finding related velocities
+        Forces = (Velocities * self.ParticleMass * 2) / (self.dt) # Finding the forces these particles apply 
+        self.TotalPressure += sum(Forces) / ((self.Length)**2) # Summing them together
+        
+
+        if(len(Forces) > 0):
+            self.counter += 1
 
     def CollisionStep(self):
 
-        # Checking the collision of the entire array at once:
-
-        CheckArray = abs(self.Positions) # Creating a purely positive clone of the positional array
-
-        # Here we use some cool numpy tech! We go through all the elements in the array, and then through all three dimentions.
-        # Then, all elements that are outside the chamber (has a position with a value higher than the chambers length halved), are set to -1
-        CheckArray[CheckArray > self.Length/2] = -1 
-        CheckArray[CheckArray != -1] = 1 # All other elements are set to 1
-
-        # We then multiply the velocity array with the checkarray, which now has 1 in most places, but -1 in all positions where the particles are inside the walls
-        # This means that the velocities at those positions are reversed, which is what we want to do.
-        self.Velocities = self.Velocities * CheckArray
+        # Finding all indexes where the particles are outside of the box
+        Indexes = np.where(abs(self.Positions) > self.Length/2)
+        # Reversing all velocities where this is the case :)
+        self.Velocities[Indexes] *= -1
 
     def TimeLoop(self):
 
         while self.t < self.t_max:
 
-            self.EulerStep(self.dt)
+            self.SelectPositions[self.i] = self.Positions[0:self.NumParticles-1:int(self.NumParticles/self.NumPoints)]
+            self.i += 1
+
+            self.EulerStep()
+            self.CalculatePressure()
             self.CollisionStep()
 
             self.t += self.dt
@@ -102,16 +123,50 @@ class FuelChamber:
 # Runtime code
 if __name__ == "__main__":
     
-    N = 10*5
+    N = 10**5
 
     TestChamber = FuelChamber(Length = 10**(-6),Temp = 3*10**3, NumParticles = N)
     TestChamber.TimeLoop()
 
-    TotalE = 0
-    for v in TestChamber.Velocities:
-        V = (v[0]**2 + v[1]**2 + v[2]**2)**(1/2) # Getting the magnitude of the velocity
-        TotalE += (1/2)*TestChamber.ParticleMass*V**2
+    # Calculating Velocity
+    V = TestChamber.Velocities
+    MeanV = sum((V[:,0]**2 + V[:,1]**2 + V[:,2]**2)**(1/2)) / N
+    AnalyticalV = 4*((const.k_B*TestChamber.Temp)/(2 * const.pi * TestChamber.ParticleMass))**(1/2)
 
-    MeanE = TotalE/N
-    print(f"Mean derived from simulation {MeanE:.5e}")
-    print(f"Mean derived analyticialy    {(3/2)*const.k_B*TestChamber.Temp:.5e}")
+    # Calculating Pressure
+    TotalP = TestChamber.TotalPressure
+    P  = (TotalP / TestChamber.counter)
+    AnalyticalP = (N * const.k_B * TestChamber.Temp) / (TestChamber.Length**3)
+
+    # Calculating Energy
+    MeanE =  ((1/2)*TestChamber.ParticleMass*(sum(V[:,0]**2 + V[:,1]**2 + V[:,2]**2)))/N
+    AnalyticalE = (3/2)*const.k_B*TestChamber.Temp
+
+    # First looking at Velocity
+    print(f"Mean velocity derived from simulation          :{MeanV:.5e}")
+    print(f"Mean velocity derived analyticaly              :{AnalyticalV:.5e}")
+    print(f"Ratio between simulated and analytical answers :{MeanV/AnalyticalV}\n")
+
+    # Second looking at Pressure
+    print(f"Pressure calculated from simulation            :{P:.5e}")
+    print(f"Pressure calculated analyticaly                :{AnalyticalP:.5e}")
+    print(f"Ratio between simulated and analytical answers :{P/AnalyticalP}\n")
+
+    # Third looking at Energy
+    print(f"Mean energy calculated from simulation         :{MeanE:.5e}")
+    print(f"Mean energy calculated analyticaly             :{AnalyticalE:.5e}")
+    print(f"Ratio between simulated and analytical answers :{MeanE/AnalyticalE}\n")
+
+    # Plotting some stuff
+
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+    line = ax.plot(TestChamber.SelectPositions[0][:,0],TestChamber.SelectPositions[0][:,1],TestChamber.SelectPositions[0][:,2],".")[0]
+
+    def animate(i):
+        line.set_data_3d(TestChamber.SelectPositions[i][:,0],TestChamber.SelectPositions[i][:,1],TestChamber.SelectPositions[i][:,2])
+
+    ani = animation.FuncAnimation(
+        fig, animate, 300, interval=100)
+
+
+    plt.show()
