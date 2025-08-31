@@ -15,26 +15,29 @@ from ast2000tools.space_mission import SpaceMission
 
 # Ast init
 seed = utils.get_seed('bmthune')
-system = SolarSystem(seed)
 mission = SpaceMission(seed)
+np.random.seed(1)
 
 class SimulationRocket(FuelRocket):
 
     def __init__(self,FuelMass,SpeedBoost,NumMotors,NumParticles = 10**5,dt = 10**(-3),Graph = False):
         super().__init__(FuelMass,SpeedBoost,NumMotors,NumParticles,dt)
 
-        self.PlanetMass = system.masses[0] * const.m_sun
-        self.PlanetRadius = system.radii[0] * 1000
+        self.Mission = mission
+        self.System = self.Mission.system
+        self.PlanetMass = self.System.masses[0] * const.m_sun
+        self.PlanetRadius = self.System.radii[0] * 1000
         self.GravityConstant = const.G
 
         r_y = self.PlanetRadius
-        v_x = ((2*np.pi)/(system.rotational_periods[0] * 86400)) * r_y
+        self.v_x = ((2*np.pi)/(self.System.rotational_periods[0] * (86400/2))) * r_y
+        #print(self.System.rotational_periods)
         # rotational_periods[0] is given in 24 hours, so we have to turn it into seconds.
         # 86400 is the amount of seconds in 24 hours
 
         # Position and Velocity are now vectors!!
         self.Position = np.array([0,r_y])
-        self.Velocity = np.array([v_x,0])
+        self.Velocity = np.array([0,0.0])
 
         # Graphing lists
         self.Graph = Graph
@@ -49,15 +52,17 @@ class SimulationRocket(FuelRocket):
         TotalAcceleration = ThrustAcceleration + GravityAcceleration
 
         # Adding a direction to the acceleration
-        AccelerationDirection = self.Position/np.linalg.norm(self.Position)
+        AccelerationDirection = np.array([0.0,1.0])#self.Position/np.linalg.norm(self.Position)
         AccelerationVector = TotalAcceleration * AccelerationDirection
 
         # Tracking stats
         if self.Graph:
-            self.Positions.append(self.Position)
-            self.Velocities.append(self.Velocity)
+            self.Positions.append(self.Position.copy())
+            self.Velocities.append(self.Velocity.copy())
 
         # Eulering Velocity, Position, Fuel, and Time
+        #print(self.Velocity)
+        #print(AccelerationVector)
         self.Velocity += AccelerationVector * self.dt
         self.Position += self.Velocity * self.dt
         self.FuelMass -= self.FuelConsumption * self.dt
@@ -75,14 +80,13 @@ class SimulationRocket(FuelRocket):
         # Keeping track of how many times this method has been called
         self.counter += 1
         # Printing after an amount of loops
-        if self.counter % 100000000 == 0:
+        #if self.counter % 100000000 == 0:
+        if self.Velocity[1] < 0:
             #print(f"Current Direction Vector : [x : {AccelerationDirection[0]}, y : {AccelerationDirection[1]}]")
             print(f"Current Velocity : [x : {self.Velocity[0]:.3f}, y : {self.Velocity[1]:.3f}], Current Fuel Mass : {self.FuelMass:.3f},Current time in seconds : {self.t:.1f}, Current time in minutes : {self.t/60:.1f}")
 
     def TimeLoop(self):
-
-
-        while(np.linalg.norm(self.Velocity) < self.SpeedBoost):
+        while(np.linalg.norm(self.Velocity + np.array([self.v_x,0])) < self.SpeedBoost):
             
             self.TimeStep()
 
@@ -90,14 +94,46 @@ class SimulationRocket(FuelRocket):
                 print("HOUSTON WE HAVE A PROBLEM.... \nBAAANG")
                 break
 
+    def StarPosition(self,Pos,Vel):
+        
+        # Our code already takes into account of the rotation of our planet
+        # so we don't have to take that into account when calculating new velocity
+
+        # According to the image in the problem description, we launch along the x axis in the solar system frame
+        # This means that our axes have to be switched!!
+
+        v_x = ((2*np.pi)/(self.System.rotational_periods[0])) * Pos[1]
+        Pos[0] = v_x * self.t
+
+        Pos[0],Pos[1] = Pos[1],Pos[0]
+        Vel[0],Vel[1] = Vel[1],Vel[0]
+
+        # Adjusting the position and velocity to be in Astronomical units
+        Pos *= (1/const.AU)
+        Vel *= ((60*60*24*365)/const.AU)
+
+        # Getting planet position (in AU)
+        r_p = self.System.initial_positions[:,0]
+
+        # Setting our position in the solar system frame 
+        r = r_p + Pos
+
+        # Getting planet velocity
+        v_p = self.System.initial_velocities[:,0]
+
+        # Setting our velocity in the solar system frame
+        v = v_p + Vel
+
+        return r,v
+
 if __name__ == "__main__":
     
 
     # Creating rocket instance
-    NumMotors = (1000000**3)/30 # 1/10 qube meter grid :)
-    Fuel = 400000
+    NumMotors = int((1000000**3)/30) # 1/10 qube meter grid :)
+    Fuel = 360000
     Particles = 10**5
-    EscapeVelocity = ((2 *(system.masses[0]*const.m_sun)*const.G) / (system.radii[0] * 1000))**(1/2)
+    EscapeVelocity = ((2 *(mission.system.masses[0]*const.m_sun)*const.G) / (mission.system.radii[0] * 1000))**(1/2)
     TrackValues = True
 
     TestRocket = SimulationRocket(FuelMass=Fuel,SpeedBoost=EscapeVelocity,NumMotors=NumMotors,NumParticles=Particles,Graph = TrackValues)
@@ -114,7 +150,40 @@ if __name__ == "__main__":
     print(f"Total Rocket Mass    : {f"{TestRocket.TotalMass:.2f} kg":>40}\n")
 
     # Plotting
-    print(TestRocket.Positions)
+    fig, ax = plt.subplots() # Plotting init
 
-    plt.show()
+    # Adding our planet
+    planet = plt.Circle((0, 0), mission.system.radii[0] * 1000, color='r')
+    ax.add_patch(planet)
+
+    # Plotting our graph
+    Points = list(zip(*TestRocket.Positions))
+    N_Points = len(Points[0])
+    #ax.plot(Points[0][:N_Points],Points[1][:N_Points])
+    
+    #plt.axis('equal')
+    #plt.show()
+
+    r,v = TestRocket.StarPosition(TestRocket.Position,TestRocket.Velocity)
+    print(f"Position in solar system frame : [x_f : {TestRocket.Position[0]}, x : {r[0]:.3f} AU, y : {r[1]:.2e} AU]")
+    print(f"Velocity in solar system frame : [x : {v[0]:.3f} AU/Y, y : {v[1]:.3f} AU/Y]")
+
+
+    # Test!!!11!!!
+    # Our calendar begins at launch (bbb,abb)
+
+    mission.set_launch_parameters(
+        thrust = TestRocket.Thrust,
+        mass_loss_rate = TestRocket.FuelConsumption,
+        initial_fuel_mass = Fuel,
+        estimated_launch_duration = TestRocket.t + 1,
+        launch_position = mission.system.initial_positions[:,0] + np.array([(mission.system.radii[0]*1000)/const.AU,0]),
+        time_of_launch = 0
+        )
+    
+    mission.launch_rocket(10**(-3))
+
+    mission.verify_launch_result(r) #+ np.array([0,6.54656e-05]))
+
+    #(6.71003*(10^-5)) * antall m i AU
     

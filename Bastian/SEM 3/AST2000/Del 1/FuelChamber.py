@@ -135,8 +135,8 @@ if __name__ == "__main__":
 
     # Calculating Pressure
     TotalP = TestChamber.TotalPressure
-    P  = (TotalP / TestChamber.counter) * (TestChamber.Length**3)
-    AnalyticalP = N * const.k_B * TestChamber.Temp
+    P  = (TotalP / TestChamber.counter)
+    AnalyticalP = (N * const.k_B * TestChamber.Temp) / (TestChamber.Length**3)
 
     # Calculating Energy
     MeanE =  ((1/2)*TestChamber.ParticleMass*(sum(V[:,0]**2 + V[:,1]**2 + V[:,2]**2)))/N
