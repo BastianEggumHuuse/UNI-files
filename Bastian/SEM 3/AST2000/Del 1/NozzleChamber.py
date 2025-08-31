@@ -23,12 +23,17 @@ class NozzleChamber(FuelChamber):
         y_cords = abs(self.Positions[:,1])
         z_cords = (self.Positions[:,2])    
 
-        #Finding indexes where each dimmensjon fills their conditions
+        #Finding indexes where each dimention fills their conditions
         x_indexes = np.where(x_cords < Nozzle_length)
         y_indexes = np.where(y_cords < Nozzle_length)
         z_indexes = np.where(z_cords < -self.Length/2)
 
-        
+        # Anta at dette er vår liste med posisjoner:
+        r = [[0,1,2],[1,2,4],[-1,-2,1]] # Anta at det er masse greier inni her
+        v = [[0,1,1],[1,2,5],[2,1,-1]] # Anta masse hastigheter inni her
+        I = [] # Vi ønsker å spare på alle indeksene til partiklene som er i hullet
+        hole_width = L*0.25 # Vi sparer også på lengden på hullet
+
         all_indexes = np.intersect1d(np.intersect1d(x_indexes,y_indexes),z_indexes) #finds the common indexes
         Leaving_part_vel = self.Velocities[all_indexes] #saves their velocities for later use
 
