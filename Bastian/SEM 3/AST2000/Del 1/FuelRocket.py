@@ -1,4 +1,5 @@
-# IKKE BRUKT KODEMAL!!!!!!
+# BRUKER IKKE KODEMAL!!!!
+# Skrevet av Bastian Eggum Huuse og Bendik Thune
 
 # Imports
 import  numpy        as     np
@@ -32,7 +33,6 @@ class FuelRocket:
 
         # We only care about velocity
         self.Velocity = 0
-        self.counter = 0
 
         #Motor Parameters
         self.MotorLength = 10**(-6)
@@ -79,11 +79,7 @@ class FuelRocket:
         self.Velocity += ((self.Thrust/self.TotalMass) + g) * self.dt
         self.FuelMass -= self.FuelConsumption * self.dt
         self.TotalMass = self.FuelMass + self.RocketMass
-        self.counter += 1
         self.t += self.dt
-
-        if self.counter % 1000 == 0:
-            print(f"Current Velocity : {self.Velocity:.3f}, Current Fuel Mass : {self.FuelMass:.3f},Current time in seconds : {self.t:.1f}, Current time in minutes : {self.t/60:.1f}")
 
     def TimeLoop(self):
 
@@ -105,6 +101,7 @@ if __name__ == "__main__":
     Particles = 10**5
 
     TestRocket = FuelRocket(FuelMass=Fuel,SpeedBoost=EscapeVelocity,NumMotors=NumMotors,NumParticles=Particles)
+    print("Mass",mission.system.masses[0]* const.m_sun,"Radius",mission.system.radii[0] * 1000)
     TestRocket.TimeLoop()
 
     print("\nThe rocket has reached escape velocity!!! (or crashed)")

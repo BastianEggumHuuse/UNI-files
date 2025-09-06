@@ -1,4 +1,5 @@
-# IKKE BRUKT KODEMAL!!!!!!
+# BRUKER IKKE KODEMAL!!!!
+# Skrevet av Bastian Eggum Huuse, med justeringer fra Bendik Thune
 
 # Imports
 import  numpy        as     np
@@ -31,7 +32,6 @@ class SimulationRocket(FuelRocket):
 
         r_y = self.PlanetRadius
         self.v_x = ((2*np.pi)/(self.System.rotational_periods[0] * (86400/2))) * r_y
-        #print(self.System.rotational_periods)
         # rotational_periods[0] is given in 24 hours, so we have to turn it into seconds.
         # 86400 is the amount of seconds in 24 hours
 
@@ -61,8 +61,6 @@ class SimulationRocket(FuelRocket):
             self.Velocities.append(self.Velocity.copy())
 
         # Eulering Velocity, Position, Fuel, and Time
-        #print(self.Velocity)
-        #print(AccelerationVector)
         self.Velocity += AccelerationVector * self.dt
         self.Position += self.Velocity * self.dt
         self.FuelMass -= self.FuelConsumption * self.dt
@@ -70,20 +68,12 @@ class SimulationRocket(FuelRocket):
         self.t += self.dt
 
         # Note! Technically this rocket can exist INSIDE the planet, particularily at the beginning of the simulation
-        # At the beginning the mass is (for some parameters) to high for the thrust to overtake the gravitational force,
-        # causing the rocket to accelerate into the planet. This changes very little of the rest of the simulation
-        # and also it's lowkey kinda funny, so we have decided not to write code to change this. 
+        # At the beginning the mass of the rocket is (for some parameters) to high for the thrust to overtake the gravitational force,
+        # causing the rocket to accelerate into the planet. This changes very little of the rest of the simulation with the parameters we've selected
+        # and also it's lowkey kinda funny, so we have decided not to write code to change this. (we could however just set a boundrary for the position, so it doesn't clip inside the planet)
 
         # Calculating new Escape velocity
         self.SpeedBoost = ((2 *(self.PlanetMass)*self.GravityConstant) / (np.linalg.norm(self.Position)))**(1/2)
-
-        # Keeping track of how many times this method has been called
-        self.counter += 1
-        # Printing after an amount of loops
-        #if self.counter % 100000000 == 0:
-        if self.Velocity[1] < 0:
-            #print(f"Current Direction Vector : [x : {AccelerationDirection[0]}, y : {AccelerationDirection[1]}]")
-            print(f"Current Velocity : [x : {self.Velocity[0]:.3f}, y : {self.Velocity[1]:.3f}], Current Fuel Mass : {self.FuelMass:.3f},Current time in seconds : {self.t:.1f}, Current time in minutes : {self.t/60:.1f}")
 
     def TimeLoop(self):
         while(np.linalg.norm(self.Velocity + np.array([self.v_x,0])) < self.SpeedBoost):
@@ -130,7 +120,7 @@ if __name__ == "__main__":
     
 
     # Creating rocket instance
-    NumMotors = int((1000000**3)/30) # 1/10 qube meter grid :)
+    NumMotors = int((1000000**3)/60) # 1/10 qube meter grid :)
     Fuel = 360000
     Particles = 10**5
     EscapeVelocity = ((2 *(mission.system.masses[0]*const.m_sun)*const.G) / (mission.system.radii[0] * 1000))**(1/2)
