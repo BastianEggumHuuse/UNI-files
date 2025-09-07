@@ -1,29 +1,27 @@
 # BRUKER IKKE KODEMAL!!!!
-# Skrevet av Bastian Eggum Huuse, med justeringer fra Bendik Thune
+# Skrevet av Bastian og Bendik (BaBe space center)
 
 # Imports
 import  numpy        as     np
-import  scipy.stats  as     st
-import  math         as     mt
 import  matplotlib.pyplot as plt
 # AST imports
 import ast2000tools.constants as const
 import ast2000tools.utils as utils
 # From imports
 from FuelRocket import FuelRocket
-from ast2000tools.solar_system import SolarSystem
 from ast2000tools.space_mission import SpaceMission
 
 # Ast init
 seed = utils.get_seed('bmthune')
 mission = SpaceMission(seed)
-np.random.seed(1)
+
 
 class SimulationRocket(FuelRocket):
 
     def __init__(self,FuelMass,SpeedBoost,NumMotors,NumParticles = 10**5,dt = 10**(-3),Graph = False):
-        super().__init__(FuelMass,SpeedBoost,NumMotors,NumParticles,dt)
-
+        super().__init__(FuelMass,SpeedBoost,NumMotors,NumParticles,dt) #Using class from FuelRocket 
+        
+        # Initializing variables
         self.Mission = mission
         self.System = self.Mission.system
         self.PlanetMass = self.System.masses[0] * const.m_sun
@@ -31,13 +29,13 @@ class SimulationRocket(FuelRocket):
         self.GravityConstant = const.G
 
         r_y = self.PlanetRadius
-        self.v_x = ((2*np.pi)/(self.System.rotational_periods[0] * (86400/2))) * r_y
+        self.v_x = ((2*np.pi)/(self.System.rotational_periods[0] * (86400))) * r_y
         # rotational_periods[0] is given in 24 hours, so we have to turn it into seconds.
         # 86400 is the amount of seconds in 24 hours
-
+        
         # Position and Velocity are now vectors!!
         self.Position = np.array([0,r_y])
-        self.Velocity = np.array([0,0.0])
+        self.Velocity = np.array([self.v_x,0.0])
 
         # Graphing lists
         self.Graph = Graph
@@ -52,11 +50,11 @@ class SimulationRocket(FuelRocket):
         TotalAcceleration = ThrustAcceleration + GravityAcceleration
 
         # Adding a direction to the acceleration
-        AccelerationDirection = np.array([0.0,1.0])#self.Position/np.linalg.norm(self.Position)
+        AccelerationDirection = self.Position/np.linalg.norm(self.Position)
         AccelerationVector = TotalAcceleration * AccelerationDirection
 
         # Tracking stats
-        if self.Graph:
+        if self.Graph: 
             self.Positions.append(self.Position.copy())
             self.Velocities.append(self.Velocity.copy())
 
@@ -68,9 +66,10 @@ class SimulationRocket(FuelRocket):
         self.t += self.dt
 
         # Note! Technically this rocket can exist INSIDE the planet, particularily at the beginning of the simulation
-        # At the beginning the mass of the rocket is (for some parameters) to high for the thrust to overtake the gravitational force,
-        # causing the rocket to accelerate into the planet. This changes very little of the rest of the simulation with the parameters we've selected
-        # and also it's lowkey kinda funny, so we have decided not to write code to change this. (we could however just set a boundrary for the position, so it doesn't clip inside the planet)
+        # At the beginning the mass is (for some parameters) too high for the thrust to overtake the gravitational force,
+        # causing the rocket to accelerate into the planet. This changes very little of the rest of the simulation
+        # and also it's lowkey kinda funny, so we have decided not to write code to change this. But if we would change we
+        # would just set a hard boundary.
 
         # Calculating new Escape velocity
         self.SpeedBoost = ((2 *(self.PlanetMass)*self.GravityConstant) / (np.linalg.norm(self.Position)))**(1/2)
@@ -82,7 +81,9 @@ class SimulationRocket(FuelRocket):
 
             if(self.FuelMass <= 0):
                 print("HOUSTON WE HAVE A PROBLEM.... \nBAAANG")
-                break
+                print("     _.-^^---....,,-- \n _--                  --_\n<                        >)\n|                         |\n \\._                   _./\n    ```--. . , ; .--'''\n          | |   |\n       .-=||  | |=-.\n       `-=#$%&%$#=-'\n          | ;  :|\n _____.,-#%&$@%#&#~,._____ ")
+                raise RuntimeError
+                
 
     def StarPosition(self,Pos,Vel):
         
@@ -91,17 +92,14 @@ class SimulationRocket(FuelRocket):
 
         # According to the image in the problem description, we launch along the x axis in the solar system frame
         # This means that our axes have to be switched!!
-
-        v_x = ((2*np.pi)/(self.System.rotational_periods[0])) * Pos[1]
-        Pos[0] = v_x * self.t
-
+        
         Pos[0],Pos[1] = Pos[1],Pos[0]
         Vel[0],Vel[1] = Vel[1],Vel[0]
 
         # Adjusting the position and velocity to be in Astronomical units
         Pos *= (1/const.AU)
         Vel *= ((60*60*24*365)/const.AU)
-
+        
         # Getting planet position (in AU)
         r_p = self.System.initial_positions[:,0]
 
@@ -111,9 +109,13 @@ class SimulationRocket(FuelRocket):
         # Getting planet velocity
         v_p = self.System.initial_velocities[:,0]
 
+        # Uppdating Possision with plantets orbit speed
+        r += v_p * self.t/(60*60*24*365)
+
         # Setting our velocity in the solar system frame
         v = v_p + Vel
-
+        
+        
         return r,v
 
 if __name__ == "__main__":
@@ -121,7 +123,7 @@ if __name__ == "__main__":
 
     # Creating rocket instance
     NumMotors = int((1000000**3)/60) # 1/10 qube meter grid :)
-    Fuel = 360000
+    Fuel = 190000
     Particles = 10**5
     EscapeVelocity = ((2 *(mission.system.masses[0]*const.m_sun)*const.G) / (mission.system.radii[0] * 1000))**(1/2)
     TrackValues = True
@@ -149,18 +151,13 @@ if __name__ == "__main__":
     # Plotting our graph
     Points = list(zip(*TestRocket.Positions))
     N_Points = len(Points[0])
-    #ax.plot(Points[0][:N_Points],Points[1][:N_Points])
-    
-    #plt.axis('equal')
-    #plt.show()
+    ax.plot(Points[0][:N_Points],Points[1][:N_Points])
+    plt.axis('equal')
+    plt.show()
 
     r,v = TestRocket.StarPosition(TestRocket.Position,TestRocket.Velocity)
     print(f"Position in solar system frame : [x_f : {TestRocket.Position[0]}, x : {r[0]:.3f} AU, y : {r[1]:.2e} AU]")
     print(f"Velocity in solar system frame : [x : {v[0]:.3f} AU/Y, y : {v[1]:.3f} AU/Y]")
-
-
-    # Test!!!11!!!
-    # Our calendar begins at launch (bbb,abb)
 
     mission.set_launch_parameters(
         thrust = TestRocket.Thrust,
@@ -172,8 +169,6 @@ if __name__ == "__main__":
         )
     
     mission.launch_rocket(10**(-3))
-
-    mission.verify_launch_result(r) #+ np.array([0,6.54656e-05]))
-
-    #(6.71003*(10^-5)) * antall m i AU
+    
+    mission.verify_launch_result(r)
     

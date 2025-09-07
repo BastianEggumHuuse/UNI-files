@@ -3,7 +3,6 @@
 
 # Imports
 import  numpy        as     np
-import  scipy.stats  as     st
 import  math         as     mt
 import  matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -103,9 +102,6 @@ class FuelChamber:
 
     def CollisionStep(self):
 
-        # In the flowchart we wrote this as a loop, but to increase the performance
-        # we've switched to a cool numpy implementation :)
-
         # Finding all indexes where the particles are outside of the box
         Indexes = np.where(abs(self.Positions) > self.Length/2)
         # Reversing all velocities where this is the case :)
@@ -136,49 +132,41 @@ if __name__ == "__main__":
     V = TestChamber.Velocities
     MeanV = sum((V[:,0]**2 + V[:,1]**2 + V[:,2]**2)**(1/2)) / N
     AnalyticalV = 4*((const.k_B*TestChamber.Temp)/(2 * const.pi * TestChamber.ParticleMass))**(1/2)
-    RelativeErrorV = (MeanV - AnalyticalV) / AnalyticalV
 
     # Calculating Pressure
     TotalP = TestChamber.TotalPressure
     P  = (TotalP / TestChamber.counter)
     AnalyticalP = (N * const.k_B * TestChamber.Temp) / (TestChamber.Length**3)
-    RelativeErrorP = (P - AnalyticalP) / AnalyticalP
 
     # Calculating Energy
     MeanE =  ((1/2)*TestChamber.ParticleMass*(sum(V[:,0]**2 + V[:,1]**2 + V[:,2]**2)))/N
     AnalyticalE = (3/2)*const.k_B*TestChamber.Temp
-    RelativeErrorE = (MeanE - AnalyticalE) / AnalyticalE
 
     # First looking at Velocity
-    print(f"Mean velocity derived from simulation :{MeanV:.5e}")
-    print(f"Mean velocity derived analyticaly     :{AnalyticalV:.5e}")
-    print(f"Relative error between calculations   :{RelativeErrorV}\n")
+    print(f"Mean velocity derived from simulation          :{MeanV:.5e}")
+    print(f"Mean velocity derived analyticaly              :{AnalyticalV:.5e}")
+    print(f"Ratio between simulated and analytical answers :{MeanV/AnalyticalV}\n")
 
     # Second looking at Pressure
-    print(f"Pressure calculated from simulation   :{P:.5e}")
-    print(f"Pressure calculated analyticaly       :{AnalyticalP:.5e}")
-    print(f"Relative error between calculations   :{RelativeErrorP}\n")
+    print(f"Pressure calculated from simulation            :{P:.5e}")
+    print(f"Pressure calculated analyticaly                :{AnalyticalP:.5e}")
+    print(f"Ratio between simulated and analytical answers :{P/AnalyticalP}\n")
 
     # Third looking at Energy
-    print(f"Mean energy calculated from simulation:{MeanE:.5e}")
-    print(f"Mean energy calculated analyticaly    :{AnalyticalE:.5e}")
-    print(f"Relative error between calculations   :{RelativeErrorE}\n")
+    print(f"Mean energy calculated from simulation         :{MeanE:.5e}")
+    print(f"Mean energy calculated analyticaly             :{AnalyticalE:.5e}")
+    print(f"Ratio between simulated and analytical answers :{MeanE/AnalyticalE}\n")
 
     # Plotting some stuff
-    relation = np.array([23,12.5]) / 4
-    fig, ax = plt.subplots(subplot_kw={"projection": "3d"},figsize=(10,6))
 
-    Particles = ax.plot(TestChamber.SelectPositions[0][:,0],TestChamber.SelectPositions[0][:,1],TestChamber.SelectPositions[0][:,2],".")[0]
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+    line = ax.plot(TestChamber.SelectPositions[0][:,0],TestChamber.SelectPositions[0][:,1],TestChamber.SelectPositions[0][:,2],".")[0]
 
     def animate(i):
-        Particles.set_data_3d(TestChamber.SelectPositions[i][:,0],TestChamber.SelectPositions[i][:,1],TestChamber.SelectPositions[i][:,2])
+        line.set_data_3d(TestChamber.SelectPositions[i][:,0],TestChamber.SelectPositions[i][:,1],TestChamber.SelectPositions[i][:,2])
 
     ani = animation.FuncAnimation(
         fig, animate, 300, interval=100)
 
-    plt.show()
 
-    # Video saving stuff
-    #Writer = animation.writers['ffmpeg']
-    #writer = Writer(fps=15, metadata=dict(artist='Bastian Eggum Huuse'), bitrate=1800)
-    #ani.save('Particles.mp4', writer=writer)
+    plt.show()

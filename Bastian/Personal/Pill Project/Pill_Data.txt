@@ -132,3 +132,5 @@ Day;Month;Year;Time;Stress;Happiness;Comment (Not mandatory)
 05;09;2025;M;X;X;Glemte å notere...
 05;09;2025;N;1;4;Hyggelig poker time
 06;09;2025;M;1;4
+06;09;2025;M;2;2
+07;09;2025;N;2;3
