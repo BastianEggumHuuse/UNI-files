@@ -1,6 +1,10 @@
 
 class BinarySearchTree
 {
+    // in both this class and in AVLTree later, we found out that making
+    // the algorithm methods methods of the inner class Node actually made
+    // the algorithms harder to write. In the future, this will be avoided.
+
     class Node
     {
         int element; // The element we want to store

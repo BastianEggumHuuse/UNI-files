@@ -5,6 +5,13 @@ import javax.lang.model.util.ElementScanner14;
 class AVLTree extends BinarySearchTree
 {
     // Found out you can inherit from inner classes today :)
+    // Actually inheriting from Node doesn't help that much, since we have to override
+    // many of the methods anyway.
+
+    // Since the instructions do a lot more inserting and removing than it does searching,
+    // an AVL-tree might not be the best solution here. By watching the runtimes of the A1 and B1,
+    // we see that the regular binary search tree actually performs the tasks quicker when we have a lot of commands
+    // (that or the code is just bad haha).
     class AVLNode extends Node
     {
         //The outer class handles empty trees, so the minimum height is 0
@@ -18,8 +25,8 @@ class AVLTree extends BinarySearchTree
         }
 
         // method that returns the height of a tree (or subtree)
-        //@Override
-        public int getHeigh()
+        @Override
+        public int getHeight()
         {
             if(left == null && right == null) //If we enter this statement, this is a leaf-node, and we return 0.
             {
@@ -93,7 +100,7 @@ class AVLTree extends BinarySearchTree
             }
             if(left == null)
             {
-                System.out.println(((AVLNode)right).height);
+                //System.out.println(((AVLNode)right).height);
                 return((AVLNode)right).height + 1;
             }
             if(right == null)
@@ -143,7 +150,7 @@ class AVLTree extends BinarySearchTree
             return(this);
         }
 
-        // Method for inserting an element into the tree. (REWRITE THIS ENTIRE THING!!!)
+        // Method for inserting an element into the tree.
         public Node AVLinsert(int e)
         {
             // this method is identical to the one in BinarySearchTree, but includes balancing.
@@ -152,19 +159,17 @@ class AVLTree extends BinarySearchTree
             {
                 if(left == null)
                 {
+                    // Initializing new node
                     left = new AVLNode(e);
                     left.parent = this;
 
                     ((AVLNode)left).height = ((AVLNode)left).getHeight();
-                    //System.out.println("Balance : " +((AVLNode)root).balanceFactor());
                     left = ((AVLNode)left).balance();
 
-                    return this;
+                    height = getHeight();
+                    return(balance());
                 }
                 left = ((AVLNode)left).AVLinsert(e);
-
-                height = getHeight();
-                return balance();
             }
             else if (e > element)
             {
@@ -174,18 +179,16 @@ class AVLTree extends BinarySearchTree
                     right.parent = this;
 
                     ((AVLNode)right).height = ((AVLNode)right).getHeight();
-                    ((AVLNode)root).balanceFactor();
-                    //System.out.println("Balance : " +((AVLNode)root).balanceFactor());
                     right = ((AVLNode)right).balance();
-                    return this;
+                    
+                    height = getHeight();
+                    return(balance());
                 }
                 right = ((AVLNode)right).AVLinsert(e);
-
-                height = getHeight();
-                return balance();
             }
 
-            return(this);
+            height = getHeight();
+            return(balance());
         }
 
         // method for removing an element from the tree
@@ -242,6 +245,36 @@ class AVLTree extends BinarySearchTree
             height = getHeight();
             return(balance());
         }
+
+        // Debug method for testing if the invariant stays true
+        // Since we use max here, we only look at weights to the right.
+        public int highestWeight()
+        {
+            int num = balanceFactor();   
+            if (left != null)
+            {
+                num = Integer.max(num,((AVLNode)left).highestWeight());
+            }
+            if(right != null)
+            {
+                num = Integer.max(num,((AVLNode)right).highestWeight());
+            }
+            return(num);
+        }
+
+        public int lowestWeight()
+        {
+            int num = balanceFactor();   
+            if (left != null)
+            {
+                num = Integer.min(num,((AVLNode)left).lowestWeight());
+            }
+            if(right != null)
+            {
+                num = Integer.min(num,((AVLNode)right).lowestWeight());
+            }
+            return(num);
+        }
     }   
 
     @Override
@@ -267,4 +300,14 @@ class AVLTree extends BinarySearchTree
 
         root = root.remove(e);
     } 
+
+    public int[] highestWeight()
+    {
+        if (root == null)
+        {
+            return new int[] {0,0};
+        }
+        
+        return(new int[] {((AVLNode)root).highestWeight(),((AVLNode)root).lowestWeight()});
+    }
 }

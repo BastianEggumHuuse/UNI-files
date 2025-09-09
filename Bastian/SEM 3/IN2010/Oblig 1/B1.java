@@ -60,10 +60,21 @@ class B1
                         int value = set.size();
                         Writer.write(Integer.toString(value) + "\n");
                     }
+
+                    // Breaking if the tree isn't balanced
+                    int[] weight = set.highestWeight();
+                    if(weight[0] >= 2)
+                    {
+                        System.out.println("Weight to big on one side");
+                        return;   
+                    }
                 }
 
+                int[] weights = set.highestWeight();
                 System.out.println("Finished with file: " + data.getName());
-                System.out.println("Final tree height : " + set.height() + "\n");
+                System.out.println("Final tree height : " + set.height());
+                System.out.println("Highest weight    : " + weights[0]);
+                System.out.println("Lowest weight     : " + weights[1] + "\n");
 
                 // Finished writing
                 Writer.close();
