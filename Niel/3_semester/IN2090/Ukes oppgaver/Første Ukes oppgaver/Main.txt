@@ -46,3 +46,12 @@ sorter resultat alfabetisk på kurskode
 
 for hver (kurskode, kursnavn) i resultat:
     skriv ut kode + " " + navn
+
+
+3. Lag rapport
+
+
+studenter <- read.csv("studenter.csv")
+tar_kurs <- read_csv("tar_kurs.csv")
+kurs <- read_csv("kurs.csv")
+
