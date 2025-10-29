@@ -39,7 +39,7 @@ Hashen er: 839ab8d3b16e185860afe65666693a96
 Spørsmål:
 3. Hva er passordet? - Tiramisu
 4. Hvilken hashing-algoritme er brukt? Er denne trygg? Hvorfor/hvorfor ikke? Svar kort.
-- Nei, siden MD5 er sårbar for kollisjonsangrep siden to ulike input gir samme hashverdi. #Dobblecheck
+- Nei, siden hashing-algoritmen som blir brukt er MD5 som er sårbar for kollisjonsangrep siden to ulike input gir samme hashverdi.
 
 VIKTIG!
 Om du ikke klarte å hente ut passordet så er oppdraget vårt over, og vi må klare oss videre uten deg. Brenn laptopen din, kast telefonen din og glem at vi eksisterer. Du hører aldri fra oss igjen.
@@ -65,8 +65,6 @@ Melding fra MegaScorpion222: Mkazxaz zex qkfi zqk rqh erm-zmqiqr rqh iuhjmxp
 
 - Agenten vil mote deg ved ifi-dammen ved midnatt
 
-
-
 Signert (SHA-256)
 ZbaaiIttx64cjlHyTry6SGowypLGQof9EtZTzcewMlkXYLVzW9E9cRuWgUH9RplBY9DPh/Guwj8sT9hiMuXe9nkBLT7UQ+sqEvYBM7PuBdAGHI7zzUcvIK8BxLSI2zoq0QLgVVw9KUMaZgfZus9Uy9AeNGkTkqFipbjYrLlSyRk=
 
@@ -77,13 +75,13 @@ Spørsmål:
 - Kollisjonsresistens: Altså at det er nesten umulig å finne to ulike input som gir samme hash.
 - Enveis: Det skal være umulig (eller veldig vanskelig) å finne en input som gir en gitt hashverdi, altså: Finn x slik at hash(x) = h, når du kun kjenner h.
 - Effektivt: Det skal være lett å beregne med hashingalgoritme med input data x.
-- Komprimering: Uansett hvor stort inputet er, skal det bli 256 bits.
+- Komprimering: Det viktig at det blir en konstant størrelse fordi ulike algoritmer tar ulike størrelser gitt en vilkårlig størrelse input så gir den en fast størrelse output.
 
 7. Hvor er utleveringspunktet beskrevet i meldingen inne i meldingen? 
 - "Agenten vil mote deg ved ifi-dammen ved midnatt"
 
 8. Hva heter algoritmen som er brukt til å krypteringen til meldingen inne i meldingen? Nevn en måte man kan knekke en slik type kryptering.
-- Algoritmen heter ceasar cipher og for å knekke slike krypertinger kan man bruke frekvensanalyser som viser hvilke bokstaver som er mest brukt.
+- Algoritmen heter vigenere cipher og for å knekke slike krypertinger kan man bruke frekvensanalyser som viser hvilke bokstaver som er mest brukt.
 
 Du og jeg Bob, vi har noe. Ekte partnere liksom. Så jeg har bestemt meg for å stole på deg med en liten hemmelighet om meg selv. Jeg har trust issues..
 Kan du, sånn for sikkerhetsskyld, bare sjekke at den meldingen vi stjal er ekte? Agenten sin offentlige nøkkel er:
@@ -102,4 +100,10 @@ Sjekk at den faktisk ble signert av agenten og ikke er blitt tuklet med. Signatu
 
 Spørsmål:
 9. Legg inn et skjermbilde med bekreftelse av at meldingen ble signert og sendt av agenten. (Dette er ikke et lurespørsmål, meldingen skal være Verified OK).
+
+![[Pasted image 20250919195115.png]]
+
+
 10. Signerer man med sin offentlige eller private nøkkel? Forklar kort logikken bak.
+
+Den private nøkkelen er kun kjent for eieren (agenten). Ved å signere med den private nøkkelen, beviser agenten at de er den eneste som kunne ha produsert signaturen. Alle andre kan verifisere signaturen ved å bruke den offentlige nøkkelen. Dette skaper ikke-benektelse - agenten kan ikke nekte for at de signerte meldingen. Det beviser også at meldingen ikke har blitt endret etter signering.
