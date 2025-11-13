@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Innlevering 3"
             }
+          },
+          {
+            "id": "a5beaf1df309d4c2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian UiO/second arc/IN2120/Oblig 4.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Oblig 4"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -78,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "99b39a163de53250",
@@ -165,9 +181,14 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "f7e42e463da466b5",
+  "active": "a5beaf1df309d4c2",
   "lastOpenFiles": [
+    "Obsidian UiO/second arc/IN2120/Oblig 3.md",
+    "Obsidian UiO/second arc/IN2120/Oblig 4.md",
     "Obsidian UiO/second arc/IN2120/Oblig IN2120.md",
+    "Attachments/images/Risikomatrise.png",
+    "Attachments/images/Pasted image 20251030213109.png",
+    "Obsidian UiO/second arc/IN2120/Untitled",
     "Obsidian UiO/second arc/IN2090/Innlevering 3.md",
     "Attachments/images/Pasted image 20250919195115.png",
     "Obsidian UiO/second arc/IN2010/Første ukes oppgaver.md",
@@ -188,8 +209,6 @@
     "Attachments/images/Pasted image 20250528163704.png",
     "Attachments/images/Pasted image 20250528163641.png",
     "Attachments/images/Pasted image 20250528163601.png",
-    "Attachments/images/Pasted image 20250528121204.png",
-    "Attachments/images/Pasted image 20250527184805.png",
     "Obsidian UiO/first year/V25/IN1030/repetisjon uke/Modul - A.md",
     "Obsidian UiO/first year/V25/IN1030/repetisjon uke/eksamen v24.md",
     "Obsidian UiO/first year/V25/IN1030/repetisjon uke/Modellering Sekvens og aktivitet.md",
@@ -204,14 +223,11 @@
     "Obsidian UiO/first year/V25/EXPHIL/examen forbrening/del 2 - Være.md",
     "Obsidian UiO/first year/V25/EXPHIL/examen forbrening/del 3 - Gjøre.md",
     "Obsidian UiO/first year/V25/EXPHIL/examen forbrening/Argumenterende_tekst_Niel Carlsen 1.docx",
-    "Obsidian UiO/first year/V25/EXPHIL/examen forbrening/Argumenterende_tekst_Niel Carlsen.docx",
     "Obsidian UiO/first year/V25/EXPHIL/Seminar/26.03.md",
     "Obsidian UiO/first year/V25/EXPHIL/Seminar/26.02 descartes meditasjon.md",
     "Obsidian UiO/first year/V25/EXPHIL/ultiririsime.md",
     "Obsidian UiO/first year/V25/EXPHIL/innleveringer/mal.md",
     "Obsidian UiO/first year/V25/EXPHIL/innleveringer/oblig 2.md",
-    "Obsidian UiO/first year/V25/EXPHIL/innleveringer/innlevering.md",
-    "Obsidian UiO/first year/V25/EXPHIL/30.01.25 nr.5 forelesning.md",
-    "Obsidian UiO/first year/V25/EXPHIL/14.01.25 nr.1 forelesning.md"
+    "Obsidian UiO/first year/V25/EXPHIL/innleveringer/innlevering.md"
   ]
 }
