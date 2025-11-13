@@ -20,7 +20,7 @@ Brukte wireshark for å finne at Brukeren er silje og passordet er xY688ASSu27 f
 
 Oppgave 3:
 
-Diffie-Hellman genererer en midlertidig sesjonsnøkkel som ikke lagres. Selv om en angriper får tak i de langsiktige private nøklene senere, kan de ikke rekonstruere denne tidsbegrensede sesjonsnøkkelen. Offentlige/private nøkkelpar gir ikke dette fordi den private nøkkelen er statisk - hvis den stjeles, kan angriperen dekryptere all tidligere kommunikasjon som ble kryptert med den tilsvarende offentlige nøkkelen.
+Diffie-Hellman fremoverhemmelighold ved å generere en midlertidig sesjonsnøkkel som ikke lagres. Selv om en angriper får tak i de langsiktige private nøklene senere, kan de ikke rekonstruere denne tidsbegrensede sesjonsnøkkelen. Offentlige/private nøkkelpar gir ikke dette fordi den private nøkkelen er statisk - hvis den stjeles, kan angriperen dekryptere all tidligere kommunikasjon som ble kryptert med den tilsvarende offentlige nøkkelen.
 
 Oppgave 4:
 
@@ -29,3 +29,30 @@ Oppgave 5:
 alert tcp any any -> 10.0.23.23 3389 (msg:"RDP til ip 10.0.23.23")
 
 
+Oppgave 6: 
+
+IDS er inntrengingsdeteksjonssystemer som forsøker til å oppdage mistenkelige aktiviteter. Det er sensorer som overbevåker og henter ut nettverksdata. Anomalisert basert IDS utløser når en sjelden hendelse oppstår. Siden det ofte er basert på maskinlæring kan det utløse falske alarmer. 
+
+Oppgave 7:
+
+En honeypot er et lokkesystem som etterligner ekte tjenester for å tiltrekke seg angripere. Formålet er å avlede dem fra produksjonssystemer, studere angrepsmetodene deres, og samle inn informasjon om nye trusler uten å sette virkelige ressurser i fare.
+
+Oppgave 8:
+
+Utenfor brannmur:
+
+Fordel: Ser alt ufiltrert trafikk, inkludert skanning og forsøk.
+Ulempe: Mye støy, kan bli overveldet, ser ikke trafikk som blokkeres av brannmur.
+
+Innenfor brannmur:
+
+Fordel: Fokuserer på farlig trafikk som faktisk har passert forsvar, gir færre og mer relevante alarmer.
+Ulempe: Misser trusler som ble blokkert av brannmuren, gir et ufullstendig bilde av angrepslandskapet.
+
+Oppgave 9:
+
+Alle forsøk på kommunikasjon med disse adressene er illegitim trafikk, og kan derfor tydelig identifiseres som skanning, utforskning eller angrep fra en trussel i nettverket.
+
+Oppgave 10:
+
+Dette sikrer at all kommunikasjon skjer gjennom en kryptert og sikret tunnel, selv på usikker nettverk (som offentlig Wi-Fi). Det gir også kontroll og overvåkning av trafikk, og tilgang til interne ressurser som om man var på kontoret.
