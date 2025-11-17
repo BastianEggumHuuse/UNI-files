@@ -24,6 +24,11 @@ Diffie-Hellman fremoverhemmelighold ved å generere en midlertidig sesjonsnøkke
 
 Oppgave 4:
 
+![[Pasted image 20251114141137.png]]
+
+Jeg tenker å overvåke trafikken som passerer den ytterste brannmuren. I tillegg til å sikre e-post- og webservere, bør man også etablere en domenekontroller for klientene, skrivere, samt trafikken mot databaseservere og filservere. Grunnen er at de fleste angrep skjer i flere faser. En angriper som trenger gjennom brannmuren, vil deretter prøve å bevege seg sidelengs i nettverket for å finne verdifulle mål. 
+
+
 Oppgave 5:
 
 alert tcp any any -> 10.0.23.23 3389 (msg:"RDP til ip 10.0.23.23")
@@ -39,15 +44,7 @@ En honeypot er et lokkesystem som etterligner ekte tjenester for å tiltrekke se
 
 Oppgave 8:
 
-Utenfor brannmur:
-
-Fordel: Ser alt ufiltrert trafikk, inkludert skanning og forsøk.
-Ulempe: Mye støy, kan bli overveldet, ser ikke trafikk som blokkeres av brannmur.
-
-Innenfor brannmur:
-
-Fordel: Fokuserer på farlig trafikk som faktisk har passert forsvar, gir færre og mer relevante alarmer.
-Ulempe: Misser trusler som ble blokkert av brannmuren, gir et ufullstendig bilde av angrepslandskapet.
+En IDS på utsiden av brannmuren fanger opp alle angrepsforsøk, men den jobber hardere og sender også ut varsler om angrep som brannmuren likevel ville ha stoppet. Plasserer du IDS-en på innsiden, varsler den kun om de angrepene som faktisk trenger/har kommet gjennom brannmuren, og den slipper å jobbe like mye.
 
 Oppgave 9:
 
