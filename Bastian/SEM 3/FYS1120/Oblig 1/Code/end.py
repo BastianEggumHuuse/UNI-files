@@ -8,12 +8,12 @@ pi = np.pi
 
 # Function that takes in a position r = [x_r,y_r,_z_r], a list of charges Q = [q1, q2, ...], and a list of corresponding positions R = [[x1,y1,z1], [x2,y2,z2], ...]
 # The function then returns the electric potential in this point.
-def epotlist(r,Q,R):
+def epotlist(r,Q,R,mod = 1):
     V=0
 
     for i in range(len(R)):
         Ri = r - R[i]
-        qi = Q[i]
+        qi = Q[i] * mod
         Rinorm = np.linalg.norm(Ri)
 
         V = V + qi/(4*pi*e_0*Rinorm)
@@ -52,16 +52,28 @@ print(f"Analytical capacitance between the two squares : {C_a}\n")
 # Computing Difference in V for an entire line
 N = 100 # Number of reference points
 r_y = np.linspace(-a,a,N)
+mod = 1/(len(r_y)*4)
 V = []
 
 for i in range(len(r_y)):
 
-    V.append(epotlist(np.array([-a,r_y[i],2*a]),Q,R))
-    #V.append(epotlist(R,Q,R))
+    V.append(epotlist(np.array([-a,r_y[i],2*a]),Q,R,mod))
+for i in range(len(r_y)):
+
+    V.append(epotlist(np.array([r_y[i],a,2*a]),Q,R,mod))
+for i in range(len(r_y)):
+
+    V.append(epotlist(np.array([a,-r_y[i],2*a]),Q,R,mod))
+for i in range(len(r_y)):
+
+    V.append(epotlist(np.array([-r_y[i],-a,2*a]),Q,R,mod))
 
 # Plotting the potential
-plt.plot(r_y,V)
+#plt.plot(r_y,V)
+plt.plot(np.linspace(0,1,len(V)),V)
 plt.title("Elektrisk potensial langs den vestlige linjen i\ndet negativt ladde kvadratet")
 plt.xlabel("y [m]")
 plt.ylabel("dV [V]")
 plt.show()
+
+print(f"Integrated difference in potential {sum(V) * 2}")
