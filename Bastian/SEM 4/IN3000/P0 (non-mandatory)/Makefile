@@ -29,7 +29,7 @@ SHELL_ADDR	= 0x0000
 #
 #-Wall:			All of the `-W' options combined (all warnings on)
 
-CCOPTS = -Wall -g -march=i386 -m32 -c -fomit-frame-pointer -fno-builtin
+CCOPTS = -Wall -g -march=i386 -m32 -c -fomit-frame-pointer -fno-builtin -fno-stack-protector
 
 # Linker flags
 #-nostartfiles:	Do not use the standard system startup files when linking.
