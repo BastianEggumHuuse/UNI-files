@@ -25,6 +25,9 @@ void history_init(int size){
 
 void history_put(char s)
 {
+    // We don't want s to be \r :)
+    s = (s == '\r') ? '\n' : s;
+
     /* Special case where buffer is empty */
     if(ll_start == NULL)
     {
@@ -56,14 +59,6 @@ void history_put(char s)
         return;
     }
 
-    /* Special case where we run out of memory*/
-    if((cur_size+1) * (int)sizeof(char_t) > 32*1000)
-    {
-        /* Same solution as when out of space */
-        currentNode->s = s;
-        return;
-    }
-
     /* We now have an empty slot in currentNode -> next*/
     char_t* nextNode = kzalloc(sizeof(char_t));
     nextNode->s = s;
@@ -73,34 +68,20 @@ void history_put(char s)
     cur_size++;
 }
 
-char_t* buffer_deque(void)
+void history_write(void) 
 {
-    /* Buffer is empty */
-    if(ll_start == NULL)
+    // Defining an empty string and an iterator
+    char* str = kzalloc(sizeof(char) * cur_size + 1); int i = 0;
+
+    // Defining a node to iterate over the history
+    char_t* currentNode = ll_start;
+    do 
     {
-        return NULL;
+        *(str + i++) = currentNode->s;
     }
+    while((currentNode = currentNode->next) != NULL);
 
-    /* To follow FIFO rules, we want to deque the first node,
-       which is pointed to by ll_start */
-    
-    char_t* node = ll_start; /* Storing this for returning later*/
+    *(str + i) = '\0'; // Unneccesary, but for good measure
 
-    ll_start = ll_start->next; /* Updating the second node to be the first*/
-    ll_start->prev = NULL;     /* ll_start should always be the first element, meaning it has no prev.*/
-
-    return node;
+    write_line(str);
 }
-
-void history_write(void)
-{
-    char_t* currentNode;
-    while((currentNode = buffer_deque()) != NULL)
-    {
-        write_char(currentNode->s); /* Writing char */
-        kfree(currentNode);         /* Freeing memory */
-    }
-}
-
-
-

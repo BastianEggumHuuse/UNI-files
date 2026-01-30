@@ -140,16 +140,31 @@ set_marker:
 
 get_char:
 
-    ; Beginning preservation
-    enter 0,0
+    # Preserving the base stack pointer and allocating stack space
+    pushw %bp
+    movw %sp, %bp
 
-    ; Setting the input parameters for INT 0x16
-    mov ah, 0x0  ; 0x0 is the function number for getting keyboard input
+    sub $4, %sp
+    
+    pusha
 
-    int 0x16     ; Call INT 0x16, the keyboard interfacing interrupt
-    ; The read character is now stored in al, which is the register output is read from
+    # Setting the input parameters for INT 0x16
+    movb $0x0, %ah     # 0x0 is the function number for getting keyboard input
 
-    ret
+    int $0x16        # Call INT 0x16, the keyboard interfacing interrupt
+    # The read character is now stored in al, which is the register output is read from
+
+    movb $0, %ah        # We want to ignore the upper bits of ax
+    movw %ax, -4(%bp) # Storing this value
+
+    popa
+
+    movw -4(%bp), %ax  # Restoring this value to ax (which is returned)
+
+    movw %bp, %sp      # Deallocating stack space
+    popw %bp         # Restoring %bp
+
+    ret             # Returning
 
 # ###################################################### #
 #
@@ -172,24 +187,26 @@ get_char:
 
 write_char:
 
-    ; Beginning preservation
-    enter 0,0
+    # Preserving the base stack pointer
+    pushw %bp
+    movw %sp, %bp
+    
+    pusha
 
-    ; We need to preserve the registers we use,
-    ; but ax, dx, and cx are guaranteed to be preserved by the caller
-    push bx ; bx is the remaining one :)
+    # Setting the input parameters for INT 0x10
+    movb $0x0A, %ah # ah is used for the function number. 0x0A is writing at cursor
+    movb 6(%bp), %al  # We use al for the character. Here we print !
+    movb $0,    %bh    # We don't care about page number
+    movw $1,    %cx    # We don't want to repeat the action
 
-    ; Setting the input parameters for INT 0x10
-    mov ah, 0x0A ; ah is used for the function number. 0x0A is writing at cursor
-    mov al, '!'  ; We use al for the character. Here we print !
-    mov bh, 0    ; We don't care about page number
-    mov cx, 0    ; We don't want to repeat the action
+    int $0x10     # Finally, call INT 10h, which is the video interrupt
 
-    int 0x10     ; Finally, call INT 10h, which is the video interrupt
+    popa
 
-    ; Ending preservation
-    pop bx
-    ret
+    movw %bp, %sp
+    popw %bp      # Restoring bp
+
+    ret          # Returning
 
 # ###################################################### #
 #   You can figure this one out yourself
