@@ -1,0 +1,57 @@
+1. Finn studenter
+
+studenter <- read.csv("studenter.csv")
+
+for hver student in studenter
+    fornavn <- student[0]
+    etternavn <- student [1]
+
+    hvis etternavn starter med ("g" eller "G") så
+        skriv ut fornavn + " " + etternavn
+
+
+2. Finn kurs
+
+studenter <- read.csv("studenter.csv")
+tar_kurs <- read_csv("tar_kurs.csv")
+kurs <- read_csv("kurs.csv")
+
+kurs_liste = tom mengde
+gyldige_studenter = tom liste
+
+for hver student in studenter
+    studentid <- student[0]
+    fornavn <- student[1]
+    etternavn <- student[2]
+    dato <- student[3]
+
+    hvis dato > "1992-01-01" så 
+        legg til studentid i gyldige_studenter
+
+for hver rad in tar_kurs
+    studentid <- rad[0]
+    kurskode <- rad[1]
+
+    hvis studentid er i gyldige_studenter så 
+        hvis kurskode starter med "IN" så
+            legg til kurskode i kurs_liste
+
+resultat <- tom mengde
+
+for hver kurskode i gyldige_kurs:
+    finn kursnavn i kurs der kurs[0] = kurskode
+    legg til (kurskode, kursnavn) i resultat
+
+sorter resultat alfabetisk på kurskode
+
+for hver (kurskode, kursnavn) i resultat:
+    skriv ut kode + " " + navn
+
+
+3. Lag rapport
+
+
+studenter <- read.csv("studenter.csv")
+tar_kurs <- read_csv("tar_kurs.csv")
+kurs <- read_csv("kurs.csv")
+
